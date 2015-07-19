@@ -1,0 +1,342 @@
+#! C:/Program Files/Nuke9.0v3/nuke-9.0.3.dll -nx
+version 9.0 v3
+Gizmo {
+ help Penis!
+ onCreate Flut_Write.onCreate()
+ knobChanged Flut_Write.knobChanged()
+ autolabel Flut_Write.autolabel()
+ addUserKnob {20 User l Write +HIDDEN}
+ addUserKnob {26 header l "" t "Wir sind die Flut - WriteNode" +STARTLINE T "<a href='http://www.9gag.com'><img src='F:/nuke_plugins/gizmos/wsdfbanner.png'></a>"}
+ addUserKnob {26 ""}
+ addUserKnob {4 mode l Mode M {preRender OUT "" "" ""}}
+ mode OUT
+ addUserKnob {26 ""}
+ addUserKnob {1 outPathEXR l EXR +DISABLED}
+ outPathEXR .../s900_COMP_OUT/s900_COMP_PipelineSetup_v004_vu/s900_COMP_PipelineSetup_v004_vu.%04d.exr
+ addUserKnob {4 channelsEXR l "" -STARTLINE M {rgba rgb alpha all "" "" "" ""}}
+ addUserKnob {22 openFolder1 l fldr -STARTLINE T "reload(Flut_Write)\nFlut_Write.buttonClicked_OpenFolder(1)"}
+ addUserKnob {22 openRV1 l RV -STARTLINE T "reload(Flut_Write)\nFlut_Write.buttonClicked_OpenRV('EXR')"}
+ addUserKnob {1 outPathJPG l JPG +DISABLED +HIDDEN}
+ outPathJPG .../s900_COMP_OUT/s900_COMP_PipelineSetup_v004_vu/s900_COMP_PipelineSetup_v004_vu.%04d.jpg
+ addUserKnob {4 channelsJPG l "" -STARTLINE +HIDDEN M {rgb alpha "" ""}}
+ addUserKnob {22 openFolder2 l fldr -STARTLINE +HIDDEN T "reload(Flut_Write)\nFlut_Write.buttonClicked_OpenFolder(2)"}
+ addUserKnob {22 openRV2 l RV -STARTLINE +HIDDEN T "reload(Flut_Write)\nFlut_Write.buttonClicked_OpenRV('JPG')"}
+ addUserKnob {1 prerenderName l Name +HIDDEN}
+ prerenderName Penis42
+ addUserKnob {1 prerenderVersion l Version -STARTLINE +HIDDEN}
+ prerenderVersion 001
+ addUserKnob {1 prerenderArtist l Artist -STARTLINE +HIDDEN}
+ prerenderArtist pl
+ addUserKnob {4 cacheMode M {"None / Final" BurnIn "Cache Only"}}
+ cacheMode BurnIn
+ addUserKnob {43 comment}
+ addUserKnob {26 ""}
+ addUserKnob {26 frameRangeLabel l "" +STARTLINE T "frame range"}
+ addUserKnob {4 frameRangeDropDown l "" -STARTLINE M {global input custom "" "" ""}}
+ frameRangeDropDown custom
+ addUserKnob {1 frameRange l "" -STARTLINE}
+ frameRange 1-100
+ addUserKnob {26 spacer l "" -STARTLINE T "      "}
+ addUserKnob {4 colorSpaceDropDown l rvColorSpace -STARTLINE M {lin sRGB logC}}
+ addUserKnob {6 onFarm l INVISIBLE -STARTLINE +INVISIBLE}
+ addUserKnob {6 prerenderEXR l exr -STARTLINE +HIDDEN}
+ prerenderEXR true
+ addUserKnob {6 prerenderJPG l jpg -STARTLINE +HIDDEN}
+ addUserKnob {22 buttonOutrender l Render T "reload(Flut_Write)\nFlut_Write.buttonClicked_outrender(nuke.thisNode())" +STARTLINE}
+ addUserKnob {4 renderMode l "" -STARTLINE M {inNuke batch onFarm "" ""}}
+ addUserKnob {3 numThreads l Threads -STARTLINE R 1 128}
+ numThreads 8
+ addUserKnob {6 renderEXR l exr -STARTLINE}
+ renderEXR true
+ addUserKnob {6 renderJPG l jpg -STARTLINE +HIDDEN}
+ addUserKnob {26 footer2 l "" +STARTLINE T "<font size='2' color='#555555'>initially built at Filmakademie BadenWürttemberg<br>in early 2015 by Vincent Ullmann</font>"}
+ addUserKnob {3 value_frameStart l INVISIBLE +HIDDEN +INVISIBLE}
+ value_frameStart 1
+ addUserKnob {3 value_frameEnd l INVISIBLE +HIDDEN +INVISIBLE}
+ value_frameEnd 100
+ addUserKnob {1 value_outPathEXR l INVISIBLE +HIDDEN +INVISIBLE}
+ value_outPathEXR F:/040_SHOTS/060_COMP/s900_COMP/s900_COMP_OUT/s900_COMP_PipelineSetup_v004_vu/s900_COMP_PipelineSetup_v004_vu.%04d.exr
+ addUserKnob {1 value_outPathJPG l INVISIBLE +HIDDEN +INVISIBLE}
+ value_outPathJPG F:/040_SHOTS/060_COMP/s900_COMP/s900_COMP_OUT/s900_COMP_PipelineSetup_v004_vu/s900_COMP_PipelineSetup_v004_vu.%04d.jpg
+ addUserKnob {11 channelsEXR_value +HIDDEN}
+ channelsEXR_value rgba
+ addUserKnob {11 channelsJPG_value +HIDDEN}
+ channelsJPG_value rgb
+ addUserKnob {6 valueRenderJPG -STARTLINE +HIDDEN}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -68
+  ypos -538
+ }
+set Naafa9c00 [stack 0]
+ Dot {
+  name Dot3
+  xpos -34
+  ypos -431
+ }
+set Naafa9800 [stack 0]
+ Reformat {
+  type "to box"
+  box_width {{input.format.r}}
+  box_height {{"input.format.r * (817/1920)"}}
+  box_fixed true
+  name Reformat2
+  xpos -144
+  ypos -389
+ }
+ Shuffle {
+  red white
+  green white
+  blue white
+  alpha white
+  name Shuffle1
+  xpos -144
+  ypos -356
+ }
+ Reformat {
+  type "to box"
+  box_width {{input.format.r}}
+  box_height {{"input.format.r * 9/16"}}
+  box_fixed true
+  black_outside true
+  name Reformat1
+  xpos -144
+  ypos -322
+ }
+ set Caafa8800 [stack 0]
+push $Naafa9800
+ Merge2 {
+  inputs 2
+  operation multiply
+  mix 0.8
+  name Merge1
+  xpos -68
+  ypos -274
+ }
+set Naafa8000 [stack 0]
+ Dot {
+  name Dot6
+  xpos 82
+  ypos -270
+ }
+ Dot {
+  name Dot5
+  xpos 82
+  ypos 106
+ }
+push $Naafa8000
+clone $Caafa8800 {
+  xpos -68
+  ypos -146
+  selected false
+ }
+ Text {
+  message "\[date %d.%m.%Y]  \[date %H:%M]\n\[file rootname \[file tail \[value root.name] ] ]"
+  font "\[value FontControls.font]"
+  size {{parent.FontControls.fontSize}}
+  yjustify bottom
+  Transform 1
+  box {{parent.FontControls.padding} {parent.FontControls.padding} {"input.format.r - FontControls.padding"} {"input.format.t + FontControls.padding"}}
+  center {1150 514}
+  color {{parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor}}
+  name text_UntenLinks
+  xpos -68
+  ypos -111
+ }
+ Text {
+  message "\[timecode]"
+  font "\[value FontControls.font]"
+  size {{parent.FontControls.fontSize}}
+  xjustify right
+  yjustify top
+  Transform 1
+  box {{parent.FontControls.padding} {parent.FontControls.padding} {"input.format.r - FontControls.padding"} {"input.format.t - FontControls.padding"}}
+  center {1150 514}
+  color {{parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor}}
+  name text_timecode
+  xpos -68
+  ypos -79
+ }
+ Text {
+  message "Wir sind die Flut - VFX"
+  font "\[value FontControls.font]"
+  size {{parent.FontControls.fontSize}}
+  xjustify center
+  yjustify top
+  Transform 1
+  box {{parent.FontControls.padding} {parent.FontControls.padding} {"input.format.r - FontControls.padding"} {"input.format.t - FontControls.padding"}}
+  center {1150 514}
+  color {{parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor}}
+  name text_Project1
+  xpos -68
+  ypos -46
+ }
+ Text {
+  message "\[format \"%04i\" \[frame]] (\[format \"%04i\" \[value root.first_frame]] - \[format \"%04i\" \[value root.last_frame]] | \[python nuke.root().lastFrame() - nuke.root().firstFrame()])"
+  font "\[value FontControls.font]"
+  size {{parent.FontControls.fontSize}}
+  yjustify top
+  Transform 1
+  box {{parent.FontControls.padding} {parent.FontControls.padding} {"input.format.r - FontControls.padding"} {"input.format.t - FontControls.padding"}}
+  center {1150 514}
+  color {{parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor}}
+  name text_Frame
+  xpos -68
+  ypos -9
+ }
+ Text {
+  message "\[value parent.comment]"
+  font "\[value FontControls.font]"
+  size {{parent.FontControls.fontSize}}
+  xjustify right
+  yjustify bottom
+  Transform 1
+  box {{parent.FontControls.padding} {parent.FontControls.padding} {"input.format.r - FontControls.padding"} {"input.format.t - FontControls.padding"}}
+  center {1150 514}
+  color {{parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor} {parent.FontControls.fontColor}}
+  name text_Comment
+  xpos -68
+  ypos 40
+ }
+ Dot {
+  name Dot2
+  xpos -34
+  ypos 114
+ }
+push $Naafa9c00
+ Dot {
+  name Dot7
+  xpos -252
+  ypos -534
+ }
+ Dot {
+  name Dot4
+  xpos -252
+  ypos 267
+ }
+set Nab90dc00 [stack 0]
+ Switch {
+  inputs 3
+  which {{parent.cacheMode}}
+  name Switch2
+  xpos -68
+  ypos 263
+ }
+push $Nab90dc00
+ Dot {
+  name Dot8
+  xpos -252
+  ypos 395
+ }
+ Switch {
+  inputs 2
+  which {{parent.mode}}
+  name SwitchMode
+  xpos -68
+  ypos 391
+ }
+ Dot {
+  name Dot9
+  xpos -34
+  ypos 522
+ }
+set Nab90cc00 [stack 0]
+ Dot {
+  name Dot10
+  xpos 66
+  ypos 522
+ }
+set Nab90c800 [stack 0]
+ Dot {
+  name Dot11
+  xpos 196
+  ypos 522
+ }
+ ModifyMetaData {
+  metadata {
+   {set exr/ColorSpace/Transfer "ALEXA LogC"}
+  }
+  name ModifyMetaData_LogC
+  xpos 162
+  ypos 609
+ }
+push $Nab90c800
+ ModifyMetaData {
+  metadata {
+   {set exr/ColorSpace/Transfer sRGB}
+  }
+  name ModifyMetaData_sRGB
+  xpos 32
+  ypos 608
+ }
+push $Nab90cc00
+ Switch {
+  inputs 3
+  which {{parent.colorSpaceDropDown}}
+  name Switch_colorSpace
+  selected true
+  xpos -68
+  ypos 696
+ }
+ Dot {
+  name Dot1
+  xpos -34
+  ypos 824
+ }
+set N82c5d400 [stack 0]
+ Output {
+  name Output2
+  xpos -68
+  ypos 1017
+ }
+push $N82c5d400
+ Write {
+  channels {{{parent.channelsJPG_value}}}
+  file "\[value parent.value_outPathJPG]"
+  file_type jpeg
+  _jpeg_quality 0.95
+  _jpeg_sub_sampling 4:2:2
+  first {{parent.value_frameStart}}
+  last {{parent.value_frameEnd}}
+  use_limit true
+  checkHashOnRead false
+  version 22
+  name Write_JPG
+  xpos -165
+  ypos 886
+  disable {{!parent.renderJPG}}
+ }
+ NoOp {
+  inputs 0
+  name FontControls
+  xpos -190
+  ypos -41
+  addUserKnob {20 User}
+  addUserKnob {2 font}
+  font C:/Windows/Fonts/arial.ttf
+  addUserKnob {3 padding l Padding}
+  padding 10
+  addUserKnob {16 fontSize l size -STARTLINE}
+  fontSize 25
+  addUserKnob {19 fontColor l Color}
+  fontColor 1
+  addUserKnob {6 fontColor_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+push $N82c5d400
+ Write {
+  channels {{{parent.channelsEXR_value}}}
+  file "\[value parent.value_outPathEXR]"
+  file_type exr
+  metadata "all metadata"
+  first {{parent.value_frameStart}}
+  last {{parent.value_frameEnd}}
+  use_limit true
+  version 13
+  name Write_EXR
+  xpos 26
+  ypos 888
+  disable {{!parent.renderEXR}}
+ }
+end_group
