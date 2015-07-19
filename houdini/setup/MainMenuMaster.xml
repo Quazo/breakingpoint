@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Please note, that the files defining the main menu (ie, MainMenuCommon,
+     MainMenuMaster, and MainMenuEscape)
+     can exist in $HOME/houdiniX.Y/ directory and will supplement 
+     the original definitions found in $HFS/houdini/ -->
+
+<!-- Please see ExampleMenu.xml for examples that customise the main menu. -->
+<!-- Please see menu.xsd for the menu validation schema. -->
+<mainMenu>
+	<menuBar>
+
+		<subMenu id="bp_menu">
+			<label>BREAKING POINT</label>
+			<insertBefore/>
+
+				<scriptItem id="h.bp_save_incremental">
+					<label>BP Save Increment</label>
+					<scriptPath>$JOB/setup/scripts/menu_scripts/bp_save.py</scriptPath> 
+					<scriptArgs>increment</scriptArgs>
+				</scriptItem>
+
+				<separatorItem />
+
+				<!--<scriptItem id="h.bp_menu_submit">
+					<label>BP Submit to Royal Render</label>
+					<scriptPath>$JOB/setup/scripts/menu_scripts/bp_submit.py</scriptPath>
+					<scriptArgs>arnold</scriptArgs>
+				</scriptItem>
+			
+
+				<separatorItem /> -->
+
+				<subMenu id="bp_menu_doc">
+					<label>BP Documentation</label>
+						<scriptItem id="h.bp_menu_doc_wiki">
+							<label>BP Wiki</label>
+							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptArgs>wiki</scriptArgs>
+						</scriptItem>
+
+						<separatorItem />
+
+						<scriptItem id="h.bp_menu_doc_asset_list">
+							<label>BP Asset List</label>
+							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptArgs>assetlist</scriptArgs>
+						</scriptItem>
+
+						<scriptItem  id="h.bp_menu_doc_shot_list">
+							<label>BP Shot List</label>
+							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptArgs>shotlist</scriptArgs>
+						</scriptItem>
+				</subMenu>
+
+				
+
+		</subMenu>
+
+	</menuBar>
+</mainMenu>

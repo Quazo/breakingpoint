@@ -1,0 +1,31 @@
+# This file allows you to add menu items to the RMB popup menu for various
+# operator types. Each line consists of four entries:
+#	1. The operator type name. This can include wildcards.
+#	2. The hotkey name. This should be a single unique word.
+#	3. The menu item text.
+#	4. The path to the script to run when the menu item is chosen.
+# The script path can be specified relative to the OPmenu file.
+# When the script is run, the full path of the node for which the menu item
+# was chosen is passed as the first argument.
+#
+# The first argument can also start with the keyword "Expr:". If so, the rest
+# of the first argument is treated as an expression that gets evaluated when
+# the menu is brought up. If the expression evaluates to the string "1", then
+# the menu item will appear. Two local variables are defined when executing
+# this expressions: $opmenu_optype is the operator table and type name (such
+# as "Object/geo"). $opmenu_oppath is the full path name to the node that is
+# bringing up the menu (such as "/obj/light1").
+
+# The following line adds a script called "killkids.cmd" to all objects:
+# "Pop/* Sop/*"	killkids	"Kill All Child Nodes"	./scripts/killkids.cmd
+# The following line adds a script called "reversein.cmd" to the Merge SOP:
+# Sop/merge	reverseinputs	"Reverse Inputs"	/tmp/reversein.cmd
+# The following line adds a script only to a node named "/obj/model":
+# 'Expr: strcmp($opmenu_oppath, "/obj/model") == 0' model "Model" /tmp/foo.cmd
+# The following line adds a script to any op defined in an OTL
+# (note that an entry can be continued on the next line by placing a backslash
+# at the end of the line):
+# 'Expr: execute("otgetotl -b $opmenu_optype")' \
+#	isinotl "In an OTL" /tmp/foo.cmd
+
+"Sop/* Pop/* Dop/* Rop/*"	bp_pipeline	"Breaking Point"	/no_script

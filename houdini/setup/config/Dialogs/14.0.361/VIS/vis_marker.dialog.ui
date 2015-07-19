@@ -1,0 +1,224 @@
+// Magic: cf78a2d0
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Tue Jun 23 22:10:07 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+style.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+style.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Style", "style") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    style.menu;
+
+    {  }
+
+}
+
+class.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Class", "class") ;
+    { WIDTH(0.09) }
+
+    class.menu;
+
+    {  }
+
+}
+}	
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrib.label = PARM_LABEL("Attribute", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+visibility.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+visibility.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("    Visibility", "visibility") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    visibility.menu;
+
+    {  }
+
+}
+
+decorradius.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ decorradius.label = PARM_LABEL("    Radius", "decorradius") ;
+ PARM(float, 1, "decorradius", none, none) RANGE(0,1)
+	 LABELREF(decorradius.label) HSTRETCH;
+
+}
+}	
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+markercolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    markercolor.label = PARM_LABEL("Marker Color", "markercolor") WIDTH(1.5);
+    PARM(float, 4, "markercolor", none, COLOR, "R,G,B,A") 
+	LABELREF(markercolor.label) HSTRETCH;
+
+}
+
+trail.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    trail.label = PARM_LABEL("Trail Color", "trail") WIDTH(1.5);
+    PARM(float, 4, "trail", none, COLOR, "R,G,B,A") 
+	LABELREF(trail.label) HSTRETCH;
+
+}
+
+textcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    textcolor.label = PARM_LABEL("Text Color", "textcolor") WIDTH(1.5);
+    PARM(float, 3, "textcolor", none, COLOR, "R,G,B") 
+	LABELREF(textcolor.label) HSTRETCH;
+
+}
+
+fontsize.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Font Size", "fontsize") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fontsize.menu;
+
+    { HSTRETCH }
+
+}
+
+xcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    xcolor.label = PARM_LABEL("X Color", "xcolor") WIDTH(1.5);
+    PARM(float, 4, "xcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(xcolor.label) HSTRETCH;
+
+}
+
+ycolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ycolor.label = PARM_LABEL("Y Color", "ycolor") WIDTH(1.5);
+    PARM(float, 4, "ycolor", none, COLOR, "R,G,B,A") 
+	LABELREF(ycolor.label) HSTRETCH;
+
+}
+
+zcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    zcolor.label = PARM_LABEL("Z Color", "zcolor") WIDTH(1.5);
+    PARM(float, 4, "zcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(zcolor.label) HSTRETCH;
+
+}
+
+pointsize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pointsize.label = PARM_LABEL("Point Size", "pointsize") WIDTH(1.5);
+ PARM(float, 1, "pointsize", none, none) RANGE(3,6)
+	 LABELREF(pointsize.label) HSTRETCH;
+
+}
+
+lengthscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ lengthscale.label = PARM_LABEL("Length Scale", "lengthscale") WIDTH(1.5);
+ PARM(float, 1, "lengthscale", none, none) RANGE(0,1)
+	 LABELREF(lengthscale.label) HSTRETCH;
+
+}
+
+arrowheads.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("arrowheads", "Show Arrow Tips") toggle VALUE(arrowheads.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    style.join; 
+    attrib.gad; 
+    visibility.join; 
+    group.gad; 
+    markercolor.gad; 
+    trail.gad; 
+    textcolor.gad; 
+    fontsize.gad; 
+    xcolor.gad; 
+    ycolor.gad; 
+    zcolor.gad; 
+    pointsize.gad; 
+    lengthscale.gad; 
+    arrowheads.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

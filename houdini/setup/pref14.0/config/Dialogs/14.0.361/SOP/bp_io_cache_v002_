@@ -1,0 +1,346 @@
+// Magic: 3d6612d
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Fri Jun 26 13:47:24 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("execute", "Break")
+	push VALUE(execute.val);
+
+}
+
+executebackground.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("executebackground", "Background Break")
+	push VALUE(executebackground.val);
+
+}
+}	// Template join.bot
+
+
+output.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ output.label = PARM_LABEL("Output", "output") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "output") LABELREF(output.label)
+	VALUE(output.val) HSTRETCH;
+
+    output.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(output.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    name.label = PARM_LABEL("Name", "name") WIDTH(1.5);
+    PARM_FIELD(string, "name") VALUE(name.val) 
+	LABELREF(name.label) HSTRETCH;
+
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+}
+
+custom_type.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    custom_type.label = PARM_LABEL("Custom Type", "custom_type") WIDTH(1.5);
+    PARM_FIELD(string, "custom_type") VALUE(custom_type.val) 
+	LABELREF(custom_type.label) HSTRETCH;
+
+}
+
+frame.gad = ROW
+{
+   HSTRETCH
+
+   frame.label = PARM_LABEL("Start/End/Inc", "frame") WIDTH(1.5);
+   PARM(float, 3, "frame", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(frame.label)
+	HSTRETCH;
+
+}
+
+initsim.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("initsim", "Initialize Simulation OPs") toggle VALUE(initsim.val);
+
+    { HSTRETCH }
+
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+vdbhalf.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vdbhalf", "Compress VDB to 16-Bit Floats") toggle VALUE(vdbhalf.val);
+
+    { HSTRETCH }
+
+}
+
+deleteattributes.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    deleteattributes.label = PARM_LABEL("Delete Attributes", "deleteattributes") WIDTH(1.5);
+    PARM_FIELD(string, "deleteattributes") VALUE(deleteattributes.val) 
+	LABELREF(deleteattributes.label) HSTRETCH;
+
+}
+
+deletegroups.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    deletegroups.label = PARM_LABEL("Delete Groups", "deletegroups") WIDTH(1.5);
+    PARM_FIELD(string, "deletegroups") VALUE(deletegroups.val) 
+	LABELREF(deletegroups.label) HSTRETCH;
+
+}
+
+numcasts.parm =
+{
+    LAYOUT(horizontal) SPACING(0.02) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Number of Casts", "numcasts") WIDTH(1.5);
+    { WIDTH(0.08) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center)  VALUE(numcasts.val)
+
+        numcasts.field = PARM_FIELD (integer, "numcasts")
+				VALUE(numcasts.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(numcasts.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(numcasts.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(numcasts.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+numcasts.multilist = 
+{
+    LAYOUT(vertical) STRETCH MARGIN(0.05)
+}
+
+numcasts.gad =
+{
+    LAYOUT(vertical) STRETCH SPACING(0.02)
+
+    numcasts.parm;
+    numcasts.multilist;
+}
+
+missingframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Missing Frame", "missingframe") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    missingframe.menu;
+
+    { HSTRETCH }
+
+}
+
+loadtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Load", "loadtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    loadtype.menu;
+
+    { HSTRETCH }
+
+}
+
+packedviewedit.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Display Packed As", "packedviewedit") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    packedviewedit.menu;
+
+    { HSTRETCH }
+
+}
+
+viewportlod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Display As", "viewportlod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viewportlod.menu;
+
+    { HSTRETCH }
+
+}
+
+packexpanded.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("packexpanded", "Pack Using Expanded/Absolute File Path") toggle VALUE(packexpanded.val);
+
+    { HSTRETCH }
+
+}
+
+delayload.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("delayload", "Delay Load Geometry") toggle VALUE(delayload.val);
+
+    { HSTRETCH }
+
+}
+
+folder_options.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder_options.gad.val) STRETCH(1,0)
+
+	TAB "Compression"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    vdbhalf.gad;		
+	    deleteattributes.gad;		
+	    deletegroups.gad;		
+	    numcasts.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Load from File"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    missingframe.gad;		
+	    loadtype.gad;		
+	    packedviewedit.gad;		
+	    viewportlod.gad;		
+	    packexpanded.gad;		
+	    delayload.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    execute.row.join; 
+    output.gad; 
+    sepparm.gad; 
+    name.gad; 
+    type.gad; 
+    custom_type.gad; 
+    frame.gad; 
+    initsim.gad; 
+    sepparm2.gad; 
+    folder_options.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

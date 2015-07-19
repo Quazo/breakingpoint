@@ -1,0 +1,10 @@
+orientation := "Y Up";
+tumbleStyle := 0;
+altKeyViewControls := 0;
+scrollStyle := 0;
+defaultHoming := 0;
+wireToggle := "Wireframe Ghost";
+autoHome := 1;
+viewLayoutState := 1;
+viewLayoutView1 := 1;
+viewLayoutView2 := -1;
