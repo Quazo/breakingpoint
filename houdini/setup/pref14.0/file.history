@@ -20,6 +20,9 @@ P:/2_production/1_assets/prop/palette/0_photogrammetry/work/photoscan/publish/ob
 $PATH
 /bigfoot/breakingpoint/0_rnd/mlapp/work/assets/cars/Citroen-C2/Obj/09.obj
 /bigfoot/breakingpoint/0_rnd/mlapp/work/assets/cars/Opel-Insignia/Obj/07.obj
+$OTL_SCAN_PATH
+$OTLSCAN_PATH
+$HOUDINI_OTLSCAN_PATH
 }
 OTL
 {
