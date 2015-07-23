@@ -1,0 +1,36 @@
+##############################################################################
+[node htoa__volume_vdb]
+houdini.label STRING "Legacy Volume OpenVDB"
+houdini.icon STRING "SOP_OpenVDB"
+houdini.category STRING "Volume"
+houdini.help_url STRING "https://support.solidangle.com/x/XAA7"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E54
+
+[attr filename]
+houdini.label STRING "File Name"
+houdini.type STRING "file:*.vdb"
+desc STRING "The OpenVDB file name."
+
+[attr grid]
+houdini.type STRING "menu:replace:python"
+houdini.menu_script STRING "import volume_vdb\nreturn volume_vdb.gridMenu(hou.pwd().parm('filename').evalAsString())"
+desc STRING "The OpenVDB grid to sample."
+
+[attr interpolation]
+desc STRING "Volume sampling interpolation, point is faster, box is prettier."
+
+[attr volume_type]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "fog;Fog;sdf;SDF"
+desc STRING "Interpret the volume data as fog (density) or SDF (signed distance function). In SDF mode, the inside is converted to a constant density of 1. See the sdf_threshold and sdf_invert_sign parameters."
+
+[attr sdf_blend]
+houdini.label STRING "SDF Blend"
+houdini.disable_when STRING "{ volume_type != sdf }"
+desc STRING "Distances greater than this will be clamped to a density of 1. Distances from 0 to this value are remapped to [0-1]. Outside distances are clamped to 0."
+
+[attr sdf_invert_sign]
+houdini.label STRING "Invert Sign"
+houdini.disable_when STRING "{ volume_type != sdf }"
+desc STRING "Usually in SDFs, positive distances are the outside while negative distances mean inside the surface. This parameter lets you invert this behavior."

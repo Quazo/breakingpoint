@@ -1,0 +1,13 @@
+<map id="htoa::pygeo::Translator" name="htoa::pygeo::Translator">
+<area shape="rect" id="node3" href="$classhtoa_1_1arnold_1_1Node.html" title="htoa::arnold::Node" alt="" coords="2013,403,2141,429"/>
+<area shape="rect" id="node5" href="$classhtoa_1_1arnold_1_1UserData.html" title="User data definition. " alt="" coords="2248,464,2400,491"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="289,295,369,321"/>
+<area shape="rect" id="node11" href="$classhtoa_1_1pygeo_1_1Object.html" title="SOHO Object representation. " alt="" coords="1221,173,1357,200"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="6,287,133,329"/>
+<area shape="rect" id="node13" href="$classhtoa_1_1pygeo_1_1Detail.html" title="GDP wrapper. " alt="" coords="1488,231,1619,257"/>
+<area shape="rect" id="node16" href="$classhtoa_1_1mblur_1_1MotionBlur.html" title="Motion blur settings. " alt="" coords="824,24,981,51"/>
+<area shape="rect" id="node17" href="$classhtoa_1_1mblur_1_1Times.html" title="Time series to represent the sampling times for motion blur. " alt="" coords="543,24,673,51"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="241,24,418,51"/>
+<area shape="rect" id="node20" href="$classhtoa_1_1pygeo_1_1Session.html" title="htoa::pygeo::Session" alt="" coords="830,125,975,152"/>
+<area shape="rect" id="node23" href="$classhtoa_1_1partition_1_1Partition.html" title="Partition base class. " alt="" coords="1211,319,1368,345"/>
+</map>

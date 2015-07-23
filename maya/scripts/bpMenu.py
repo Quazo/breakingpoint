@@ -1,18 +1,30 @@
+#*************************************************************
+# title: 		bpMenu
+#
+# content:		Adds a Menu with its functions to MAYA
+#
+# dependencies: userSeutup
+#
+# author: 		Alexander Richter 
+# email:		alexander.richter@filmakademie.de
+#*************************************************************
 
+import os
 import maya.cmds as cmds
 
-print("setup bpMenu")
 
+print ("\nWelcome " + os.getenv('username'))
+print("setup bpMenu")
 
 
 bpMenu = cmds.menu('bpMenu', hm = 1, p = 'MayaWindow', l = 'bpMenu', to = 1, )
 
-cmds.menuItem(p = bpMenu, l = 'Load',c = 'import bpLoad', en = 0)
-cmds.menuItem(p = bpMenu, l = 'Save',c = 'import bpSave', en = 0)
+cmds.menuItem(p = bpMenu, l = 'Load',c = 'from scripts import bpLoad', en = 0)
+cmds.menuItem(p = bpMenu, l = 'Save',c = 'from scripts import bpSave\nbpSave.main()')#, en = 0)
 
 cmds.menuItem(d = True)
 
-cmds.menuItem(p = bpMenu, l = 'Asset Manager',c = 'import bpSave', en = 0)
+cmds.menuItem(p = bpMenu, l = 'Asset Manager',c = 'import bpAssetManager', en = 0)
 #cmds.menuItem(p = bpMenu, l = 'Export Manager',c = 'import bpLoad', en = 0)
 
 cmds.menuItem(d = True)
@@ -33,9 +45,9 @@ cmds.menuItem(d = True)
 #             d = True)
 
 
-cmds.menuItem(p = bpMenu,
-            l = 'Report',
-            c = '', en = 0)
+# cmds.menuItem(p = bpMenu,
+#             l = 'Report',
+#             c = '', en = 0)
 
 cmds.menuItem(p = bpMenu,
             l = 'Help',

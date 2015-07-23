@@ -1,0 +1,38 @@
+<Packages>
+    <ApplicationName>Arnold for Houdini</ApplicationName>
+    <ApplicationVersion>1.5.3-1364</ApplicationVersion>
+    <Package>
+        <Name>com.solidangle.htoa</Name>
+        <Pixmap></Pixmap>
+        <Title>HtoA 1.5.3</Title>
+        <Description>Arnold for Houdini</Description>
+        <Version>1.5.3-1364</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2015-06-24</InstallDate>
+        <Size>0</Size>
+        <Dependencies></Dependencies>
+    </Package>
+    <Package>
+        <Name>com.solidangle.htoa.config_houdini14_0</Name>
+        <Pixmap></Pixmap>
+        <Title>Configure Houdini 14.0</Title>
+        <Description>Configure Houdini 14.0 for Arnold</Description>
+        <Version inheritVersionFrom="com.solidangle.htoa">0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2015-06-24</InstallDate>
+        <Size>0</Size>
+        <Dependencies></Dependencies>
+        <Virtual>true</Virtual>
+    </Package>
+    <Package>
+        <Name>com.solidangle.htoa.houdini14_0_361</Name>
+        <Pixmap></Pixmap>
+        <Title>HtoA 1.5.3 for Houdini 14.0.361</Title>
+        <Description>Arnold for Houdini 14.0.361</Description>
+        <Version inheritVersionFrom="com.solidangle.htoa">0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2015-06-24</InstallDate>
+        <Size>44751665</Size>
+        <Dependencies>com.solidangle.htoa.config_houdini14_0</Dependencies>
+    </Package>
+</Packages>

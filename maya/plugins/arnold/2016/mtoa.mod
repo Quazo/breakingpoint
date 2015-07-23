@@ -1,2 +1,2 @@
-+ mtoa any \\bigfoot\breakingpoint\_pipeline\maya\plugins\arnold\2016
++ mtoa any \\bigfoot\breakingpoint\_pipeline\software\maya\plugins\arnold\2016
 PATH +:= bin

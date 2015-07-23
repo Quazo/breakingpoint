@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: MainMenuCommon.xml 1334 2015-06-03 13:22:23Z kik $ -->
+
+<mainMenu>
+	<menuBar>
+		<subMenu id="render_menu">
+			<subMenu id="render_create_submenu">
+				<separatorItem id="render_create_submenu_sep_arnold">
+					<insertAfter>h.create_mantra_pbr</insertAfter>
+				</separatorItem>
+
+				<scriptItem id="arnold_rop">
+					<label>Arnold</label>
+					<insertAfter>render_create_submenu_sep_arnold</insertAfter>
+					<scriptCode><![CDATA[__import__('roptoolutils').createRenderNode('arnold')]]></scriptCode>
+				</scriptItem>
+			</subMenu>
+		</subMenu>
+        
+		<subMenu id="arnold_menu">
+			<label>Arnold</label>
+			<insertBefore>help_menu</insertBefore>
+
+			<scriptItem id="arnold_user_guide">
+				<label>User Guide</label>
+				<scriptCode><![CDATA[__import__('webbrowser').open('https://support.solidangle.com/display/AFHUG/Arnold+for+Houdini+User+Guide')]]></scriptCode>
+			</scriptItem>
+
+			<scriptItem id="arnold_tutorials">
+				<label>Tutorials</label>
+				<scriptCode><![CDATA[__import__('webbrowser').open('https://support.solidangle.com/display/AFHTUT/Arnold+for+Houdini+Tutorials')]]></scriptCode>
+			</scriptItem>
+
+			<separatorItem />
+
+            <scriptItem id="arnold_solidangle">
+                <label>Solid Angle</label>
+                <scriptCode><![CDATA[__import__('webbrowser').open('https://www.solidangle.com/')]]></scriptCode>
+            </scriptItem>
+            
+            <scriptItem id="arnold_mailing_lists">
+                <label>Mailing Lists</label>
+                <scriptCode><![CDATA[__import__('webbrowser').open('https://subscribe.solidangle.com/')]]></scriptCode>
+            </scriptItem>
+
+            <scriptItem id="arnold_ask">
+                <label>Knowledge Base</label>
+                <scriptCode><![CDATA[__import__('webbrowser').open('http://ask.solidangle.com/')]]></scriptCode>
+            </scriptItem>
+            
+            <scriptItem id="arnold_support">
+                <label>Support Blog</label>
+                <scriptCode><![CDATA[__import__('webbrowser').open('https://support.solidangle.com/blog/arnsupp')]]></scriptCode>
+            </scriptItem>
+
+			<scriptItem id="arnold_licensing">
+				<label>Licensing</label>
+				<scriptCode><![CDATA[__import__('webbrowser').open('https://support.solidangle.com/display/AILIC/Licensing+Home')]]></scriptCode>
+			</scriptItem>
+
+            <separatorItem />
+			
+            <scriptItem id="arnold_developer">
+                <label>Developer Guide</label>
+                <scriptCode><![CDATA[__import__('webbrowser').open('file:///%s/docs/api/html/index.html' % __import__('htoa').folder)]]></scriptCode>
+            </scriptItem>
+
+			<separatorItem />
+
+            <scriptItem id="arnold_eula">
+                <label>Legal Notice</label>
+                <scriptCode><![CDATA[__import__('htoa.dialog').dialog.eula()]]></scriptCode>
+            </scriptItem>
+            
+            <scriptItem id="arnold_diagnostics">
+                <label>Diagnostics</label>
+                <scriptCode><![CDATA[__import__('htoa.dialog').dialog.diagnostics()]]></scriptCode>
+            </scriptItem>
+            
+            <scriptItem id="arnold_about">
+                <label>About HtoA</label>
+                <scriptCode><![CDATA[__import__('htoa.dialog').dialog.about()]]></scriptCode>
+            </scriptItem>
+		</subMenu>
+	</menuBar>
+</mainMenu>

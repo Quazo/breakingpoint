@@ -12,47 +12,49 @@ import sys
 import nuke
 import webbrowser
 
+sys.path.append(os.path.abspath(".."))
 
-print ("Breaking Point: MENU")
+import settings as s
 
-
-PIPELINE_PATH 	= os.getcwd()
-
-ICON_PATH 		= PIPELINE_PATH + '/img/icons'
-MAIN_ICON_PATH 	= ICON_PATH 	+ '/bpN.png'
-
-WRITE_ICON_PATH	= ICON_PATH 	+ '/menu/changeBtn24.ico'
-HELP_ICON_PATH	= ICON_PATH 	+ '/menu/helpBtn24.ico'
-
-RT_ICON_PATH	= ICON_PATH 	+ '/menu/rt_timm.ico'
-RT2_ICON_PATH	= ICON_PATH 	+ '/menu/rt_timm.ico'
-
-GIZMO_PATH		= PIPELINE_PATH + '/nuke/gizmos'
+print ("\nWelcome " + os.getenv('username'))
+print ("\nBreaking Point: MENU")
 
 
-menuNode = nuke.menu('Nodes').addMenu("BREAKINGPOINT", icon = MAIN_ICON_PATH)
+PATH_ICON 		= os.path.join(s.PATH["img"], 'icons').replace('\\', '/')
+PATH_MAIN_ICON	= os.path.join(PATH_ICON , 'bpN.png').replace('\\', '/')
+
+PATH_WRITE_ICON	= os.path.join(PATH_ICON , 'menu', 'changeBtn24.ico').replace('\\', '/')
+PATH_HELP_ICON	= os.path.join(PATH_ICON , 'menu', 'helpBtn24.ico').replace('\\', '/')
+
+PATH_RT_ICON	= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
+PATH_RT2_ICON	= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
+
+PATH_GIZMO		= os.path.join(s.PATH["nuke"], 'gizmos').replace('\\', '/')  #JUST FOR SOFTWARE NOT _SANDBOX
+
+PATH_BPWRITE	= os.path.join(PATH_GIZMO, 'bpWrite').replace('\\', '/')
+
+
+menuNode = nuke.menu('Nodes').addMenu("BREAKINGPOINT", icon = PATH_MAIN_ICON)
 
 
 # #*******************
 # # TOOLBAR
 # #*******************
-menuNode.addCommand('bpWrite', lambda: nuke.createNode(GIZMO_PATH + '/bpWrite'), 'alt+w', WRITE_ICON_PATH)
+menuNode.addCommand('bpWrite', lambda: nuke.createNode(PATH_BPWRITE), 'alt+w', PATH_WRITE_ICON)
 
 menuNode.addSeparator()
 
-menuNode.addCommand('RenderThreads by Timm', lambda: run_renderthreads(), 'alt+t', RT_ICON_PATH)
-menuNode.addCommand('RenderThreads by Vincent', lambda: run_renderthreadsV(), 'alt+v', RT2_ICON_PATH)
+menuNode.addCommand('RenderThreads by Timm', lambda: run_renderthreads(), 'alt+t', PATH_RT_ICON)
+menuNode.addCommand('RenderThreads by Vincent', lambda: run_renderthreadsV(), 'alt+v', PATH_RT2_ICON)
 
 menuNode.addSeparator()
 
-menuNode.addCommand('Help', lambda: webbrowser.open("https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline"), 'alt+h', HELP_ICON_PATH)
+menuNode.addCommand('Help', lambda: webbrowser.open("https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline"), 'alt+h', PATH_HELP_ICON)
 
-
-# m = menuNode.findItem('bpWrite')
-# m.setEnabled( False )
+m = menuNode.findItem('bpWrite')
+m.setEnabled( False )
 # m = menuNode.findItem('RenderThreads by Vincent')
 # m.setEnabled( False )
-
 
 
 # #*******************
@@ -69,3 +71,6 @@ def run_renderthreadsV():
 
     from plugins.vuRenderThreads.plugin_nuke import plugin_nuke
     plugin_nuke.showPopup()
+
+
+

@@ -1,0 +1,32 @@
+// $Id: RenderCOP 167 2012-12-19 16:10:19Z kik $
+// 
+// When the user runs the render command, it's possible that they specify
+// overrides for particular information on the command line.
+// 
+// This override file provides the mapping from the options on the render
+// command to parameters evaluated by SOHO.
+// 
+//     $imagefile   - The filename to store the image
+//     $resolution  - The COP resolution
+//     $aspect      - Aspect ratio from the COP
+// 
+// These overrides are applied to the CAMERA object given in the
+// initialization of SOHO.
+// 
+// NOTES:
+// This file is used to provide overrides when the render is invoked by the
+// render COP.
+
+#include "$HH/soho/overrides/RenderCOP"
+
+// RenderCOP overrides for Arnold
+{
+    override.inherit    CommonCommand
+    override.name       Arnold
+
+    ar_picture          [ $imagefile ]
+    aspect_override     [ $aspect ]
+                          
+    // set this flag to signal the override to htoa
+    ar_overridden       [ 1 ]
+}

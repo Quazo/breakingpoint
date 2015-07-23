@@ -10,11 +10,9 @@
 
 import nuke
 
+print ("\nWelcome " + os.getenv('username'))
+print ("\nBREAKINGPOINT: System is setting ...\n")
 
-print ("BREAKINGPOINT: \"DUKE, NUKE THEM!\"")
-
-
-PIPELINE_PATH 	= os.getcwd()
 
 # #*******************
 # # VARIABLES

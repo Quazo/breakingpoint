@@ -1,0 +1,1965 @@
+##############################################################################
+[node htoa__abs]
+houdini.icon STRING "VOP_abs"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E00
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "Input to calculate the absolute value of."
+
+##############################################################################
+[node htoa__add]
+houdini.icon STRING "VOP_add"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E01
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input1]
+desc STRING "First parameter to be added."
+
+[attr input2]
+desc STRING "Second parameter to be added."
+
+##############################################################################
+[node htoa__aov_read_float]
+houdini.label STRING "AOV Read Float"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E02
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of Float type AOV to be read."
+
+##############################################################################
+[node htoa__aov_read_int]
+houdini.label STRING "AOV Read Int"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E03
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of int type AOV to be read."
+
+##############################################################################
+[node htoa__aov_read_rgb]
+houdini.label STRING "AOV Read RGB"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E04
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of RGB type AOV to be read."
+
+##############################################################################
+[node htoa__aov_write_float]
+houdini.label STRING "AOV Write Float"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E05
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_input]
+houdini.label STRING "AOV Input"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of float type AOV to be written."
+
+##############################################################################
+[node htoa__aov_write_int]
+houdini.label STRING "AOV Write Int"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E06
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_input]
+houdini.label STRING "AOV Input"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of int type AOV to be written."
+
+##############################################################################
+[node htoa__aov_write_rgb]
+houdini.label STRING "AOV Write RGB"
+houdini.icon STRING "VOP_shadinglayer"
+houdini.category STRING "AOV"
+houdini.help_url STRING "https://support.solidangle.com/x/nYBi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E07
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "AOV"
+
+[attr aov_input]
+houdini.label STRING "AOV Input"
+
+[attr aov_name]
+houdini.label STRING "AOV Name"
+desc STRING "Name of RGB type AOV to be written."
+
+##############################################################################
+[node htoa__atan]
+houdini.icon STRING "VOP_atan"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E08
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr y]
+desc STRING "Y input to calculate arctangent of y/x"
+
+[attr x]
+desc STRING "X input to calculate arctangent of y/x"
+
+[attr units]
+desc STRING "The units of the result."
+
+
+##############################################################################
+[node htoa__blackbody]
+houdini.icon STRING "SHELF_fire"
+houdini.category STRING "Texture"
+houdini.help_url STRING "https://support.solidangle.com/x/HYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E09
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+c4d.node_id             INT     1034217
+
+[attr temperature]
+desc STRING "The temperature corresponding to an input value of 1. For example, if this parameter is 6500 (the default 6500K, is considered as the 'daylight' white point), then an input value of 1 means a temperature of 6500 degrees Kelvin. The color ranges from red, through to white and then to blue. Values above 6500 will give a cool color, whilst values below will show a warm color."
+
+[attr mode]
+desc STRING "color: Outputs the color RGB channels multiplied by the intensity with a solid alpha.\nchroma: Outputs the color in the RGB channels and the intensity to the alpha channel. This allow the hue to be modified independently of the intensity."
+
+[attr adaptation]
+houdini.disable_when STRING "{ tone_map == 0 }"
+desc STRING "Squashes or stretches the low end of the generated intensity, similar to exposing a photograph for shadows."
+
+[attr burn]
+houdini.disable_when STRING "{ tone_map == 0 }"
+desc STRING "Manipulates the high end of the generated intensity."
+
+##############################################################################
+[node htoa__cache]
+houdini.icon STRING "SOP_cache"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/WIwQ"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0A
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+##############################################################################
+[node htoa__camera_projection]
+houdini.icon STRING "OBJ_camera"
+houdini.category STRING "Texture"
+houdini.help_url STRING "https://support.solidangle.com/x/H4A9AQ"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E56
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+[attr camera]
+desc STRING "The projecting camera. Leave blank to use the default render camera."
+houdini.type STRING "opfilter:!!OBJ/CAMERA!!"
+
+[attr projection_color]
+desc STRING "The image to be projected."
+
+[attr offscreen_color]
+desc STRING "The color returned outside of the projection camera viewing frustum."
+
+[attr mask]
+desc STRING "Use this parameter to mask out areas that should not receive the projection."
+min FLOAT 0.0
+max FLOAT 1.0
+
+[attr aspect_ratio]
+desc STRING "The projection camera aspect ratio."
+min FLOAT 0.0001
+softmax FLOAT 3.0
+houdini.expression STRING "ch(strcat(chs(\"camera\"), \"/resx\")) / ch(strcat(chs(\"camera\"), \"/resy\"))"
+
+[attr front_facing]
+desc STRING "Apply the projection to polygons front-facing the projection camera."
+
+[attr back_facing]
+desc STRING "Apply the projection to polygons back-facing the projection camera."
+
+[attr use_shading_normal]
+desc STRING "Use the shading normal for visibility tests instead of the "
+"geometric normal. This results in smoother but less accurate visibility "
+"boundaries that can produce seams if the render camera is used for the "
+"projection."
+
+##############################################################################
+[node htoa__clamp]
+houdini.icon STRING "VOP_clamp"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0B
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+[attr min]
+desc STRING "The minumum value that the input will be clamped to."
+
+[attr max]
+desc STRING "The maximum value that the input will be clamped to."
+
+##############################################################################
+[node htoa__color_convert]
+houdini.icon STRING "COP2_lookup"
+houdini.category STRING "Color"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0C
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "color"
+
+[attr from]
+houdini.no_menu_caps BOOL true
+desc STRING "Source color space."
+
+[attr to]
+houdini.no_menu_caps BOOL true
+desc STRING "Destination color space."
+
+##############################################################################
+[node htoa__color_correct]
+houdini.icon STRING "COP2_colorcorrect"
+houdini.category STRING "Color"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0D
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "color"
+
+[attr hue_shift]
+softmin FLOAT -1
+softmax FLOAT 1
+desc STRING "Rotate the color hue, a value of 1 means a full rotation."
+
+[attr saturation]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Scale the saturation by this factor."
+
+[attr add]
+softmin FLOAT -1
+softmax FLOAT 1
+desc STRING "Add this value to the color."
+
+[attr contrast]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Scale values around the contrast pivot."
+
+[attr contrast_pivot]
+desc STRING "The origin of the contrast scaling."
+
+[attr exposure]
+softmin FLOAT -10
+softmax FLOAT 10
+desc STRING "Multiply the color using a photo f-stop scale, where an increment of 1 doubles the luminosity."
+
+[attr multiply]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Multiply the color by this factor."
+
+[attr gamma]
+softmin FLOAT 0
+softmax FLOAT 3
+desc STRING "Apply a gamma correction to the color."
+
+##############################################################################
+[node htoa__compare]
+houdini.icon STRING "VOP_compare"
+houdini.category STRING "Math"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0E
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr test]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "==;Equal\t==;!=;Not Equal\t!=;<;Less Than\t<;>;Greater Than\t>;<=;Less Than or Equal\t<=;>=;Greater Than or Equal\t>="
+desc STRING "Operators with which to compare input1 and input2" 
+
+##############################################################################
+[node htoa__complement]
+houdini.icon STRING "VOP_complement"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E0F
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "The complement will be 1 minus this input"
+
+##############################################################################
+[node htoa__composite]
+houdini.icon STRING "COP2_composite"
+houdini.category STRING "Color"
+houdini.help_url STRING "https://support.solidangle.com/x/VoE3AQ"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E10
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "color"
+
+[attr A]
+desc STRING "Foreground A"
+
+[attr B]
+desc STRING "Background B"
+
+[attr operation]
+desc STRING "A: passthrough A\n"
+"B: passthrough B\n"
+"Atop: A * B.a + B * (1 - A.a)\n"
+"Average: (A + B) / 2\n"
+"Cojoint Over: A + B * (1 - A.a) /B.a, A if A.a > B.a\n"
+"Difference: abs(A - B)\n"
+"Disjoint Over: A + B * (1 - A.a) / B.a, A + B if A.a + B.a < 1\n"
+"Divide: A / B, 0 if A and B < 0, else A if B < eps4\n"
+"Exclusion: A + B - 2 * A * B\n"
+"From: B - A\n"
+"Geometric: 2 * A * B / (A + B)\n"
+"Hard Light: 1 - 2 * (1 - A) * (1 - B), 2 * A * B if A < 0.5\n"
+"Hypot Diagonal: sqr(A * A + B * B)\n"
+"In: A * B.a\n"
+"Mask: B * A.a\n"
+"Matte: A * A.a + B * (1 - A.a)\n"
+"Max: max(A, B)\n"
+"Min: min(A, B)\n"
+"Minus: A - B\n"
+"Multiply: A * B, A if A and B < 0\n"
+"Out: A * (1 - B.a)\n"
+"Over: A + B * (1 - A.a)\n"
+"Overlay: hardlight(B, A)\n"
+"Plus: A + B\n"
+"Screen: A + B - A * B if A and B in 0..1, else max(A, B)\n"
+"Soft Light: softer version of Hard Light\n"
+"Stencil: B * (1 - A.a)\n"
+"Under: A * (1 - B.a) + B\n"
+"Xor: A * (1 - B.a) + B * (1 - A.a)"
+
+[attr alpha_operation]
+desc STRING "Same: Apply the same operation to alpha\nA: Use A.a\nB: Use B.a"
+
+##############################################################################
+[node htoa__cross]
+houdini.icon STRING "VOP_cross"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E11
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input1]
+desc STRING "First vector to use in cross product computation."
+
+[attr input2]
+desc STRING "Second vector to use in cross product computation."
+
+##############################################################################
+[node htoa__determinant]
+houdini.icon STRING "VOP_determinant"
+houdini.category STRING "Matrix"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E12
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr input]
+desc STRING "Input matrix to calculate determinant."
+
+##############################################################################
+[node htoa__divide]
+houdini.icon STRING "VOP_divide"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E13
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input1]
+desc STRING "Input to be divided."
+
+[attr input2]
+desc STRING "Input to divide by."
+
+##############################################################################
+[node htoa__dot]
+houdini.icon STRING "VOP_dot"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E14
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input1]
+desc STRING "First vector to use in dot product computation."
+
+[attr input2]
+desc STRING "Second vector to use in dot product computation."
+
+##############################################################################
+[node htoa__exp]
+houdini.icon STRING "VOP_exp"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E15
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "Input to calcute exponential of."
+
+##############################################################################
+[node htoa__float_to_int]
+houdini.icon STRING "VOP_floattoint"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E16
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr mode]
+desc STRING "Round yields the nearest integer. Trunc just removes the fractional part. Floor rounds downwards and Ceil upwards."
+
+##############################################################################
+[node htoa__float_to_matrix]
+houdini.icon STRING "VOP_floattohmatx"
+houdini.category STRING "Convert"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E17
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+##############################################################################
+[node htoa__float_to_rgb]
+houdini.label STRING "Float To RGB"
+houdini.icon STRING "VOP_floattovec"
+houdini.category STRING "Convert"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E18
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+##############################################################################
+[node htoa__float_to_rgba]
+houdini.label STRING "Float To RGBA"
+houdini.icon STRING "VOP_floattohvec"
+houdini.category STRING "Convert"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E19
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+##############################################################################
+[node htoa__fraction]
+houdini.icon STRING "VOP_frac"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1A
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__int_to_float]
+houdini.icon STRING "VOP_inttofloat"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1B
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr input]
+softmin FLOAT -10
+softmax FLOAT 10
+
+##############################################################################
+[node htoa__is_finite]
+houdini.icon STRING "VOP_is_finite"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1C
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+desc STRING "Input to test. Returns false if either infinity or NaN and true otherwise."
+
+##############################################################################
+[node htoa__length]
+houdini.icon STRING "VOP_length"
+houdini.category STRING "Vector"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1D
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr mode]
+desc STRING "Euclidian: The actual length of the vector.\nQuadrance: Euclidian distance squared, which is cheaper to compute.\nManhattan: Measures distance following only axis-aligned directions, which is even cheaper to compute."
+
+##############################################################################
+[node htoa__linearize]
+houdini.icon STRING "COP2_gamma"
+houdini.category STRING "Color"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1E
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "color"
+c4d.node_id             INT     1034219 
+
+[attr colorspace]
+houdini.label STRING "Source Colorspace"
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "linear;Linear;sRGB;sRGB;Rec709;Rec. 709;AdobeRGB;Adobe RGB (1998);gamma;Gamma;cineon;Cineon Log"
+desc STRING "The input colorspace"
+
+[attr gamma]
+houdini.hide_when STRING "{ colorspace != gamma }"
+min FLOAT 0.0001
+softmax FLOAT 5
+
+[attr ref_black]
+houdini.label STRING "Reference Black"
+houdini.hide_when STRING "{ colorspace != cineon }"
+min FLOAT 0
+max FLOAT 1023
+
+[attr ref_white]
+houdini.label STRING "Reference White"
+houdini.hide_when STRING "{ colorspace != cineon }"
+min FLOAT 0
+max FLOAT 1023
+
+[attr film_gamma]
+houdini.hide_when STRING "{ colorspace != cineon }"
+min FLOAT 0.0001
+softmax FLOAT 5
+
+##############################################################################
+[node htoa__ln]
+houdini.icon STRING "VOP_ln"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E1F
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "Input to calcute natural logarithm of."
+
+##############################################################################
+[node htoa__log]
+houdini.icon STRING "VOP_log"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E20
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "Input to calcute logarithm of."
+
+[attr input]
+desc STRING "Base for use in logarithm calculation."
+
+##############################################################################
+[node htoa__matrix_berp]
+houdini.icon STRING "VOP_matrix_berp"
+houdini.category STRING "Matrix"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E21
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr bu]
+houdini.label STRING "bu"
+desc STRING "U barycentric coordinate"
+
+[attr bv]
+houdini.label STRING "bv"
+desc STRING "V barycentric coordinate"
+
+##############################################################################
+[node htoa__matrix_frame]
+houdini.icon STRING "OBJ_null"
+houdini.category STRING "Matrix"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E22
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr origin]
+desc STRING "origin vector"
+
+[attr basis_u]
+desc STRING "U basis vector"
+
+[attr basis_V]
+desc STRING "V basis vector"
+
+[attr basis_w]
+desc STRING "W basis vector"
+
+##############################################################################
+[node htoa__matrix_invert]
+houdini.icon STRING "VOP_invert"
+houdini.category STRING "Matrix"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E23
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr input]
+desc STRING "Input matrix to be inverted"
+
+##############################################################################
+[node htoa__matrix_lerp]
+houdini.icon STRING "VOP_matrix_lerp"
+houdini.category STRING "Matrix"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E24
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr t]
+houdini.label STRING "t"
+desc STRING "Linear interpolation paramter between 0 and 1."
+
+[attr input1]
+desc STRING "Input matrix at t=0"
+
+[attr input2]
+desc STRING "Input matrix at t=1"
+
+##############################################################################
+[node htoa__matrix_multiply]
+houdini.icon STRING "VOP_matrix_multiply"
+houdini.category STRING "Matrix"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E25
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+##############################################################################
+[node htoa__matrix_multiply_vector]
+houdini.icon STRING "VOP_matrix_multiply_vector"
+houdini.category STRING "Matrix"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E26
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr input]
+desc STRING "Input to be multiplied by matrix."
+
+[attr type]
+desc STRING "Point: Plain multiplication, the point is transformed by the matrix.\nVector: Does not do any translation.\nNormal: Multiply by the inverse transpose to preserve the normal to the angle of the surface. "
+
+[attr matrix]
+desc STRING "Matrix to multiply the input by."
+
+##############################################################################
+[node htoa__matrix_to_float]
+houdini.icon STRING "VOP_hmatxtofloat"
+houdini.category STRING "Convert"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E27
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+##############################################################################
+[node htoa__matrix_transform]
+houdini.icon STRING "VOP_makexform"
+houdini.category STRING "Matrix"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E28
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+c4d.node_id             INT     1034220
+
+[attr transform_order]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "srt;Scale Rotation Translate;str;Scale Translate Rotation;rst;Rotation Scale Translate;rts;Rotation Translate Scale;tsr;Translate Scale Rotation;trs;Translate Rotation Scale"
+
+[attr rotation_type]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "euler;Euler Angles;axis;Axis / Angle"
+
+[attr rotation_order]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "xyz;X Y Z;xzy;X Z Y;yxz;Y X Z;yzx;Y Z X;zxy;Z X Y;zyx;Z Y X"
+houdini.hide_when STRING "{ rotation_type != euler }"
+
+[attr rotation]
+houdini.hide_when STRING "{ rotation_type != euler }"
+
+[attr axis]
+houdini.hide_when STRING "{ rotation_type != axis }"
+
+[attr angle]
+softmin FLOAT -180
+softmax FLOAT 180
+houdini.hide_when STRING "{ rotation_type != axis }"
+
+##############################################################################
+[node htoa__matte]
+houdini.icon STRING "VOP_matte"
+houdini.category STRING "Utility"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/display/AFHUG/Matte"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E29
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "surface"
+
+##############################################################################
+[node htoa__max]
+houdini.icon STRING "VOP_max"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2A
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__min]
+houdini.icon STRING "VOP_min"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2B
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__mix]
+houdini.icon STRING "VOP_mix"
+houdini.category STRING "Color"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2C
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr mix]
+desc STRING "Computes a blend (or a mix) of its input values using linear interpolation."
+
+##############################################################################
+[node htoa__modulo]
+houdini.icon STRING "VOP_modulo"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2D
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__multiply]
+houdini.icon STRING "VOP_multiply"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2E
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__negate]
+houdini.icon STRING "VOP_negate"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E2F
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__normalize]
+houdini.icon STRING "VOP_normalize"
+houdini.category STRING "Vector"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E30
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__passthrough]
+houdini.icon STRING "BUTTONS_move_to_right"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E31
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+##############################################################################
+[node htoa__pow]
+houdini.icon STRING "VOP_pow"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E32
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr base]
+desc STRING "Value to be raised to the power of the exponent."
+
+[attr exponent]
+desc STRING "The base is raised to the power of this value."
+
+##############################################################################
+[node htoa__print]
+houdini.icon STRING "VOP_print"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/NoM3AQ"
+maya.id                 INT     0x00115E55
+maya.classification     STRING  "shader/surface"
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+[attr passthrough]
+desc STRING "A passthrough color to trigger evaluation of this shader."
+
+[attr format]
+desc STRING "An optional format string to specify how the input values will be displayed.\n\n"
+"If format is an empty string, each input shader name will be printed, followed by its value.\n\n"
+"To display the values with a custom format, enter an arbitrary string where input values are represented by a % character, in the order they are connected.\n\n"
+"For example, if you had an RGBA and a vector input connected, you could have a format like: \"the color is % and the normal is %\"."
+
+[attr precision]
+desc STRING "The number of digits after the decimal point for float values."
+min FLOAT 0
+max FLOAT 17
+
+[attr verbosity]
+desc STRING "The verbosity percentage, ranging from 0 (no message at all), to 1 (messages are printed every time the shader is evaluated)."
+min FLOAT 0
+softmax FLOAT 0.1
+
+[attr log_level]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "debug;Debug;info;Info;warning;Warning;error;Error (might abort);fatal;Fatal (WILL CRASH)"
+desc STRING "The log level used to print out messages.\n\nWARNING:\n"
+"- The Error log level might *abort* your render if abort_on_errors is on.\n"
+"- The Fatal log level will *CRASH* your render."
+
+[attr tuple0]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr tuple1]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr tuple2]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr tuple3]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr tuple4]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr int0]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr int1]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr int2]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr int3]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr int4]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr matrix0]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+[attr matrix1]
+houdini.invisible BOOL true
+c4d.gui_visible BOOL false
+
+##############################################################################
+[node htoa__ramp_float]
+houdini.skip BOOL true
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E33
+c4d.classification      STRING  "texture"
+c4d.menu                STRING  "texture"
+c4d.node_id             INT     1034228
+
+[attr position]
+c4d.gui_visible BOOL false
+
+[attr value]
+c4d.gui_visible BOOL false
+
+[attr interpolation]
+c4d.gui_visible BOOL false
+
+##############################################################################
+[node htoa__ramp_rgb]
+houdini.skip BOOL true
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E34
+c4d.classification      STRING  "texture"
+c4d.menu                STRING  "texture"
+c4d.node_id             INT     1034229
+
+[attr position]
+c4d.gui_visible BOOL false
+
+[attr color]
+c4d.gui_visible BOOL false
+
+[attr interpolation]
+c4d.gui_visible BOOL false
+
+##############################################################################
+[node htoa__random]
+houdini.icon STRING "VOP_random"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/MYM3AQ"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E35
+c4d.classification     STRING  "surface"
+c4d.menu               STRING  "math"
+c4d.node_id            INT     1034221
+
+[attr input_type]
+desc STRING "The input type. The integer type is the cheapest to compute, while the color type is the most expensive."
+
+[attr input_int]
+houdini.hide_when STRING "{ input_type != int }"
+houdini.label STRING "Integer Input"
+softmin FLOAT 0
+softmax FLOAT 100
+desc STRING "Integer input used when the input type is int."
+
+[attr input_float]
+houdini.hide_when STRING "{ input_type != float }"
+houdini.label STRING "Float Input"
+softmin FLOAT 0
+softmax FLOAT 10
+desc STRING "Float input used when the input type is float."
+
+[attr input_color]
+houdini.hide_when STRING "{ input_type != color }"
+houdini.label STRING "Color Input"
+desc STRING "Color input used when the input type is rgb."
+
+[attr seed]
+softmin FLOAT 0
+softmax FLOAT 100
+desc STRING "The random number generator seed."
+
+[attr grayscale]
+desc STRING "Produce a cheaper to compute, monochromatic noise."
+
+##############################################################################
+[node htoa__range]
+houdini.icon STRING "VOP_fit"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E36
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input_min]
+desc STRING "The minimum value of the input range."
+
+[attr input_max]
+desc STRING "The maximum value of the input range."
+
+[attr output_min]
+desc STRING "The minimum value of the output range. The Input Min  will be mapped to this value."
+
+[attr output_max]
+desc STRING "The maximum value of the input range. The Input Max will be mapped to this value."
+
+[attr smoothstep]
+desc STRING "Interpolates the output range smoothly between the max and min output values. The returned value is clamped between these values."
+
+##############################################################################
+[node htoa__reciprocal]
+houdini.icon STRING "VOP_reciprocal"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E37
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__rgb_to_float]
+houdini.label STRING "RGB To Float"
+houdini.icon STRING "VOP_vectofloat"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E38
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr mode]
+desc STRING "r: Red component.\ng: Green component.\nb: Blue component.\nmin: Minimum component.\nmax: Maximum component.\naverage: Average of the components.\nsum: Sum of the components.\nluminance: Rec.709/sRGB luminance."
+
+##############################################################################
+[node htoa__rgb_to_rgba]
+houdini.label STRING "RGB To RGBA"
+houdini.icon STRING "VOP_vectohvec"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E39
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+##############################################################################
+[node htoa__rgb_to_vector]
+houdini.label STRING "RGB To Vector"
+houdini.icon STRING "COP2_lookup"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3A
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr mode]
+desc STRING "raw: Pass-through.\ncanonical: Remaps input from [0, 1] to [-1, 1]."
+
+##############################################################################
+[node htoa__rgba_to_float]
+houdini.label STRING "RGBA To Float"
+houdini.icon STRING "VOP_hvectofloat"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3B
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr mode]
+desc STRING "r: Red component.\ng: Green component.\nb: Blue component.\na: Alpha component.\nmin: Minimum component.\nmax: Maximum component.\naverage: Average of the components.\nsum: Sum of the components.\nluminance: Rec.709/sRGB luminance scaled by alpha."
+
+##############################################################################
+[node htoa__shadow_matte]
+houdini.icon STRING "VOP_shadowmatte"
+houdini.category STRING "Shading"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+houdini.parm.folder.folder1 STRING "Shadow;3;Indirect;7;AOVs;3"
+houdini.order STRING "folder1 background shadow_color shadow_opacity "
+"indirect_diffuse_enable diffuse_color diffuse_intensity "
+"indirect_specular_enable specular_color specular_intensity specular_roughness "
+"aov_shadow aov_indirect_diffuse aov_indirect_specular"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3C
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "surface"
+c4d.node_id             INT     1034222
+
+[attr background]
+desc STRING "The background color, usually a camera projected plate."
+
+[attr shadow_color]
+desc STRING "A color to tint the shadows."
+
+[attr shadow_opacity]
+desc STRING "The opacity of the shadows."
+
+[attr indirect_diffuse_enable]
+#houdini.label STRING "Indirect Diffuse"
+desc STRING "Add indirect diffuse lighting." 
+
+[attr diffuse_color]
+desc STRING "A color to tint the indirect diffuse."
+houdini.disable_when STRING "{ indirect_diffuse_enable == 0 }"
+
+[attr diffuse_intensity]
+desc STRING "The indirect diffuse intensity."
+houdini.disable_when STRING "{ indirect_diffuse_enable == 0 }"
+
+[attr indirect_specular_enable]
+#houdini.label STRING "Indirect Specular"
+desc STRING "Add indirect specular lighting." 
+
+[attr specular_color]
+desc STRING "A color to tint the indirect specular."
+houdini.disable_when STRING "{ indirect_specular_enable == 0 }"
+
+[attr specular_intensity]
+desc STRING "The indirect specular intensity."
+houdini.disable_when STRING "{ indirect_specular_enable == 0 }"
+
+[attr specular_roughness]
+desc STRING "The indirect specular roughness."
+houdini.disable_when STRING "{ indirect_specular_enable == 0 }"
+
+[attr aov_shadow]
+houdini.label STRING "Shadow"
+
+[attr aov_indirect_diffuse]
+houdini.label STRING "Indirect Diffuse"
+
+[attr aov_indirect_specular]
+houdini.label STRING "Indirect Specular"
+
+##############################################################################
+[node htoa__sign]
+houdini.icon STRING "VOP_sign"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3D
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__skin]
+houdini.label STRING "Skin"
+houdini.icon STRING "SHOP_surface"
+houdini.category STRING "Shading"
+
+houdini.parm.folder.folder1 STRING "Scatter;14;Specular;10;Options;2;AOVs;3"
+houdini.parm.heading.shallow STRING "Shallow Scatter"
+houdini.parm.heading.mid STRING "Mid Scatter"
+houdini.parm.heading.deep STRING "Deep Scatter"
+houdini.parm.heading.specular STRING "Specular"
+houdini.parm.heading.sheen STRING "Sheen"
+
+houdini.order STRING "folder1 sss_weight global_sss_radius_multiplier "
+"shallow shallow_scatter_color shallow_scatter_weight shallow_scatter_radius "
+"mid mid_scatter_color mid_scatter_weight mid_scatter_radius "
+"deep deep_scatter_color deep_scatter_weight deep_scatter_radius "
+"specular specular_color specular_weight specular_roughness specular_ior "
+"sheen sheen_color sheen_weight sheen_roughness sheen_ior "
+"options fresnel_affect_sss specular_in_secondary_rays "
+"aov_sss aov_specular aov_sheen"
+
+houdini.help_url STRING "https://support.solidangle.com/x/GYAo"
+
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E53
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "surface"
+c4d.command_id          INT     1031875
+
+[attr sss_weight]
+houdini.label STRING "Global Scatter Scale"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+desc STRING "Overall control for the scatter weight of the total SSS contribution."
+
+[attr global_sss_radius_multiplier]
+houdini.label STRING "Global Radius Scale"
+softmin             FLOAT   0.0
+softmax             FLOAT   20.0
+desc STRING "Overall multiplier for the radius of all three SSS layers."
+
+[attr shallow_scatter_color]
+houdini.label STRING "Shallow Color"
+desc STRING "Color of the Shallow Scatter layer."
+
+[attr shallow_scatter_weight]
+houdini.label STRING "Shallow Scatter"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+desc STRING "Controls the weight of the Shallow Scatter layer. 0 = No contribution, 1 = Full contribution."
+
+[attr shallow_scatter_radius]
+houdini.label STRING "Shallow Radius"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+c4d.gui_type        INT     10
+desc STRING "Controls the radius of the Shallow Scatter layer. Larger values pass deeper into the geometry."
+
+[attr mid_scatter_color]
+houdini.label STRING "Mid Color"
+desc STRING "Color of the Mid Scatter layer."
+
+[attr mid_scatter_weight]
+houdini.label STRING "Mid Scatter"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+desc STRING "Controls the weight of the Mid Scatter layer. 0 = No contribution, 1 = Full contribution."
+
+[attr mid_scatter_radius]
+houdini.label STRING "Mid Radius"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0        
+c4d.gui_type        INT     10
+desc STRING "Controls the radius of the Mid Scatter layer. Larger values pass deeper into the geometry."
+
+[attr deep_scatter_color]
+houdini.label STRING "Deep Color"
+desc STRING "Color of the Deep Scatter layer."
+
+[attr deep_scatter_weight]
+houdini.label STRING "Deep Scatter"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+desc STRING "Controls the weight of the Deep Scatter layer. 0 = No contribution, 1 = Full contribution."
+
+[attr deep_scatter_radius]
+houdini.label STRING "Deep Radius"
+min                 FLOAT   0.0
+softmax             FLOAT   1.0
+c4d.gui_type        INT     10
+desc STRING "Controls the radius of the Deep Scatter layer. Larger values pass deeper into the geometry."
+
+[attr specular_color]
+#houdini.label STRING "Color"
+desc STRING "The color of the specular highlights."
+
+[attr specular_weight]
+#houdini.label STRING "Specular"
+min                 FLOAT   0.0
+max                 FLOAT   1.0        
+desc STRING "Controls the weight of the specular."
+
+[attr specular_roughness]
+#houdini.label STRING "Roughness"
+min                 FLOAT   0.0
+max                 FLOAT   1.0   
+default             FLOAT   0.5
+desc STRING "Controls how blurry/glossy the specular reflections are. The lower the value, the sharper the reflection. 0 = sharp mirror reflection, 1 = close to diffuse shading."
+
+[attr specular_ior]
+houdini.label STRING "Specular IOR"
+min                 FLOAT   0.0
+softmin             FLOAT   1.0
+softmax             FLOAT   5.0
+desc STRING "Specular index of refraction."
+
+[attr sheen_color]
+#houdini.label STRING "Color"
+desc STRING "The color of the sheen highlights."
+
+[attr sheen_weight]
+#houdini.label STRING "Specular"
+min                 FLOAT   0.0
+max                 FLOAT   1.0
+desc STRING "Controls the weight of the sheen."
+
+[attr sheen_roughness]
+#houdini.label STRING "Roughness"
+min                 FLOAT   0.0
+max                 FLOAT   1.0
+default             FLOAT   0.5
+desc STRING "Controls how blurry/glossy the sheen reflections are. The lower the value, the sharper the reflection. 0 = sharp mirror reflection, 1 = close to diffuse shading."
+
+[attr sheen_ior]
+houdini.label STRING "Sheen IOR"
+min                 FLOAT   0.0
+softmin             FLOAT   1.0
+softmax             FLOAT   5.0
+desc STRING "Specular index of refraction."
+
+[attr fresnel_affect_sss]
+houdini.label STRING "Fresnel Affects SSS"
+desc STRING "Determines whether fresnel computations affect SSS. It is recommended that this should be left on by default."
+
+[attr specular_in_secondary_rays]
+houdini.label STRING "Specular in Secondary Rays"
+desc STRING "When on, Glossy rays will only evaluate/compute the SSS component of the shader, thus making it faster to render."
+
+[attr aov_sss]
+houdini.label STRING "SSS"
+desc STRING "The name of the SSS AOV."
+
+[attr aov_specular]
+houdini.label STRING "Specular"
+desc STRING "The name of the specular AOV."
+
+[attr aov_sheen]
+houdini.label STRING "Sheen"
+desc STRING "The name of the sheen AOV."
+
+##############################################################################
+[node htoa__space_transform]
+houdini.icon STRING "VOP_transform"
+houdini.category STRING "Vector"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3E
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+c4d.node_id             INT     1034223
+
+[attr input]
+desc STRING "The point, vector or normal to transform."
+
+[attr type]
+desc STRING "The input type."
+
+[attr from]
+desc STRING "Source space."
+
+[attr to]
+desc STRING "Destination space."
+
+[attr tangent]
+houdini.disable_when STRING "{ from != tangent to != tangent }"
+desc STRING "The tangent vector that, together with the normal, defines the "
+"tangent reference frame. When this parameter is zero, the shader will attempt "
+"the following actions to build the tangent frame:\n"
+"1. Look for vector user data named \"tangent\" and \"bitangent\".\n"
+"2. Use the UV derivatives.\n"
+"3. Build its own local frame."
+
+[attr scale]
+softmin FLOAT 0
+softmax FLOAT 10
+desc STRING "Uniformly scales the output or, if the normal is set, magnifies the bump effect."
+
+[attr order]
+desc STRING "Specify the input (X,Y,Z) components order before transform."
+
+[attr invert_x]
+desc STRING "Invert the input X before transform."
+
+[attr invert_y]
+desc STRING "Invert the input Y before transform."
+
+[attr invert_z]
+desc STRING "Invert the input Z before transform."
+
+[attr color_to_signed]
+desc STRING "Remap the input color from the [0, 1] range to [-1, 1] range before transform."
+
+[attr set_normal]
+desc STRING "Set the normalized transform result as the shading normal, doing a bump mapping."
+
+##############################################################################
+[node htoa__sqrt]
+houdini.icon STRING "VOP_sqrt"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E3F
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+[attr input]
+desc STRING "Input to calculate square root of."
+
+##############################################################################
+[node htoa__state_float]
+houdini.icon STRING "VOP_global"
+houdini.category STRING "State"
+houdini.help_url STRING "https://support.solidangle.com/x/rYNY"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E40
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "shading state"
+
+[attr variable]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "sx;Screen X\tsx;sy;Screen Y\tsy;time;Shutter Time\ttime;we;Sample Weight\twe;Rl;Ray Length\tRl;bu;Barycentric U\tbu;bv;Barycentric V\tbv;u;Surface U\tu;v;Surface V\tv;Ldist;Light Distance\tLdist;area;Shaded or Avg. Displaced Area\tarea;dudx;U Derivative wrt Screen X\tdudx;dudy;U Derivative wrt Screen Y\tdudy;dvdx;V Derivative wrt Screen X\tdvdx;dvdy;V Derivative wrt Screen Y\tdvdy;shutter_start;Shutter Start\tshutter_start;shutter_end;Shutter End\tshutter_end"
+desc STRING "Shading state variable."
+
+##############################################################################
+[node htoa__state_int]
+houdini.icon STRING "VOP_global"
+houdini.category STRING "State"
+houdini.help_url STRING "https://support.solidangle.com/x/rYNY"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E41
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "shading state"
+
+[attr variable]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "x;Raster X\tx;y;Raster Y\ty;si;Subpixel Sample Index\tsi;i;Path or Light Sample Index\ti;n;Number of Samples\tn;Rt;Ray Type\tRt;transp_index;Transparency Index\ttransp_index;tid;Thread ID\ttid;Rr;Ray Depth\tRr;Rr_refl;Reflection Depth\tRr_refl;Rr_refr;Refraction Depth\tRr_refr;Rr_diff;Diffuse Depth\tRr_diff;Rr_gloss;Glossy Depth\tRr_gloss;fhemi;Force Hemispherical Lighting\tfhemi;fi;"
+houdini.menu2 STRING "Primitive ID\tfi;nlights;Number of Active Lights\tnlights;inclusive_traceset;Inclusive Traceset\tinclusive_traceset;skip_shadow;Skip Shadow Rays\tskip_shadow;sc;Shading Context\tsc"
+desc STRING "Shading state variable."
+
+##############################################################################
+[node htoa__state_matrix]
+houdini.icon STRING "VOP_global"
+houdini.category STRING "State"
+houdini.help_url STRING "https://support.solidangle.com/x/rYNY"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E42
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "shading state"
+
+[attr matrix]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "object_to_world;Object to World;world_to_object;World to Object;camera_to_world;Camera to World;world_to_camera;World to Camera;screen_to_world;Screen to World;world_to_screen;World to Screen"
+desc STRING "Transformation matrix."
+
+##############################################################################
+[node htoa__state_rgb]
+houdini.label STRING "State RGB"
+houdini.icon STRING "VOP_global"
+houdini.category STRING "State"
+houdini.help_url STRING "https://support.solidangle.com/x/rYNY"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E43
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "shading state"
+
+[attr variable]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "Li;Light Intensity\tLi;Liu;Unoccluded Light Intensity\tLiu;Lo;Shadow Occlusion\tLo;Ci;Volume Input Color\tCi;Vo;Volume Output Radiance\tVo;out_opacity;Output Opacity\tout_opacity"
+desc STRING "Shading state variable."
+
+##############################################################################
+[node htoa__state_vector]
+houdini.icon STRING "VOP_global"
+houdini.category STRING "State"
+houdini.help_url STRING "https://support.solidangle.com/x/rYNY"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E44
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "shading state"
+
+[attr variable]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "Ro;Ray Origin\tRo;Rd;Ray Direction\tRd;Po;Shading Point in Object-Space\tPo;P;Shading Point in World-Space\tP;dPdx;Surface derivative wrt screen X\tdPdx;dPdy;Surface derivative wrt screen Y\tdPdy;N;Shading Normal\tN;Nf;Face-Forward Shading Normal\tNf;Ng;Geometric Normal\tNg;Ngf;Face-Forward Geometric Normal\tNgf;Ns;Smoothed Normal (no bump)\tNs;Ld;Light Direction\tLd;"
+houdini.menu2 STRING "dPdu;Surface Derivative wrt U\tdPdu;dPdv;Surface Derivative wrt V\tdPdv;dDdx;Ray Direction Derivative wrt Screen X\tdDdx;dDdy;Ray Direction Derivative wrt Screen Y\tdDdy;dNdx;Surface Normal Derivative wrt Screen X\tdNdx;dNdy;Surface Normal Derivative wrt Screen Y\tdNdy"
+desc STRING "Shading state variable."
+
+##############################################################################
+[node htoa__subtract]
+houdini.icon STRING "VOP_subtract"
+houdini.category STRING "Math"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E45
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+
+##############################################################################
+[node htoa__switch]
+houdini.icon STRING "VOP_switch"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/x/GgBr"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E46
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+[attr index]
+min FLOAT 0
+max FLOAT 19
+
+##############################################################################
+[node htoa__trace_set]
+houdini.icon STRING "VOP_rayhit"
+houdini.category STRING "Utility"
+houdini.help_url STRING "https://support.solidangle.com/display/AFHUG/Trace+Set"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E47
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "utility"
+
+[attr passthough]
+desc STRING "The passthrough input to insert this shader before the firing of rays downstream the shader network."
+
+[attr trace_set]
+desc STRING "The trace set name."
+
+[attr inclusive]
+desc STRING "When a trace set is inclusive, rays are traced against tagged nodes, but also against nodes that are not tagged at all. Input from which to calcaulate transpose. When a trace set is exclusive, rays are traced against all geometry except the tagged nodes."
+
+##############################################################################
+[node htoa__transpose]
+houdini.icon STRING "VOP_transpose"
+houdini.category STRING "Matrix"
+houdini.help_url STRING "https://support.solidangle.com/x/n4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E48
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math/matrix"
+
+[attr input]
+desc STRING "Input from which to calcaulate transpose."
+
+##############################################################################
+[node htoa__trigo]
+houdini.icon STRING "VOP_trig"
+houdini.category STRING "Math"
+houdini.lod STRING "H"
+houdini.help_url STRING "https://support.solidangle.com/x/XoAo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E49
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "math"
+c4d.node_id             INT     1034226
+
+[attr function]
+houdini.type STRING "menu:single:menu"
+houdini.menu STRING "cos;Cosine\tcos;sin;Sine\tsin;tan;Tangent\ttan;acos;Arccosine\tacos;asin;Arcsine\tasin;atan;Arctangent\tatan;cosh;Hyperbolic Cosine\tcosh;sinh;Hyperbolic Sine\tsinh;tanh;Hyperbolic Tangent\ttanh"
+desc STRING "Trigonometric function to perform."
+
+[attr units]
+houdini.disable_when STRING "{ function == cosh } { function == sinh } { function == tanh }"
+desc STRING "Choose between radians and degrees for the argument of sine, cosine and tangent and for the result of the inverse functions. It has no effect on the hyperbolic functions."
+
+[attr frequency]
+softmin FLOAT -5
+softmax FLOAT 5
+desc STRING "The frequency in function(input * frequency + phase). Makes most sense for the sine, cosine and tangent functions."
+
+[attr phase]
+softmin FLOAT -5
+softmax FLOAT 5
+desc STRING "The phase in function(input * frequency + phase). Makes most sense for the sine, cosine and tangent functions."
+
+##############################################################################
+[node htoa__two_sided]
+houdini.icon STRING "VOP_two_sided"
+houdini.category STRING "Shading"
+houdini.help_url STRING "https://support.solidangle.com/display/AFHUG/Shaders"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E57
+
+[attr front]
+desc STRING "The color when the surface normal is facing the camera."
+
+[attr back]
+desc STRING "The color when the surface normal is opposite to the camera."
+
+##############################################################################
+[node htoa__user_data_float]
+houdini.icon STRING "SOP_attribute"
+houdini.category STRING "User Data"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/FYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4A
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "user data"
+
+[attr attribute]
+desc STRING "Name of the custom attribute attached to the geometry with float data."
+
+[attr default]
+desc STRING "The default value to use if the attribute is not found on input."
+
+##############################################################################
+[node htoa__user_data_int]
+houdini.icon STRING "SOP_attribute"
+houdini.category STRING "User Data"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/FYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4B
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "user data"
+
+[attr attribute]
+desc STRING "Name of the custom attribute attached to the geometry with integer data."
+
+[attr default]
+desc STRING "The default value to use if the attribute is not found on input."
+
+##############################################################################
+[node htoa__user_data_rgb]
+houdini.label STRING "User Data RGB"
+houdini.icon STRING "SOP_attribute"
+houdini.category STRING "User Data"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/FYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4C
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "user data"
+
+[attr attribute]
+desc STRING "Name of the custom attribute attached to the geometry with RGB data."
+
+[attr default]
+desc STRING "The default value to use if the attribute is not found on input."
+
+##############################################################################
+[node htoa__user_data_rgba]
+houdini.label STRING "User Data RGBA"
+houdini.icon STRING "SOP_attribute"
+houdini.category STRING "User Data"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/FYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4D
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "user data"
+
+[attr attribute]
+desc STRING "Name of the custom attribute attached to the geometry with RGBA data."
+
+[attr default]
+desc STRING "The default value to use if the attribute is not found on input."
+
+##############################################################################
+[node htoa__user_data_string]
+houdini.icon STRING "SOP_attribute"
+houdini.category STRING "User Data"
+houdini.lod STRING "M"
+houdini.help_url STRING "https://support.solidangle.com/x/FYEo"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4E
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "user data"
+
+[attr attribute]
+desc STRING "Name of the custom attribute attached to the geometry with string data."
+
+[attr default]
+desc STRING "The default value to use if the attribute is not found on input."
+
+##############################################################################
+[node htoa__vector_to_rgb]
+houdini.label STRING "Vector To RGB"
+houdini.icon STRING "COP2_lookup"
+houdini.category STRING "Convert"
+houdini.help_url STRING "https://support.solidangle.com/x/o4Bi"
+maya.classification     STRING  "shader/surface"
+maya.id                 INT     0x00115E4F
+c4d.classification      STRING  "surface"
+c4d.menu                STRING  "conversion"
+
+[attr mode]
+desc STRING "raw: Pass-through.\nnormalized: Normalizes the vector and remaps input from [0, 1] to [-1, 1].\ncanonical: Remaps input from [0, 1] to [-1, 1]."
+
+##############################################################################
+[node htoa__volume_collector]
+houdini.icon STRING "SOP_volume"
+houdini.category STRING "Volume"
+houdini.shader_type STRING "volume"
+houdini.help_url STRING "https://support.solidangle.com/x/UwA7"
+
+houdini.parm.folder.folder1 STRING "Shading;20;Sampling;2"
+houdini.parm.heading.sca_hdg STRING "Scattering"
+houdini.parm.heading.att_hdg STRING "Attenuation"
+houdini.parm.heading.emi_hdg STRING "Emission"
+
+houdini.order STRING "folder1 sca_hdg scattering_source scattering scattering_channel scattering_color scattering_intensity anisotropy "
+"att_hdg attenuation_source attenuation attenuation_channel attenuation_color attenuation_intensity attenuation_mode "
+"emi_hdg emission_source emission emission_channel emission_color emission_intensity "
+"position_offset interpolation"
+
+maya.id                 INT     0x00115E50
+maya.classification     STRING  "shader/surface"
+maya.swatch             BOOL    False
+c4d.classification      STRING  "volume"
+c4d.menu                STRING  "volume"
+c4d.node_id             INT     1031876
+c4d.command_id          INT     1031876
+
+[attr interpolation]
+desc STRING "The voxel interpolation used when sampling the volume through channels."
+
+[attr scattering_source]
+desc STRING "Where to obtain scattering from."
+
+[attr scattering]
+houdini.hide_when STRING "{ scattering_source != \"parameter\" }"
+desc STRING "Scattering is the rate at which light is scattered (or reflected) "
+"at a given point. The greater the rate of scattering, the shorter the average "
+"distance a ray of light will travel through a volume before being bounced off "
+"of its course. Higher values make a harder, harsher reflective volume."
+
+[attr scattering_channel]
+houdini.hide_when STRING "{ scattering_source != \"channel\" }"
+desc STRING "Obtain scattering from this named channel."
+
+[attr scattering_color]
+desc STRING "Tint color for scattering."
+
+[attr scattering_intensity]
+min FLOAT 0
+softmax FLOAT 2
+desc STRING "Scattering scale."
+
+[attr anisotropy]
+min FLOAT -1
+max FLOAT 1
+desc STRING "Henyey-Greenstein Anisotropy coefficient between -1 (full back-scatter) "
+"and 1 (full forward-scatter). Default is 0 for an isotropic medium."
+
+[attr attenuation_mode]
+houdini.join_next BOOL true
+desc STRING "Switch between absorption mode (attenuation is due to absorption only) "
+"and extinction mode (attenuation is due to absorption and scattering. Under "
+"these terms extinction = absorption + scattering. While absorption mode garantees "
+"energy conservation, extinction allows more artistic freedom."
+
+[attr attenuation_source]
+desc STRING "Where to obtain attenuation from. When set to \"scattering\", the scattering input/channel will be used for the attenuation."
+
+[attr attenuation]
+houdini.hide_when STRING "{ attenuation_source != \"parameter\" }"
+desc STRING "Attenuation is the rate at which the intensity of a beam of light "
+"traversing a volume is lost due to either scattering and/or absorption events "
+"(see attenuation_mode). Higher values make a harder, harsher, and darker volume."
+
+[attr attenuation_channel]
+houdini.hide_when STRING "{ attenuation_source != \"channel\" }"
+desc STRING "Obtain attenuation from this named channel."
+
+[attr attenuation_color]
+desc STRING "Tint color for attenuation."
+
+[attr attenuation_intensity]
+min FLOAT 0
+softmax FLOAT 2
+desc STRING "Attenuation scale."
+
+[attr emission_source]
+desc STRING "Where to obtain emission from."
+
+[attr emission]
+houdini.hide_when STRING "{ emission_source != \"parameter\" }"
+min FLOAT 0
+desc STRING "Emission is the rate at which a volume emits light at a given point. "
+"The light emitted by a volume is visible to GI. It also will be affected by "
+"any attenuation, out-scattering or absorption effects in the volume."
+
+[attr emission_channel]
+houdini.hide_when STRING "{ emission_source != \"channel\" }"
+desc STRING "Obtain emission from this named channel."
+
+[attr emission_color]
+desc STRING "Tint color for emission."
+
+[attr emission_intensity]
+min FLOAT 0
+softmax FLOAT 2
+desc STRING "Emission scale."
+
+[attr position_offset]
+desc STRING "An offset added to the sampling position, in order to displace or "
+"add noise to the volume. Remember to pad the volume bounds_slack accordingly."
+
+##############################################################################
+[node htoa__volume_sample_float]
+houdini.icon STRING "SOP_volume"
+houdini.category STRING "Volume"
+houdini.help_url STRING "https://support.solidangle.com/x/UwA7"
+houdini.parm.folder.folder1 STRING "Sampling;3;Remap;10"
+houdini.order STRING "folder1 channel position_offset interpolation "
+"input_min input_max contrast contrast_pivot bias gain output_min output_max clamp_min clamp_max"
+maya.id                 INT     0x00115E51
+maya.classification     STRING  "shader/surface"
+maya.swatch             BOOL    False
+c4d.classification      STRING  "volume"
+c4d.menu                STRING  "volume"
+
+[attr channel]
+desc STRING "The volume channel to sample."
+
+[attr position_offset]
+desc STRING "An offset added to the sampling position, in order to displace or "
+"add noise to the volume. Remember to pad the volume bounds_slack accordingly."
+
+[attr interpolation]
+desc STRING "The voxel interpolation used when sampling the channel."
+
+[attr input_min]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "The minimum value of the input range."
+
+[attr input_max]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "The maximum value of the input range."
+
+[attr contrast]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Scale values around the contrast pivot."
+
+[attr contrast_pivot]
+desc STRING "The origin of the contrast scaling."
+
+[attr bias]
+min FLOAT 0
+max FLOAT 1
+desc STRING "Push or pull values by altering the slope at the beginning of the "
+"range. Bias values below 0.5 decrease the slope and lower values overall. "
+"Above 0.5, the slope is higher and value grow more quickly. A value of 0.5 has "
+"no effect."
+
+[attr gain]
+min FLOAT 0
+max FLOAT 1
+desc STRING "Increase or decrease the slope of the mid range values. Gain values "
+"below 0.5 increase the contrast whereas values above 0.5 flatten the mid range "
+"values. A value of 0.5 has no effect."
+
+[attr output_min]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "The minimum value of the output range, input_min will be mapped to this value."
+
+[attr output_max]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "The maximum value of the input range, input_max will be mapped to this value."
+
+[attr clamp_min]
+desc STRING "Clamp the result to the min_output value."
+
+[attr clamp_max]
+desc STRING "Clamp the result to the max_output value."
+
+##############################################################################
+[node htoa__volume_sample_rgb]
+houdini.label STRING "Volume Sample RGB"
+houdini.icon STRING "SOP_volume"
+houdini.category STRING "Volume"
+houdini.help_url STRING "https://support.solidangle.com/x/UwA7"
+houdini.parm.folder.folder1 STRING "Sampling;3;Color Correction;8"
+houdini.order STRING "folder1 channel position_offset interpolation "
+"channel position_offset interpolation gamma hue_shift saturation contrast contrast_pivot exposure gain brighten"
+maya.id                 INT     0x00115E52
+maya.classification     STRING  "shader/surface"
+maya.swatch             BOOL    False
+c4d.classification      STRING  "volume"
+c4d.menu                STRING  "volume"
+
+[attr channel]
+desc STRING "The volume channel to sample."
+
+[attr position_offset]
+desc STRING "An offset added to the sampling position, in order to displace or "
+"add noise to the volume. Remember to pad the volume bounds_slack accordingly."
+
+[attr interpolation]
+desc STRING "The voxel interpolation used when sampling the channel."
+
+[attr hue_shift]
+softmin FLOAT -1
+softmax FLOAT 1
+desc STRING "Rotate the color hue, a value of 1 means a full rotation."
+
+[attr saturation]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Scale the saturation by this factor."
+
+[attr add]
+softmin FLOAT -1
+softmax FLOAT 1
+desc STRING "Add this value to the color."
+
+[attr contrast]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Scale values around the contrast pivot."
+
+[attr contrast_pivot]
+desc STRING "The origin of the contrast scaling."
+
+[attr exposure]
+softmin FLOAT -10
+softmax FLOAT 10
+desc STRING "Multiply the color using a photo f-stop scale, where an increment of 1 doubles the luminosity."
+
+[attr multiply]
+softmin FLOAT 0
+softmax FLOAT 2
+desc STRING "Multiply the color by this factor."
+
+[attr gamma]
+softmin FLOAT 0
+softmax FLOAT 3
+desc STRING "Apply a gamma correction to the color."

@@ -1,0 +1,24 @@
+<map id="src/pygeo/object.cpp" name="src/pygeo/object.cpp">
+<area shape="rect" id="node2" href="$object_8h.html" title="object.h" alt="" coords="921,453,988,480"/>
+<area shape="rect" id="node3" href="$detail_8h.html" title="detail.h" alt="" coords="2089,528,2153,555"/>
+<area shape="rect" id="node25" href="$log_8h.html" title="log.h" alt="" coords="129,379,180,405"/>
+<area shape="rect" id="node27" href="$node_8h.html" title="arnold/node.h" alt="" coords="858,304,957,331"/>
+<area shape="rect" id="node34" href="$polygons_8h.html" title="translator/polygons.h" alt="" coords="1343,80,1485,107"/>
+<area shape="rect" id="node37" href="$particles_8h.html" title="translator/particles.h" alt="" coords="1911,229,2051,256"/>
+<area shape="rect" id="node38" href="$tessellated_8h.html" title="translator/tessellated.h" alt="" coords="1511,80,1665,107"/>
+<area shape="rect" id="node39" href="$translator_2curves_8h.html" title="translator/curves.h" alt="" coords="1191,80,1319,107"/>
+<area shape="rect" id="node41" href="$instances_8h.html" title="translator/instances.h" alt="" coords="1689,80,1836,107"/>
+<area shape="rect" id="node43" href="$translator_2volume_8h.html" title="translator/volume.h" alt="" coords="2139,304,2269,331"/>
+<area shape="rect" id="node44" href="$translator_2procedural_8h.html" title="translator/procedural.h" alt="" coords="2075,229,2225,256"/>
+<area shape="rect" id="node45" href="$translator_2points_8h.html" title="translator/points.h" alt="" coords="1861,304,1987,331"/>
+<area shape="rect" id="node7" href="$mblur_8h.html" title="mblur.h" alt="" coords="1207,528,1272,555"/>
+<area shape="rect" id="node10" href="$properties_8h.html" title="properties.h" alt="" coords="385,603,476,629"/>
+<area shape="rect" id="node14" href="$session_8h.html" title="session.h" alt="" coords="522,528,600,555"/>
+<area shape="rect" id="node28" href="$user__data_8h.html" title="user_data.h" alt="" coords="1551,528,1641,555"/>
+<area shape="rect" id="node29" href="$translator_8h.html" title="../translator/translator.h" alt="" coords="1744,379,1901,405"/>
+<area shape="rect" id="node30" href="$partition_8h.html" title="../partition.h" alt="" coords="1911,453,2001,480"/>
+<area shape="rect" id="node35" href="$polymesh_8h.html" title="../arnold/polymesh.h" alt="" coords="1331,155,1471,181"/>
+<area shape="rect" id="node36" href="$shape_8h.html" title="shape.h" alt="" coords="1367,229,1435,256"/>
+<area shape="rect" id="node40" href="$arnold_2curves_8h.html" title="../arnold/curves.h" alt="" coords="1186,155,1307,181"/>
+<area shape="rect" id="node42" href="$instancer_8h.html" title="../arnold/instancer.h" alt="" coords="1495,155,1632,181"/>
+</map>

@@ -3,8 +3,11 @@
 
  rem --- Path ---
 set "PROJECT_ROOT=//bigfoot/breakingpoint"
-set "PIPELINE_PATH=%PROJECT_ROOT%/_pipeline/_sandbox"
-set "PLUGINS_PATH=%PIPELINE_PATH%/nuke"
+set "PROJECT_ROOT=P:"
+set "PIPELINE_PATH=%PROJECT_ROOT%/_pipeline"
+set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox"
+set "PLUGINS_PATH=%SOFTWARE_PATH%/nuke"
+
 set "NUKE_VERSION=Nuke9.0v6"
 
 

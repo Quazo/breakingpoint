@@ -1,0 +1,363 @@
+##############################################################################
+[node persp_camera]
+
+[attr fov]
+blacklist BOOL true
+
+[attr plane_distance]
+optional BOOL true
+
+[attr focus_distance]
+blacklist BOOL true
+
+[attr aperture_size]
+blacklist BOOL true
+
+[attr aperture_blades]
+blacklist BOOL true
+
+[attr aperture_rotation]
+optional BOOL true
+
+[attr aperture_blade_curvature]
+optional BOOL true
+
+[attr aperture_aspect_ratio]
+optional BOOL true
+
+[attr uv_remap]
+blacklist BOOL true
+
+[attr position]
+blacklist BOOL true
+
+[attr look_at]
+blacklist BOOL true
+
+[attr up]
+blacklist BOOL true
+
+[attr matrix]
+blacklist BOOL true
+
+[attr near_clip]
+remap STRING "near"
+
+[attr far_clip]
+remap STRING "far"
+
+[attr shutter_start]
+blacklist BOOL true
+
+[attr shutter_end]
+blacklist BOOL true
+
+[attr shutter_type]
+optional BOOL true
+
+[attr shutter_curve]
+blacklist BOOL true
+
+[attr rolling_shutter]
+optional BOOL true
+
+[attr rolling_shutter_duration]
+optional BOOL true
+
+[attr filtermap]
+blacklist BOOL true
+
+[attr handedness]
+blacklist BOOL true
+
+[attr time_samples]
+blacklist BOOL true
+
+[attr screen_window_min]
+blacklist BOOL true
+
+[attr screen_window_max]
+blacklist BOOL true
+
+[attr exposure]
+optional BOOL true
+
+[attr name]
+blacklist BOOL true
+
+
+##############################################################################
+[node ortho_camera]
+
+[attr position]
+blacklist BOOL true
+
+[attr look_at]
+blacklist BOOL true
+
+[attr up]
+blacklist BOOL true
+
+[attr matrix]
+blacklist BOOL true
+
+[attr near_clip]
+remap STRING "near"
+
+[attr far_clip]
+remap STRING "far"
+
+[attr shutter_start]
+blacklist BOOL true
+
+[attr shutter_end]
+blacklist BOOL true
+
+[attr shutter_type]
+optional BOOL true
+
+[attr shutter_curve]
+blacklist BOOL true
+
+[attr rolling_shutter]
+optional BOOL true
+
+[attr rolling_shutter_duration]
+optional BOOL true
+
+[attr filtermap]
+blacklist BOOL true
+
+[attr handedness]
+blacklist BOOL true
+
+[attr time_samples]
+blacklist BOOL true
+
+[attr screen_window_min]
+blacklist BOOL true
+
+[attr screen_window_max]
+blacklist BOOL true
+
+[attr exposure]
+optional BOOL true
+
+[attr name]
+blacklist BOOL true
+
+
+##############################################################################
+[node fisheye_camera]
+
+[attr fov]
+blacklist BOOL true
+
+[attr autocrop]
+optional BOOL true
+
+[attr focus_distance]
+blacklist BOOL true
+
+[attr aperture_size]
+blacklist BOOL true
+
+[attr aperture_blades]
+blacklist BOOL true
+
+[attr aperture_rotation]
+optional BOOL true
+
+[attr aperture_blade_curvature]
+optional BOOL true
+
+[attr aperture_aspect_ratio]
+optional BOOL true
+
+[attr position]
+blacklist BOOL true
+
+[attr look_at]
+blacklist BOOL true
+
+[attr up]
+blacklist BOOL true
+
+[attr matrix]
+blacklist BOOL true
+
+[attr near_clip]
+remap STRING "near"
+
+[attr far_clip]
+remap STRING "far"
+
+[attr shutter_start]
+blacklist BOOL true
+
+[attr shutter_end]
+blacklist BOOL true
+
+[attr shutter_type]
+optional BOOL true
+
+[attr shutter_curve]
+blacklist BOOL true
+
+[attr rolling_shutter]
+optional BOOL true
+
+[attr rolling_shutter_duration]
+optional BOOL true
+
+[attr filtermap]
+blacklist BOOL true
+
+[attr handedness]
+blacklist BOOL true
+
+[attr time_samples]
+blacklist BOOL true
+
+[attr screen_window_min]
+blacklist BOOL true
+
+[attr screen_window_max]
+blacklist BOOL true
+
+[attr exposure]
+optional BOOL true
+
+[attr name]
+blacklist BOOL true
+
+
+##############################################################################
+[node cyl_camera]
+
+[attr horizontal_fov]
+blacklist BOOL true
+
+[attr vertical_fov]
+blacklist BOOL true
+
+[attr projective]
+optional BOOL true
+
+[attr position]
+blacklist BOOL true
+
+[attr look_at]
+blacklist BOOL true
+
+[attr up]
+blacklist BOOL true
+
+[attr matrix]
+blacklist BOOL true
+
+[attr near_clip]
+remap STRING "near"
+
+[attr far_clip]
+remap STRING "far"
+
+[attr shutter_start]
+blacklist BOOL true
+
+[attr shutter_end]
+blacklist BOOL true
+
+[attr shutter_type]
+optional BOOL true
+
+[attr shutter_curve]
+blacklist BOOL true
+
+[attr rolling_shutter]
+optional BOOL true
+
+[attr rolling_shutter_duration]
+optional BOOL true
+
+[attr filtermap]
+blacklist BOOL true
+
+[attr handedness]
+blacklist BOOL true
+
+[attr time_samples]
+blacklist BOOL true
+
+[attr screen_window_min]
+blacklist BOOL true
+
+[attr screen_window_max]
+blacklist BOOL true
+
+[attr exposure]
+optional BOOL true
+
+[attr name]
+blacklist BOOL true
+
+
+##############################################################################
+[node spherical_camera]
+
+[attr position]
+blacklist BOOL true
+
+[attr look_at]
+blacklist BOOL true
+
+[attr up]
+blacklist BOOL true
+
+[attr matrix]
+blacklist BOOL true
+
+[attr near_clip]
+remap STRING "near"
+
+[attr far_clip]
+remap STRING "far"
+
+[attr shutter_start]
+blacklist BOOL true
+
+[attr shutter_end]
+blacklist BOOL true
+
+[attr shutter_type]
+optional BOOL true
+
+[attr shutter_curve]
+blacklist BOOL true
+
+[attr rolling_shutter]
+optional BOOL true
+
+[attr rolling_shutter_duration]
+optional BOOL true
+
+[attr filtermap]
+blacklist BOOL true
+
+[attr handedness]
+blacklist BOOL true
+
+[attr time_samples]
+blacklist BOOL true
+
+[attr screen_window_min]
+blacklist BOOL true
+
+[attr screen_window_max]
+blacklist BOOL true
+
+[attr exposure]
+optional BOOL true
+
+[attr name]
+blacklist BOOL true

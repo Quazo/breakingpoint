@@ -1,0 +1,385 @@
+// $Id: object_parms.ds 589 2013-11-24 18:50:16Z kik $
+
+collection {
+    name "ar_procedural_parms"
+    label "Arnold"
+    parmtag { spare_category "Arnold" }
+
+    group {
+    name    "folder_subdivision_4"
+    label   "Motion Blur"
+
+    parm {
+        name    "ar_mb_xform_keys_override"
+        label   "Transform Keys Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override the ROP settings for Transform Keys."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Motion Blur" }
+    }
+    parm {
+        name    "ar_mb_xform_keys"
+        label   "Transform Keys"
+        type    integer
+        default { "2" }
+        help    "Number of motion keys for matrix transformation. Transformation motion blur is calculated based on a linear interpolation of an object transform matrix, between successive motion keys. Increasing this value will add extra steps, which can improve the blurred result, especially for rotating objects. The default is 2, which results in straight lines of blur between shutter start and shutter end."
+        disablewhen "{ ar_mb_xform_keys_override == 0 }"
+        range   { 1! 20 }
+        export  none
+        parmtag { "spare_category" "Motion Blur" }
+    }
+    }
+
+    group {
+    name    "folder_subdivision_4_1"
+    label   "Visibility"
+
+    parm {
+        name    "ar_visibility_override"
+        label   "Visibility Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override visibility."
+        range   { 0 1 }
+        export  none
+    }
+    parm {
+        name    "ar_visibility_camera"
+        label   "Visible to Camera Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for camera rays (i.e. primary or view rays)."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_visibility_shadow"
+        label   "Visible to Shadow Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for shadow rays fired in the direct lighting calculations."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_visibility_reflection"
+        label   "Visible to Reflected Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for mirror reflection rays."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_visibility_refraction"
+        label   "Visible to Refracted Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for refraction rays."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_visibility_diffuse"
+        label   "Visible to Diffuse Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for indirect diffuse rays (i.e. global illumination, hemi, or GI rays)."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_visibility_glossy"
+        label   "Visible to Glossy Rays"
+        type    toggle
+        default { "1" }
+        help    "Toggle object visibility for indirect specular rays (i.e. glossy reflection rays)."
+        disablewhen "{ ar_visibility_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_receive_shadows_override"
+        label   "Receive Shadows Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override received shadows."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_receive_shadows"
+        label   "Receive Shadows"
+        type    toggle
+        default { "1" }
+        help    "Enable/disable received shadows over the object."
+        disablewhen "{ ar_receive_shadows_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_self_shadows_override"
+        label   "Self Shadows Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override self-shadowing."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_self_shadows"
+        label   "Self Shadows"
+        type    toggle
+        default { "1" }
+        help    "Enable/disable self-shadowing over the object."
+        disablewhen "{ ar_self_shadows_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_opaque_override"
+        label   "Opaque Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override the opaque flag."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_opaque"
+        label   "Opaque"
+        type    toggle
+        default { "1" }
+        help    "By default, Arnold will assume that objects are opaque, which lets the renderer take certain shortcuts and optimizations for maximum ray tracing speed. When this option is unchecked, the object is assumed as \"possibly transparent\", and Arnold will perform extra computations to support transparency and transparent shadows, according to the shader's opacity settings."
+        disablewhen "{ ar_opaque_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Geometry" }
+    }
+    parm {
+        name    "ar_matte_override"
+        label   "Matte Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        range   { 0 1 }
+        export  none
+    }
+    parm {
+        name    "ar_matte"
+        label   "Matte"
+        type    toggle
+        default { "0" }
+        disablewhen "{ ar_matte_override == 0 }"
+        help    "Output black and zero alpha for camera rays to create a holdout."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Visibility" }
+    }
+    parm {
+        name    "ar_use_light_group"
+        label   "Use Light Group"
+        type    toggle
+        invisible
+        nolabel
+        joinnext
+        default { "0" }
+        range   { 0 1 }
+        export  none
+    }
+    parm {
+        name    "ar_light_group"
+        label   "Light Group"
+        type    oplist
+        invisible
+        default { "" }
+        disablewhen "{ ar_use_light_group == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "opfilter" "!!OBJ/LIGHT!!" }
+        parmtag { "oprelative" "/" }
+    }
+    parm {
+        name    "ar_use_shadow_group"
+        label   "Use Shadow Group"
+        type    toggle
+        invisible
+        nolabel
+        joinnext
+        default { "0" }
+        range   { 0 1 }
+        export  none
+    }
+    parm {
+        name    "ar_shadow_group"
+        label   "Shadow Group"
+        type    oplist
+        invisible
+        default { "" }
+        disablewhen "{ ar_use_shadow_group == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "opfilter" "!!OBJ/LIGHT!!" }
+        parmtag { "oprelative" "/" }
+    }
+    parm {
+        name    "ar_trace_sets_override"
+        label   "Trace Sets Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        range   { 0 1 }
+        export  none
+    }
+    parm {
+        name    "ar_trace_sets"
+        label   "Trace Sets"
+        type    string
+        default { "" }
+        disablewhen "{ ar_trace_sets_override == 0 }"
+        menutoggle  {
+        }
+        range   { 0 1 }
+        export  none
+    }
+    }
+
+    group {
+    name    "folder_subdivision_4_2"
+    label   "Normals"
+
+    parm {
+        name    "ar_invert_normals_override"
+        label   "Invert Normals Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override Invert Normals."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Render" }
+    }
+    parm {
+        name    "ar_invert_normals"
+        label   "Invert Normals"
+        type    toggle
+        default { "0" }
+        help    "Invert normals"
+        disablewhen "{ ar_invert_normals_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Render" }
+    }
+    parm {
+        name    "ar_sidedness_override"
+        label   "Sidedeness Override"
+        type    toggle
+        nolabel
+        joinnext
+        default { "0" }
+        help    "Override sidedness."
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Render" }
+    }
+    parm {
+        name    "ar_sidedness_camera"
+        label   "Double-sided for Camera"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for camera rays (i.e. primary or view rays)."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    parm {
+        name    "ar_sidedness_shadow"
+        label   "Double-sided for Shadow"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for shadow rays fired in the direct lighting calculations."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    parm {
+        name    "ar_sidedness_reflection"
+        label   "Double-sided for Reflection"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for mirror reflection rays."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    parm {
+        name    "ar_sidedness_refraction"
+        label   "Double-sided for Refraction"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for refraction rays."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    parm {
+        name    "ar_sidedness_diffuse"
+        label   "Double-sided for Diffuse"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for indirect diffuse rays (i.e. global illumination, hemi, or GI rays)."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    parm {
+        name    "ar_sidedness_glossy"
+        label   "Double-sided for Glossy"
+        type    toggle
+        default { "1" }
+        help    "Toggle object double-sidedness for indirect specular rays (i.e. glossy reflection rays)."
+        disablewhen "{ ar_sidedness_override == 0 }"
+        range   { 0 1 }
+        export  none
+        parmtag { "spare_category" "Sidedness" }
+    }
+    }
+
+
+}

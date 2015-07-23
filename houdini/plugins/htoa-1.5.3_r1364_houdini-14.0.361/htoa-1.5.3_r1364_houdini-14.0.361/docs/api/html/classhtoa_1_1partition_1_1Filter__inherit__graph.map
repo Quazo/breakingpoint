@@ -1,0 +1,14 @@
+<map id="htoa::partition::Filter" name="htoa::partition::Filter">
+<area shape="rect" id="node3" href="$classhtoa_1_1partition_1_1FilterPrimitives.html" title="Filter primitives. " alt="" coords="376,279,571,305"/>
+<area shape="rect" id="node14" href="$classhtoa_1_1partition_1_1FilterUnusedPoints.html" title="Filter unused points. " alt="" coords="382,330,565,371"/>
+<area shape="rect" id="node4" href="$classhtoa_1_1partition_1_1FilterBezierCurves.html" title="Filter Bezier curves. " alt="" coords="634,5,809,46"/>
+<area shape="rect" id="node5" href="$classhtoa_1_1partition_1_1FilterCurves.html" title="Filter curves (open polygons, Bezier and NURBS curves) " alt="" coords="633,71,810,97"/>
+<area shape="rect" id="node6" href="$classhtoa_1_1partition_1_1FilterNone.html" title="Dummy filter that filters out everything. " alt="" coords="637,121,805,148"/>
+<area shape="rect" id="node7" href="$classhtoa_1_1partition_1_1FilterNonTessellated.html" title="Filter primtives not to be tessellated. " alt="" coords="641,173,802,214"/>
+<area shape="rect" id="node8" href="$classhtoa_1_1partition_1_1FilterNurbsCurves.html" title="Filter NURBS curves. " alt="" coords="635,238,807,279"/>
+<area shape="rect" id="node9" href="$classhtoa_1_1partition_1_1FilterOpenPolygons.html" title="Open polygon filter. " alt="" coords="637,303,806,345"/>
+<area shape="rect" id="node10" href="$classhtoa_1_1partition_1_1FilterParticles.html" title="Particle primitive filter. " alt="" coords="627,369,816,396"/>
+<area shape="rect" id="node11" href="$classhtoa_1_1partition_1_1FilterPolygons.html" title="Polygon filter. " alt="" coords="625,420,817,447"/>
+<area shape="rect" id="node12" href="$classhtoa_1_1partition_1_1FilterTessellated.html" title="Filter primtives to be tessellated. " alt="" coords="619,471,823,497"/>
+<area shape="rect" id="node13" href="$classhtoa_1_1partition_1_1FilterVolumes.html" title="Filter volumes. " alt="" coords="627,521,816,548"/>
+</map>

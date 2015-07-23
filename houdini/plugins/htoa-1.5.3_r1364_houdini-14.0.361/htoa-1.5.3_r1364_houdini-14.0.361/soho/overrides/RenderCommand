@@ -1,0 +1,33 @@
+// $Id: RenderCommand 178 2013-01-09 18:38:38Z kik $
+// 
+// When the user runs the render command, it's possible that they specify
+// overrides for particular information on the command line.
+// 
+// This override file provides the mapping from the options on the
+// render command to parameters evaluated by SOHO.
+// 
+//     $over_file       - The -o option (output filename)
+//     $over_device     - The -d option (output device name)
+//     $over_flipbook   - The -k option (output to flipbook)
+//     $frame_range     - The -f option (start/end)
+//     $frame_increment - The -i option
+// 
+// When either the -r option is specified, then:
+// 
+//     $over_res            - Set to 1 (otherwise 0)
+//     $over_resfraction    - Set to the average of the resolution scale
+// 
+// These overrides are applied to the CAMERA object given in the
+// initialization of SOHO.
+
+#include "$HH/soho/overrides/RenderCommand"
+
+// RenderCommand overrides for Arnold
+{
+    override.inherit    CommonCommand
+    override.name       Arnold
+
+    // Force the render to go to the "ip" device
+    ar_picture          [ $over_file ]
+    ar_picture_format   [ $over_device ]
+}

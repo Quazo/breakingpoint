@@ -1,0 +1,6 @@
+<map id="htoa.ipr::Socket" name="htoa.ipr::Socket">
+<area shape="rect" id="node2" href="$classhtoa_1_1ipr_1_1Publisher.html" title="htoa.ipr::Publisher" alt="" coords="29,80,155,107"/>
+<area shape="rect" id="node4" href="$classhtoa_1_1ipr_1_1Subscriber.html" title="htoa.ipr::Subscriber" alt="" coords="194,80,328,107"/>
+<area shape="rect" id="node3" href="$classhtoa_1_1ipr_1_1DeltaPublisher.html" title="Delta publisher singleton. " alt="" coords="5,155,163,181"/>
+<area shape="rect" id="node5" href="$classhtoa_1_1ipr_1_1DeltaSubscriber.html" title="htoa.ipr::DeltaSubscriber" alt="" coords="187,155,352,181"/>
+</map>

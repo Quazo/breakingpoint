@@ -16,7 +16,7 @@
 
 				<scriptItem id="h.bp_save_incremental">
 					<label>BP Save Increment</label>
-					<scriptPath>$JOB/setup/scripts/menu_scripts/bp_save.py</scriptPath> 
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_save.py</scriptPath> 
 					<scriptArgs>increment</scriptArgs>
 				</scriptItem>
 
@@ -24,7 +24,7 @@
 
 				<!--<scriptItem id="h.bp_menu_submit">
 					<label>BP Submit to Royal Render</label>
-					<scriptPath>$JOB/setup/scripts/menu_scripts/bp_submit.py</scriptPath>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_submit.py</scriptPath>
 					<scriptArgs>arnold</scriptArgs>
 				</scriptItem>
 			
@@ -35,7 +35,7 @@
 					<label>BP Documentation</label>
 						<scriptItem id="h.bp_menu_doc_wiki">
 							<label>BP Wiki</label>
-							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
 							<scriptArgs>wiki</scriptArgs>
 						</scriptItem>
 
@@ -43,13 +43,13 @@
 
 						<scriptItem id="h.bp_menu_doc_asset_list">
 							<label>BP Asset List</label>
-							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
 							<scriptArgs>assetlist</scriptArgs>
 						</scriptItem>
 
 						<scriptItem  id="h.bp_menu_doc_shot_list">
 							<label>BP Shot List</label>
-							<scriptPath>$JOB/setup/scripts/menu_scripts/bp_doc.py</scriptPath>
+							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
 							<scriptArgs>shotlist</scriptArgs>
 						</scriptItem>
 				</subMenu>

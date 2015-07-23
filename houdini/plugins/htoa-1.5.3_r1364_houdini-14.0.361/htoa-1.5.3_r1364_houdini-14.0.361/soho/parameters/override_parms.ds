@@ -1,0 +1,38 @@
+// $Id: camera_parms.ds 123 2012-11-28 23:42:32Z kik $
+
+collection {
+    name "ar_override_parms"
+    label "Arnold"
+    parmtag { spare_category "Arnold" }
+
+    parm {
+    	name	"shop_propertiespath"
+    	label	"Default Properties"
+    	type	oppath
+    	default	{ "" }
+    	help	"Specifies a Property SHOP that is used to resolve rendering parameter values. At render time, this SHOP (if given) is used to resolve rendering parameter values first, before looking for then on the objects being rendered."
+    	range	{ 0 1 }
+    	export	none
+    	parmtag	{ "oprelative" "." }
+    	parmtag	{ "opfilter" "!!SHOP/PROPERTIES!!" }
+    	parmtag	{ "spare_category" "Shaders" }
+    }
+    parm {
+        name    "ar_user_options"
+        label   "User Options"
+        type    string
+        default { "" }
+        joinnext
+        help    "This string is passed to AiNodeSetAttributes() ont the Arnold node. It can contain any number of parameter/value pairs separated by whitespace (spaces, tabs, newlines) as found in .ass files."
+        disablewhen "{ ar_user_options_enable == 0 }"
+        export  none
+    }
+    parm {
+        name    "ar_user_options_enable"
+        label   "Enable"
+        type    toggle
+        default { "0" }
+        help    "Overrides the value of any parameter of the Arnold node."
+        export  none
+    }
+}
