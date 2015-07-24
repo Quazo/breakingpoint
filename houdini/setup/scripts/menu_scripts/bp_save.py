@@ -1,26 +1,26 @@
 import sys
 import hou
 
+
 def save_increment():
 
-	# Houdini Variables
-	hip = hou.expandString('$HIP')
-	hipname = hou.expandString('$HIPNAME')
+    if(!hou.hipFile.hasUnsavedChanges):
+        return
 
-	# Parse HIP File
-	# version = hipname.split('_v')[1].split('_')[0]
-	# version_incremented = "%03d" % (int(version)+1)
+    try:
 
-try:
+        hou.hipFile.saveAndIncrementFileName()
+        HIPFILE = hou.expandString("$HIPFILE")
+        msg = "[BP] Successfully saved under : {0}".format(HIPFILE)
+        msgSeverityType = hou.severityType.ImportantMessage
+        hou.ui.setStatusMessage(msg, msgSeverityType)
 
-	hou.hipFile.saveAndIncrementFileName()
-	print(".hip saved under : {0}".format(hou.expandString('$HIPFILE')))
+    except:
 
-except:
+        hou.ui.setStatusMessage("Save aborted!", hou.severityType.Error)
 
-	print("Save aborted!")
-
-# ---------------------------------------------
+# Main
 arg = sys.argv[1]
 
-if(arg=='increment'): save_increment()
+if(arg == "increment"):
+    save_increment()

@@ -20,6 +20,12 @@
 					<scriptArgs>increment</scriptArgs>
 				</scriptItem>
 
+				<scriptItem id="h.bp_rcrash_incremental">
+					<label>BP Crash Recovery</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_open.py</scriptPath> 
+					<scriptArgs>crash_recovery</scriptArgs>
+				</scriptItem>
+
 				<separatorItem />
 
 				<!--<scriptItem id="h.bp_menu_submit">
