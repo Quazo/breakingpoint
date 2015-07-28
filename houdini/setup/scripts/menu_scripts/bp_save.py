@@ -4,7 +4,7 @@ import hou
 
 def save_increment():
 
-    if(!hou.hipFile.hasUnsavedChanges):
+    if(not hou.hipFile.hasUnsavedChanges()):
         return
 
     try:

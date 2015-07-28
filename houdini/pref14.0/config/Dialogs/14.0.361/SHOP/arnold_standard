@@ -1,0 +1,677 @@
+// Magic: 88a2d6b0
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Fri Jul 24 15:19:02 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Kd_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    Kd_color.label = PARM_LABEL("Diffuse Color", "Kd_color") WIDTH(1.5);
+    PARM(float, 3, "Kd_color", none, COLOR, "R,G,B") 
+	LABELREF(Kd_color.label) HSTRETCH;
+
+}
+
+Kd.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Kd.label = PARM_LABEL("Diffuse", "Kd") WIDTH(1.5);
+ PARM(float, 1, "Kd", none, none) RANGE(0,1)
+	 LABELREF(Kd.label) HSTRETCH;
+
+}
+
+direct_diffuse.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ direct_diffuse.label = PARM_LABEL("Direct Diffuse", "direct_diffuse") WIDTH(1.5);
+ PARM(float, 1, "direct_diffuse", none, none) RANGE(0,1)
+	 LABELREF(direct_diffuse.label) HSTRETCH;
+
+}
+
+indirect_diffuse.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ indirect_diffuse.label = PARM_LABEL("Indirect Diffuse", "indirect_diffuse") WIDTH(1.5);
+ PARM(float, 1, "indirect_diffuse", none, none) RANGE(0,1)
+	 LABELREF(indirect_diffuse.label) HSTRETCH;
+
+}
+
+diffuse_roughness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ diffuse_roughness.label = PARM_LABEL("Roughness", "diffuse_roughness") WIDTH(1.5);
+ PARM(float, 1, "diffuse_roughness", none, none) RANGE(0,1)
+	 LABELREF(diffuse_roughness.label) HSTRETCH;
+
+}
+
+Kb.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Kb.label = PARM_LABEL("Backlight", "Kb") WIDTH(1.5);
+ PARM(float, 1, "Kb", none, none) RANGE(0,1)
+	 LABELREF(Kb.label) HSTRETCH;
+
+}
+
+bounce_factor.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bounce_factor.label = PARM_LABEL("Bounce Factor", "bounce_factor") WIDTH(1.5);
+ PARM(float, 1, "bounce_factor", none, none) RANGE(0,1)
+	 LABELREF(bounce_factor.label) HSTRETCH;
+
+}
+
+Fresnel_affect_diff.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Fresnel_affect_diff", "Compensate Fresnel Falloff") toggle VALUE(Fresnel_affect_diff.val);
+
+    { HSTRETCH }
+
+}
+
+Ks_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    Ks_color.label = PARM_LABEL("Specular Color", "Ks_color") WIDTH(1.5);
+    PARM(float, 3, "Ks_color", none, COLOR, "R,G,B") 
+	LABELREF(Ks_color.label) HSTRETCH;
+
+}
+
+Ks.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Ks.label = PARM_LABEL("Specular", "Ks") WIDTH(1.5);
+ PARM(float, 1, "Ks", none, none) RANGE(0,1)
+	 LABELREF(Ks.label) HSTRETCH;
+
+}
+
+direct_specular.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ direct_specular.label = PARM_LABEL("Direct Specular", "direct_specular") WIDTH(1.5);
+ PARM(float, 1, "direct_specular", none, none) RANGE(0,1)
+	 LABELREF(direct_specular.label) HSTRETCH;
+
+}
+
+indirect_specular.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ indirect_specular.label = PARM_LABEL("Indirect Specular", "indirect_specular") WIDTH(1.5);
+ PARM(float, 1, "indirect_specular", none, none) RANGE(0,1)
+	 LABELREF(indirect_specular.label) HSTRETCH;
+
+}
+
+specular_roughness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ specular_roughness.label = PARM_LABEL("Roughness", "specular_roughness") WIDTH(1.5);
+ PARM(float, 1, "specular_roughness", none, none) RANGE(0,1)
+	 LABELREF(specular_roughness.label) HSTRETCH;
+
+}
+
+specular_anisotropy.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ specular_anisotropy.label = PARM_LABEL("Anisotropy", "specular_anisotropy") WIDTH(1.5);
+ PARM(float, 1, "specular_anisotropy", none, none) RANGE(0,1)
+	 LABELREF(specular_anisotropy.label) HSTRETCH;
+
+}
+
+specular_rotation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ specular_rotation.label = PARM_LABEL("Rotation", "specular_rotation") WIDTH(1.5);
+ PARM(float, 1, "specular_rotation", none, none) RANGE(-1,1)
+	 LABELREF(specular_rotation.label) HSTRETCH;
+
+}
+
+enable_glossy_caustics.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_glossy_caustics", "Glossy Caustics") toggle VALUE(enable_glossy_caustics.val);
+
+    { HSTRETCH }
+
+}
+
+specular_Fresnel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("specular_Fresnel", "Fresnel Falloff") toggle VALUE(specular_Fresnel.val);
+
+    { HSTRETCH }
+
+}
+
+Ksn.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Ksn.label = PARM_LABEL("Normal Reflectance", "Ksn") WIDTH(1.5);
+ PARM(float, 1, "Ksn", none, none) RANGE(0,20)
+	 LABELREF(Ksn.label) HSTRETCH;
+
+}
+
+Kr_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    Kr_color.label = PARM_LABEL("Reflection Color", "Kr_color") WIDTH(1.5);
+    PARM(float, 3, "Kr_color", none, COLOR, "R,G,B") 
+	LABELREF(Kr_color.label) HSTRETCH;
+
+}
+
+Kr.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Kr.label = PARM_LABEL("Reflection", "Kr") WIDTH(1.5);
+ PARM(float, 1, "Kr", none, none) RANGE(0,1)
+	 LABELREF(Kr.label) HSTRETCH;
+
+}
+
+enable_reflective_caustics.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_reflective_caustics", "Reflective Caustics") toggle VALUE(enable_reflective_caustics.val);
+
+    { HSTRETCH }
+
+}
+
+Fresnel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Fresnel", "Fresnel Falloff") toggle VALUE(Fresnel.val);
+
+    { HSTRETCH }
+
+}
+
+Krn.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Krn.label = PARM_LABEL("Normal Reflectance", "Krn") WIDTH(1.5);
+ PARM(float, 1, "Krn", none, none) RANGE(0,20)
+	 LABELREF(Krn.label) HSTRETCH;
+
+}
+
+reflection_exit_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    reflection_exit_color.label = PARM_LABEL("Exit Color", "reflection_exit_color") WIDTH(1.5);
+    PARM(float, 3, "reflection_exit_color", none, COLOR, "R,G,B") 
+	LABELREF(reflection_exit_color.label) HSTRETCH;
+
+}
+
+reflection_exit_use_environment.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reflection_exit_use_environment", "Environment Exit Color") toggle VALUE(reflection_exit_use_environment.val);
+
+    { HSTRETCH }
+
+}
+
+Kt_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    Kt_color.label = PARM_LABEL("Transparency Color", "Kt_color") WIDTH(1.5);
+    PARM(float, 3, "Kt_color", none, COLOR, "R,G,B") 
+	LABELREF(Kt_color.label) HSTRETCH;
+
+}
+
+Kt.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Kt.label = PARM_LABEL("Transparency", "Kt") WIDTH(1.5);
+ PARM(float, 1, "Kt", none, none) RANGE(0,1)
+	 LABELREF(Kt.label) HSTRETCH;
+
+}
+
+refraction_roughness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refraction_roughness.label = PARM_LABEL("Roughness", "refraction_roughness") WIDTH(1.5);
+ PARM(float, 1, "refraction_roughness", none, none) RANGE(0,1)
+	 LABELREF(refraction_roughness.label) HSTRETCH;
+
+}
+
+IOR.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IOR.label = PARM_LABEL("Index of Refraction", "IOR") WIDTH(1.5);
+ PARM(float, 1, "IOR", none, none) RANGE(0,3)
+	 LABELREF(IOR.label) HSTRETCH;
+
+}
+
+Fresnel_use_IOR.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Fresnel_use_IOR", "Fresnel From IOR") toggle VALUE(Fresnel_use_IOR.val);
+
+    { HSTRETCH }
+
+}
+
+transmittance.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    transmittance.label = PARM_LABEL("Transmittance", "transmittance") WIDTH(1.5);
+    PARM(float, 3, "transmittance", none, COLOR, "R,G,B") 
+	LABELREF(transmittance.label) HSTRETCH;
+
+}
+
+opacity.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    opacity.label = PARM_LABEL("Opacity", "opacity") WIDTH(1.5);
+    PARM(float, 3, "opacity", none, COLOR, "R,G,B") 
+	LABELREF(opacity.label) HSTRETCH;
+
+}
+
+enable_internal_reflections.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_internal_reflections", "Internal Reflections") toggle VALUE(enable_internal_reflections.val);
+
+    { HSTRETCH }
+
+}
+
+enable_refractive_caustics.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_refractive_caustics", "Refractive Caustics") toggle VALUE(enable_refractive_caustics.val);
+
+    { HSTRETCH }
+
+}
+
+refraction_exit_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refraction_exit_color.label = PARM_LABEL("Exit Color", "refraction_exit_color") WIDTH(1.5);
+    PARM(float, 3, "refraction_exit_color", none, COLOR, "R,G,B") 
+	LABELREF(refraction_exit_color.label) HSTRETCH;
+
+}
+
+refraction_exit_use_environment.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refraction_exit_use_environment", "Environment Exit Color") toggle VALUE(refraction_exit_use_environment.val);
+
+    { HSTRETCH }
+
+}
+
+emission_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    emission_color.label = PARM_LABEL("Emission Color", "emission_color") WIDTH(1.5);
+    PARM(float, 3, "emission_color", none, COLOR, "R,G,B") 
+	LABELREF(emission_color.label) HSTRETCH;
+
+}
+
+emission.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission.label = PARM_LABEL("Emission", "emission") WIDTH(1.5);
+ PARM(float, 1, "emission", none, none) RANGE(0,1)
+	 LABELREF(emission.label) HSTRETCH;
+
+}
+
+Ksss_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    Ksss_color.label = PARM_LABEL("SSS Color", "Ksss_color") WIDTH(1.5);
+    PARM(float, 3, "Ksss_color", none, COLOR, "R,G,B") 
+	LABELREF(Ksss_color.label) HSTRETCH;
+
+}
+
+Ksss.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ Ksss.label = PARM_LABEL("Scattering", "Ksss") WIDTH(1.5);
+ PARM(float, 1, "Ksss", none, none) RANGE(0,1)
+	 LABELREF(Ksss.label) HSTRETCH;
+
+}
+
+sss_radius.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    sss_radius.label = PARM_LABEL("SSS Radius", "sss_radius") WIDTH(1.5);
+    PARM(float, 3, "sss_radius", none, COLOR, "R,G,B") 
+	LABELREF(sss_radius.label) HSTRETCH;
+
+}
+
+aov_direct_diffuse.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_direct_diffuse.label = PARM_LABEL("Direct Diffuse", "aov_direct_diffuse") WIDTH(1.5);
+    PARM_FIELD(string, "aov_direct_diffuse") VALUE(aov_direct_diffuse.val) 
+	LABELREF(aov_direct_diffuse.label) HSTRETCH;
+
+}
+
+aov_direct_specular.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_direct_specular.label = PARM_LABEL("Direct Specular", "aov_direct_specular") WIDTH(1.5);
+    PARM_FIELD(string, "aov_direct_specular") VALUE(aov_direct_specular.val) 
+	LABELREF(aov_direct_specular.label) HSTRETCH;
+
+}
+
+aov_indirect_diffuse.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_indirect_diffuse.label = PARM_LABEL("Indirect Diffuse", "aov_indirect_diffuse") WIDTH(1.5);
+    PARM_FIELD(string, "aov_indirect_diffuse") VALUE(aov_indirect_diffuse.val) 
+	LABELREF(aov_indirect_diffuse.label) HSTRETCH;
+
+}
+
+aov_indirect_specular.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_indirect_specular.label = PARM_LABEL("Indirect Specular", "aov_indirect_specular") WIDTH(1.5);
+    PARM_FIELD(string, "aov_indirect_specular") VALUE(aov_indirect_specular.val) 
+	LABELREF(aov_indirect_specular.label) HSTRETCH;
+
+}
+
+aov_reflection.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_reflection.label = PARM_LABEL("Reflection", "aov_reflection") WIDTH(1.5);
+    PARM_FIELD(string, "aov_reflection") VALUE(aov_reflection.val) 
+	LABELREF(aov_reflection.label) HSTRETCH;
+
+}
+
+aov_refraction.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_refraction.label = PARM_LABEL("Refraction", "aov_refraction") WIDTH(1.5);
+    PARM_FIELD(string, "aov_refraction") VALUE(aov_refraction.val) 
+	LABELREF(aov_refraction.label) HSTRETCH;
+
+}
+
+aov_refraction_opacity.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_refraction_opacity.label = PARM_LABEL("Refraction Opacity", "aov_refraction_opacity") WIDTH(1.5);
+    PARM_FIELD(string, "aov_refraction_opacity") VALUE(aov_refraction_opacity.val) 
+	LABELREF(aov_refraction_opacity.label) HSTRETCH;
+
+}
+
+aov_emission.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_emission.label = PARM_LABEL("Emission", "aov_emission") WIDTH(1.5);
+    PARM_FIELD(string, "aov_emission") VALUE(aov_emission.val) 
+	LABELREF(aov_emission.label) HSTRETCH;
+
+}
+
+aov_sss.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    aov_sss.label = PARM_LABEL("SSS", "aov_sss") WIDTH(1.5);
+    PARM_FIELD(string, "aov_sss") VALUE(aov_sss.val) 
+	LABELREF(aov_sss.label) HSTRETCH;
+
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Diffuse"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Kd_color.gad;		
+	    Kd.gad;		
+	    direct_diffuse.gad;		
+	    indirect_diffuse.gad;		
+	    diffuse_roughness.gad;		
+	    Kb.gad;		
+	    bounce_factor.gad;		
+	    Fresnel_affect_diff.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Specular"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Ks_color.gad;		
+	    Ks.gad;		
+	    direct_specular.gad;		
+	    indirect_specular.gad;		
+	    specular_roughness.gad;		
+	    specular_anisotropy.gad;		
+	    specular_rotation.gad;		
+	    enable_glossy_caustics.gad;		
+	    specular_Fresnel.gad;		
+	    Ksn.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Reflection"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Kr_color.gad;		
+	    Kr.gad;		
+	    enable_reflective_caustics.gad;		
+	    Fresnel.gad;		
+	    Krn.gad;		
+	    reflection_exit_color.gad;		
+	    reflection_exit_use_environment.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Refraction"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Kt_color.gad;		
+	    Kt.gad;		
+	    refraction_roughness.gad;		
+	    IOR.gad;		
+	    Fresnel_use_IOR.gad;		
+	    transmittance.gad;		
+	    opacity.gad;		
+	    enable_internal_reflections.gad;		
+	    enable_refractive_caustics.gad;		
+	    refraction_exit_color.gad;		
+	    refraction_exit_use_environment.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Emission"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    emission_color.gad;		
+	    emission.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "SSS"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Ksss_color.gad;		
+	    Ksss.gad;		
+	    sss_radius.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "AOVs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    aov_direct_diffuse.gad;		
+	    aov_direct_specular.gad;		
+	    aov_indirect_diffuse.gad;		
+	    aov_indirect_specular.gad;		
+	    aov_reflection.gad;		
+	    aov_refraction.gad;		
+	    aov_refraction_opacity.gad;		
+	    aov_emission.gad;		
+	    aov_sss.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

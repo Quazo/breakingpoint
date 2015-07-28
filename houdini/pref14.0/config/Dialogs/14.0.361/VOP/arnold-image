@@ -1,0 +1,373 @@
+// Magic: a2943807
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Fri Jul 24 15:20:07 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+filename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ filename.label = PARM_LABEL("Filename", "filename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "filename") LABELREF(filename.label)
+	VALUE(filename.val) HSTRETCH;
+
+    filename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(filename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    filename.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(filename.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+multiply.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    multiply.label = PARM_LABEL("Multiply", "multiply") WIDTH(1.5);
+    PARM(float, 3, "multiply", none, COLOR, "R,G,B") 
+	LABELREF(multiply.label) HSTRETCH;
+
+    multiply.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(multiply.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+offset.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+    PARM(float, 3, "offset", none, COLOR, "R,G,B") 
+	LABELREF(offset.label) HSTRETCH;
+
+    offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+filter.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Filter", "filter") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    filter.menu;
+
+    { HSTRETCH }
+
+    filter.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(filter.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+mipmap_bias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ mipmap_bias.label = PARM_LABEL("Mipmap Bias", "mipmap_bias") WIDTH(1.5);
+ PARM(integer, 1, "mipmap_bias", none, none) RANGE(-5,5)
+	 LABELREF(mipmap_bias.label) HSTRETCH;
+
+    mipmap_bias.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mipmap_bias.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+single_channel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("single_channel", "Single Channel") toggle VALUE(single_channel.val);
+
+    { HSTRETCH }
+
+    single_channel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(single_channel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+start_channel.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ start_channel.label = PARM_LABEL("Start Channel", "start_channel") WIDTH(1.5);
+ PARM(integer, 1, "start_channel", none, none) RANGE(0,3)
+	LOCK_RANGE_MIN LABELREF(start_channel.label) HSTRETCH;
+
+    start_channel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(start_channel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ignore_missing_tiles.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_missing_tiles", "Ignore Missing Tiles") toggle VALUE(ignore_missing_tiles.val);
+
+    { HSTRETCH }
+
+    ignore_missing_tiles.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ignore_missing_tiles.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+missing_tile_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    missing_tile_color.label = PARM_LABEL("Missing Tile Color", "missing_tile_color") WIDTH(1.5);
+    PARM(float, 4, "missing_tile_color", none, COLOR, "R,G,B,A") 
+	LABELREF(missing_tile_color.label) HSTRETCH;
+
+    missing_tile_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(missing_tile_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+uvcoords.gad = ROW
+{
+   HSTRETCH
+
+   uvcoords.label = PARM_LABEL("Custom UVs", "uvcoords") WIDTH(1.5);
+   PARM(float, 2, "uvcoords", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(uvcoords.label)
+	HSTRETCH;
+
+    uvcoords.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uvcoords.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+uvset.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    uvset.label = PARM_LABEL("UV Set", "uvset") WIDTH(1.5);
+    PARM_FIELD(string, "uvset") VALUE(uvset.val) 
+	LABELREF(uvset.label) HSTRETCH;
+
+    uvset.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    uvset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uvset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+sscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sscale.label = PARM_LABEL("Scale U", "sscale") WIDTH(1.5);
+ PARM(float, 1, "sscale", none, none) RANGE(0,2)
+	 LABELREF(sscale.label) HSTRETCH;
+
+    sscale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sscale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ tscale.label = PARM_LABEL("Scale V", "tscale") WIDTH(1.5);
+ PARM(float, 1, "tscale", none, none) RANGE(0,2)
+	 LABELREF(tscale.label) HSTRETCH;
+
+    tscale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tscale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+swrap.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Wrap U", "swrap") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    swrap.menu;
+
+    { HSTRETCH }
+
+    swrap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(swrap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+twrap.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Wrap V", "twrap") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    twrap.menu;
+
+    { HSTRETCH }
+
+    twrap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(twrap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+swap_st.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("swap_st", "Swap U & V") toggle VALUE(swap_st.val);
+
+    { HSTRETCH }
+
+    swap_st.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(swap_st.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+sflip.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sflip", "Flip U") toggle VALUE(sflip.val);
+
+    { HSTRETCH }
+
+    sflip.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(sflip.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tflip.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tflip", "Flip V") toggle VALUE(tflip.val);
+
+    { HSTRETCH }
+
+    tflip.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tflip.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Texture"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    filename.gad;		
+	    multiply.gad;		
+	    offset.gad;		
+	    filter.gad;		
+	    mipmap_bias.gad;		
+	    single_channel.gad;		
+	    start_channel.gad;		
+	    ignore_missing_tiles.gad;		
+	    missing_tile_color.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB " UV "
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    uvcoords.gad;		
+	    uvset.gad;		
+	    sscale.gad;		
+	    tscale.gad;		
+	    swrap.gad;		
+	    twrap.gad;		
+	    swap_st.gad;		
+	    sflip.gad;		
+	    tflip.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

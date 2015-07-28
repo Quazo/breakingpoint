@@ -1,0 +1,132 @@
+// Magic: aa785c13
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Sat Jul 25 16:40:37 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+orientation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Orientation", "orientation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    orientation.menu;
+
+    { HSTRETCH }
+
+}
+
+center.gad = ROW
+{
+   HSTRETCH
+
+   center.label = PARM_LABEL("Center", "center") WIDTH(1.5);
+   PARM(float, 3, "center", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(center.label)
+	HSTRETCH;
+
+}
+
+columns.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ columns.label = PARM_LABEL("Columns", "columns") WIDTH(1.5);
+ PARM(integer, 1, "columns", none, none) RANGE(1,24)
+	LOCK_RANGE_MIN LABELREF(columns.label) HSTRETCH;
+
+}
+
+rows.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ rows.label = PARM_LABEL("Rows", "rows") WIDTH(1.5);
+ PARM(integer, 1, "rows", none, none) RANGE(1,40)
+	LOCK_RANGE_MIN LABELREF(rows.label) HSTRETCH;
+
+}
+
+setsize.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Size Type", "setsize") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    setsize.menu;
+
+    { HSTRETCH }
+
+}
+
+radius.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ radius.label = PARM_LABEL("Radius", "radius") WIDTH(1.5);
+ PARM(float, 1, "radius", none, none) RANGE(0,10)
+	 LABELREF(radius.label) HSTRETCH;
+
+}
+
+width.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ width.label = PARM_LABEL("Width", "width") WIDTH(1.5);
+ PARM(float, 1, "width", none, none) RANGE(0,10)
+	 LABELREF(width.label) HSTRETCH;
+
+}
+
+height.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+}
+
+intact.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("intact", "Intact") toggle VALUE(intact.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    orientation.gad; 
+    center.gad; 
+    columns.gad; 
+    rows.gad; 
+    setsize.gad; 
+    radius.gad; 
+    width.gad; 
+    height.gad; 
+    intact.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,84 @@
+// Magic: 17092119
+// Automatically generated PSI dialog (PSI version 14.0.361)
+// Fri Jul 24 19:23:53 2015
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+sdf_voxelsize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sdf_voxelsize.label = PARM_LABEL("SDF Voxel Size", "sdf_voxelsize") WIDTH(1.5);
+ PARM(float, 1, "sdf_voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(sdf_voxelsize.label) HSTRETCH;
+
+}
+
+cookie_npts.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ cookie_npts.label = PARM_LABEL("Cookie Count", "cookie_npts") WIDTH(1.5);
+ PARM(integer, 1, "cookie_npts", none, none) RANGE(1,100000)
+	 LABELREF(cookie_npts.label) HSTRETCH;
+
+}
+
+interior_uv_spacing.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ interior_uv_spacing.label = PARM_LABEL("Interior UV Spacing", "interior_uv_spacing") WIDTH(1.5);
+ PARM(float, 1, "interior_uv_spacing", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(interior_uv_spacing.label) HSTRETCH;
+
+}
+
+toggle_polysoup.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("toggle_polysoup", "PolySoup-ize") toggle VALUE(toggle_polysoup.val);
+
+    { HSTRETCH }
+
+}
+
+toggle_cookie_cutting.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("toggle_cookie_cutting", "Visualize Cookie Cutting") toggle VALUE(toggle_cookie_cutting.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    sdf_voxelsize.gad; 
+    cookie_npts.gad; 
+    interior_uv_spacing.gad; 
+    toggle_polysoup.gad; 
+    toggle_cookie_cutting.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}
