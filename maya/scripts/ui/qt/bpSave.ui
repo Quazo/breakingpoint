@@ -19,7 +19,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>bpSave</string>
   </property>
   <property name="windowIcon">
    <iconset resource="bpMaya.qrc">
@@ -367,8 +367,8 @@ Frames:	1001 - 1245</string>
    </property>
    <property name="font">
     <font>
-     <family>Bebas Neue Bold</family>
-     <pointsize>12</pointsize>
+     <family>Nexa Bold</family>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>

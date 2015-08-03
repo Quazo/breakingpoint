@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../_sandbox/maya/scripts/ui/qt/bpSave.ui'
 #
-# Created: Fri Jul 24 15:37:33 2015
+# Created: Mon Aug 03 18:09:13 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -144,8 +144,8 @@ class Ui_bpSave(object):
         self.lblShotNr = QtGui.QLabel(bpSave)
         self.lblShotNr.setGeometry(QtCore.QRect(280, 150, 141, 21))
         font = QtGui.QFont()
-        font.setFamily("Bebas Neue Bold")
-        font.setPointSize(12)
+        font.setFamily("Nexa Bold")
+        font.setPointSize(10)
         font.setWeight(75)
         font.setBold(True)
         self.lblShotNr.setFont(font)
@@ -245,7 +245,7 @@ class Ui_bpSave(object):
         QtCore.QMetaObject.connectSlotsByName(bpSave)
 
     def retranslateUi(self, bpSave):
-        bpSave.setWindowTitle(QtGui.QApplication.translate("bpSave", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        bpSave.setWindowTitle(QtGui.QApplication.translate("bpSave", "bpSave", None, QtGui.QApplication.UnicodeUTF8))
         self.cbxPublish.setText(QtGui.QApplication.translate("bpSave", "PUBLISH", None, QtGui.QApplication.UnicodeUTF8))
         self.edtSavePath.setText(QtGui.QApplication.translate("bpSave", "140_LIGHT_v003_ar.ma", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSave.setShortcut(QtGui.QApplication.translate("bpSave", "Return", None, QtGui.QApplication.UnicodeUTF8))

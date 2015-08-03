@@ -40,7 +40,7 @@ SAVE_DIR        = ''
 
 SHOT_DEFAULT    = '000'
 
-
+WEB_HELP        = "https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Software"
 
 
 #**********************
@@ -61,7 +61,7 @@ def clicked_btnCancel():
 
 
 def clicked_btnHelp():
-    webbrowser.open("https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline")
+    webbrowser.open(WEB_HELP)
 
 
 def clicked_btnEmail():
@@ -173,14 +173,19 @@ def initPath():
 
     if not (SAVE_DIR):
         SAVE_DIR =  os.path.join(s.PATH['shots'], '000_TEMPLATE\\40_LIGHT\\WORK')
-        currentFile = '000_LIGHT_v001_ar.mb'
+        currentFile = '000_LIGHT_v000_ar.mb'
 
     (FILE_NAME, FILE_FORMAT) = currentFile.split('.')
 
     if (len(FILE_NAME.split('_')) == 5):
         (shot, task, version, user, comment) = FILE_NAME.split('_')
-    else:
+    
+    elif(len(FILE_NAME.split('_')) == 4):
         (shot, task, version, user) = FILE_NAME.split('_')
+   
+    else:
+        (shot, task) = FILE_NAME.split('_')
+        version = "v000"
 
     user = ui.cbxUser.currentText()[:2]
 
@@ -200,6 +205,9 @@ def initPath():
 
     ui.edtSavePath.setText(('_').join(FILE_NAME) + '.' + FILE_FORMAT)
     ui.lblShotNr.setText(shot)
+
+    if("PUBLISH" in SAVE_DIR):
+        SAVE_DIR = SAVE_DIR.replace("PUBLISH", "WORK")
 
     ui.edtPath.setText(os.path.join(SAVE_DIR, ui.edtSavePath.text()))
 
