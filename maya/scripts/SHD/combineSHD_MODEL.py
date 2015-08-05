@@ -17,7 +17,11 @@
 import maya.cmds as cmds
 import maya.mel as mel
 
+import uniteShaderGroup
+
 def start():
+
+    uniteShaderGroup.start()
 
     shaderList = cmds.ls(type = 'alSurface')
     #print shaderList
@@ -30,7 +34,7 @@ def start():
         tmpShader = shader
         
         if (tmpShader.find("SHD")):
-            print "SHD" + tmpShader
+            #print "SHD" + tmpShader
             tmpShader = tmpShader.replace("SHD", "MODEL") 
           
         for obj in objList:
@@ -42,10 +46,10 @@ def start():
                 
             if (tmpObj.find(tmpShader[:-1]) != -1):   
 
-                print "Set SHD"
-                print obj
-                print shader
-                print ""
+                #print "Set SHD"
+                #print obj
+                #print shader
+                #print ""
                 mel.eval('select -r ' + obj + ';')
                 mel.eval('sets -e -forceElement ' + shader + 'SG;')
                 

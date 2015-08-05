@@ -1,6 +1,8 @@
 #*************************************************************
 # title: 		User Setup
 #
+# software:     Maya
+#
 # content:		start point for MAYA
 #
 # dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
@@ -21,5 +23,3 @@ print ("\nBREAKINGPOINT: System is setting ...\n")
 
 cmds.evalDeferred("from scripts import maya_settings")
 cmds.evalDeferred("from scripts import bpMenu")
-
-  

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../_sandbox/maya/scripts/ui/qt/bpSave.ui'
 #
-# Created: Mon Aug 03 18:09:13 2015
+# Created: Tue Aug 04 13:49:31 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -20,7 +20,7 @@ class Ui_bpSave(object):
         font.setBold(True)
         bpSave.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/img/icons/bpM.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/shelf/img/shelf/shelf_save35.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         bpSave.setWindowIcon(icon)
         bpSave.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(31, 31, 31);")
@@ -144,8 +144,8 @@ class Ui_bpSave(object):
         self.lblShotNr = QtGui.QLabel(bpSave)
         self.lblShotNr.setGeometry(QtCore.QRect(280, 150, 141, 21))
         font = QtGui.QFont()
-        font.setFamily("Nexa Bold")
-        font.setPointSize(10)
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(12)
         font.setWeight(75)
         font.setBold(True)
         self.lblShotNr.setFont(font)
@@ -250,17 +250,17 @@ class Ui_bpSave(object):
         self.edtSavePath.setText(QtGui.QApplication.translate("bpSave", "140_LIGHT_v003_ar.ma", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSave.setShortcut(QtGui.QApplication.translate("bpSave", "Return", None, QtGui.QApplication.UnicodeUTF8))
         self.btnCancel.setShortcut(QtGui.QApplication.translate("bpSave", "Esc", None, QtGui.QApplication.UnicodeUTF8))
-        self.edtMetaData.setPlainText(QtGui.QApplication.translate("bpSave", "Resolution:    2048 x 858\n"
+        self.edtMetaData.setPlainText(QtGui.QApplication.translate("bpSave", "Resolution:    2048 x 1152\n"
 "\n"
 "FPS:    25 FPS\n"
 "\n"
-"Frames:    1001 - 1245", None, QtGui.QApplication.UnicodeUTF8))
+"Frames:    1001 - ", None, QtGui.QApplication.UnicodeUTF8))
         self.lblShotNr.setText(QtGui.QApplication.translate("bpSave", "140", None, QtGui.QApplication.UnicodeUTF8))
         self.lblVersion.setText(QtGui.QApplication.translate("bpSave", "v.0.01", None, QtGui.QApplication.UnicodeUTF8))
         self.lblStatus.setText(QtGui.QApplication.translate("bpSave", "WORK", None, QtGui.QApplication.UnicodeUTF8))
         self.lblSlash.setText(QtGui.QApplication.translate("bpSave", "|", None, QtGui.QApplication.UnicodeUTF8))
         self.btnVersionUp.setText(QtGui.QApplication.translate("bpSave", "↑", None, QtGui.QApplication.UnicodeUTF8))
         self.btnVersionDown.setText(QtGui.QApplication.translate("bpSave", "↓", None, QtGui.QApplication.UnicodeUTF8))
-        self.edtPath.setText(QtGui.QApplication.translate("bpSave", "140_LIGHT_v003_ar.ma", None, QtGui.QApplication.UnicodeUTF8))
+        self.edtPath.setText(QtGui.QApplication.translate("bpSave", "P:/2_production/2_shots/140_magneto/4_LIGHT/WORK/140_LIGHT_v003_ar.ma", None, QtGui.QApplication.UnicodeUTF8))
 
 import bpMaya_rc

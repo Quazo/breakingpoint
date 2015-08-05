@@ -1,0 +1,294 @@
+global proc shelf_bpShelf () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Save Asset/Shot" 
+        -enableBackground 0
+        -align "center" 
+        -label "Save" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_save35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_save35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from scripts import bpSave\nbpSave.main()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 13
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Separator" 
+        -enableBackground 0
+        -align "center" 
+        -label "-------------------" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "// Dont touch me" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Outliner" 
+        -enableBackground 0
+        -align "center" 
+        -label "Outliner" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_outliner35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_outliner35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OutlinerWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Hypershade" 
+        -enableBackground 0
+        -align "center" 
+        -label "Hypershade" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_hypershade35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_hypershade35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "HypershadeWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Node Editor" 
+        -enableBackground 0
+        -align "center" 
+        -label "Node Editor" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_nodeEditor35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_nodeEditor35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "NodeEditorWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 13
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Separator" 
+        -enableBackground 0
+        -align "center" 
+        -label "-------------------" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "// Dont touch me" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Reference SHD_SCENE" 
+        -enableBackground 0
+        -align "center" 
+        -label "from scripts.SHD import referenceSHDSCENE\nreferenceSHDSCENE.star..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_sceneShd35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_sceneShd35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from scripts.SHD import referenceSCENE_SHD\nreferenceSCENE_SHD.start()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Alembic Export with Attributes" 
+        -enableBackground 0
+        -align "center" 
+        -label "from scripts.ANIM import alembicExport\nalembicExport.start()" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_alembicExport35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_alembicExport35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from scripts.ANIM import alembicExport\nalembicExport.start()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Combine Shader and Model" 
+        -enableBackground 0
+        -align "center" 
+        -label "from shelf import shelf_unitShaderAndGroup" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_combineSHDandMODEL35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_combineSHDandMODEL35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from scripts.SHD import combineSHD_MODEL\ncombineSHD_MODEL.start()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 13
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Separator" 
+        -enableBackground 0
+        -align "center" 
+        -label "-------------------" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "// Dont touch me" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Open Wiki in your browser" 
+        -enableBackground 0
+        -align "center" 
+        -label "Help" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_help35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_help35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import webbrowser\nwebbrowser.open(\"https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline\")" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

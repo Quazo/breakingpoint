@@ -1,7 +1,10 @@
 #*************************************************************
 # title:        bpSave
 #
+# software:     Maya
+#
 # content:      automaticly saves work and publish files
+#               automaticly executes other script on publish
 #
 # dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
 #
@@ -14,15 +17,15 @@ import os, sys
 import subprocess
 import shutil
 import webbrowser
+import time
 
 from PySide.QtGui import *
 from PySide.QtCore import *
 
 from scripts.ui import bpSave
-#from ui import bpSave
 import maya.cmds as cmds
+import maya.mel as mel
 
-sys.path.append('../')
 import settings as s
 sys.path.append(s.PATH['lib'])
 import libMessageBox as msg
@@ -31,7 +34,7 @@ import libMessageBox as msg
 #**********************
 # VARIABLE
 #**********************
-VERSION         = "v0.02"
+VERSION         = "v0.40"
 CURRENT_USER    = os.getenv('username')
 
 FILE_NAME       = ['140', 'SHD', 'v001', 'ar']
@@ -41,12 +44,8 @@ SAVE_DIR        = ''
 SHOT_DEFAULT    = '000'
 
 WEB_HELP        = "https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Software"
-
-
-#**********************
-# SETTINGS
-#**********************
-
+SCENE_SHD_PATH  = s.PATH_EXTRA["scene_shd"]
+META_DATA       = "Resolution:  2048 x 1152\n\nFPS:           25 FPS\n\nFrames:       1001 - "
 
 
 #**********************
@@ -74,7 +73,10 @@ def clicked_btnMessage():
 
 def clicked_btnMsgFolder():
     print("clicked_btnMsgFolder")
-    msg.folderMsgBox(bpS, "Maya Files (*.mb *.ma)")
+    output = msg.folderMsgBox(bpS, "Maya Files (*.mb *.ma)", "Choose Maya file to open")
+    print "OUTPUT: " + str(output)
+    
+    initPath(output)
 
 
 def clicked_btnVersionUp():
@@ -112,6 +114,7 @@ def changed_user():
     FILE_NAME[3] = ui.cbxUser.currentText()[:2]
     ui.edtSavePath.setText(('_').join(FILE_NAME) + '.' + FILE_FORMAT)
     ui.edtPath.setText(os.path.join(SAVE_DIR, ui.edtSavePath.text()))
+    changed_edtComment()
 
 
 def changed_publish():
@@ -134,8 +137,8 @@ def changed_edtComment():
         else:
             ui.edtSavePath.setText(('_').join(FILE_NAME) + '.' + FILE_FORMAT)   
     else:
-        ui.edtComment.setPlainText(ui.edtComment.toPlainText()[:-1])
-
+        ui.edtComment.textCursor().deletePreviousChar()
+       
 
 def changed_edtSavePath():
     currentFile     = ui.edtPath.text()
@@ -146,7 +149,7 @@ def changed_edtSavePath():
         if (len(FILE_NAME.split('_')) > 4):
             FILE_NAME = FILE_NAME.split('_')
         else:
-            ui.edtPath.setText('NAME CONVENTION: Not conform name setting - 010_SHD_v001_ar.ma')
+            ui.edtPath.setText('NAME CONVENTION: Not conform name setting - 010_SHD_v001_ar.' + FILE_FORMAT)
 
     ui.edtPath.setText(os.path.join(SAVE_DIR, ui.edtSavePath.text()))
 
@@ -162,18 +165,28 @@ def changeUserImg(user):
         ui.lblUser.setPixmap(QPixmap(QImage(os.path.join(s.PATH['img'], 'user', "_default.png"))))
 
 
-def initPath():
+def setMetaData():
+    ui.edtMetaData.setPlainText(META_DATA)
+
+
+def initPath(filePath = ''):
     global FILE_NAME, FILE_FORMAT, SAVE_DIR
 
-    SAVE_DIR        = os.path.dirname(cmds.file(q=True,sn=True)).replace('/','\\')
-    currentFile     = os.path.basename(cmds.file(q=True,sn=True))
+    if(filePath == ''):
+        filePath = cmds.file(q=True,sn=True)
+
+    SAVE_DIR        = os.path.dirname(filePath).replace('/','\\')
+    currentFile     = os.path.basename(filePath)
 
     print SAVE_DIR
     print currentFile
 
     if not (SAVE_DIR):
         SAVE_DIR =  os.path.join(s.PATH['shots'], '000_TEMPLATE\\40_LIGHT\\WORK')
-        currentFile = '000_LIGHT_v000_ar.mb'
+        currentFile = '000_LIGHT_v000_ar.' + FILE_FORMAT
+
+    if(SAVE_DIR.startswith("\\\\bigfoot\\breakingpoint")):
+        SAVE_DIR = SAVE_DIR.replace("\\\\bigfoot\\breakingpoint", "P:")
 
     (FILE_NAME, FILE_FORMAT) = currentFile.split('.')
 
@@ -210,36 +223,101 @@ def initPath():
         SAVE_DIR = SAVE_DIR.replace("PUBLISH", "WORK")
 
     ui.edtPath.setText(os.path.join(SAVE_DIR, ui.edtSavePath.text()))
+    setMetaData()
 
 
 def saveFile():
     global SAVE_DIR, FILE_FORMAT, FILE_NAME
 
+    msgText = "File was saved!"
+
     # SAVE FILE:
     tmpSavePath = ui.edtPath.text()
     
-    cmds.file( rename=tmpSavePath)
-    cmds.file( save=True, type='mayaAscii' )
-
-    print (tmpSavePath)
 
     if(ui.cbxPublish.isChecked()):
-        print ("PUBLISH")
 
-        # COPY 
+        msgText = "File was published!"
+
+        try:
+
+            # CUSTOM TASK SCRIPTS
+            if("MODEL" == FILE_NAME[1]):
+                print ("PUBLISH: MODEL")
+
+
+            if("SHD" == FILE_NAME[1]):
+                print ("PUBLISH: SHD")
+
+                from scripts.SHD import uniteShaderGroup
+                uniteShaderGroup.start()
+                
+                try:
+                    mel.eval('file -removeReference -referenceNode "SCENE_SHDRN";')
+                except:
+                    print("Cant remove SCENE_SHD reference")
+
+                # get all files and uncheck them all
+                # referenceNode =  + "RN" 
+                # cmds.file( unloadReference=referenceNode )
+                # cmds.file( loadReference='refRN' )
+
+
+            if("RIG" == FILE_NAME[1]):
+                print ("PUBLISH: RIG")    
+
+
+            if("LIGHT" == FILE_NAME[1]):
+                print ("PUBLISH: LIGHT")
+                
+        except:
+            msgFailed = "SORRY: One helping script failed!"
+            print(msgFailed)
+            msgText = msgText + msgFailed
+
+
+    try:    
+        cmds.file( rename=tmpSavePath)
+        cmds.file( save=True, type='mayaAscii' )
+
+    except:
+        msgText = "FAIL | SAVE: Couldnt save file!"
+
+    print ("SAVE: " + tmpSavePath)
+
+
+    if(ui.cbxPublish.isChecked()):
+
+        # COPY FILE WITH _PUBLISH
         tmpCopyWork = os.path.join(SAVE_DIR, ('_').join(FILE_NAME) + '_PUBLISH' + '.' + FILE_FORMAT)
         shutil.copy(tmpSavePath, tmpCopyWork)
-        print (tmpCopyWork)
+        print ("COPY: " + tmpCopyWork)
         
         if('WORK' in SAVE_DIR):
             SAVE_DIR = SAVE_DIR.replace('WORK', 'PUBLISH')
 
-        # COPY
-        tmpCopyPublish = os.path.join(SAVE_DIR, ('_').join(FILE_NAME[:2]) + '.' + FILE_FORMAT)
-        shutil.copy(tmpSavePath, tmpCopyPublish)
-        print (tmpCopyPublish)
+        # PUBLISH FILE
+        if("ANIM" == FILE_NAME[1]):
+            print ("ANIM PUBLISH")
+            from scripts.ANIM import alembicExport
+            msgText = "File was saved!\n\n" + alembicExport.start()
+            print ("PUBLISH: ALEMBIC") 
 
+        else:
+            tmpCopyPublish = os.path.join(SAVE_DIR, ('_').join(FILE_NAME[:2]) + '.' + FILE_FORMAT)
+            shutil.copy(tmpSavePath, tmpCopyPublish)
+            print ("PUBLISH: " + tmpCopyPublish)
+
+        if("SHD" == FILE_NAME[1]): 
+            from SHD import referenceSCENE_SHD
+            referenceSCENE_SHD.start()
+
+
+    QMessageBox.information( bpS, "bpSave", msgText ) 
+
+    print ("** DONE | SAVE: Save File **")
     bpS.close() 
+
 
 #**********************
 # START PROZESS
@@ -257,10 +335,10 @@ def setSave():
     #setLOGO IMG
     initPath()
 
+
 #**********************
 # RUN DOS RUN
 #**********************
-#app     = QApplication(sys.argv)
 bpS     = QWidget()
 ui      = bpSave.Ui_bpSave()
 
@@ -294,6 +372,3 @@ def main():
     # ui.edtQuestionNr.lostFocus.connect(changed_questionNr)
 
     bpS.show()    
-    #sys.exit(app.exec_())
-
-main()

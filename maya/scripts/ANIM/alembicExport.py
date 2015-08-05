@@ -1,7 +1,7 @@
 #*************************************************************
 # title:        alembicExport
 #
-# content:      automaticly saves work and publish files
+# content:      sets name attribute to mesh & export alembic to PUBLISH
 #
 # dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
 #
@@ -34,6 +34,9 @@ def setAttributeToMesh(attribute = "Name"):
 
 
 def exportAlembic():
+	
+	msgText = ""
+
 	SAVE_PATH       = os.path.dirname(cmds.file(q=True,sn=True))
 	SAVE_PATH		= SAVE_PATH.replace("WORK", "PUBLISH")
 	SAVE_FILE     	= os.path.basename(cmds.file(q=True,sn=True))
@@ -52,12 +55,16 @@ def exportAlembic():
 		mel.eval('select -r ASSETS ;')
 		mel.eval('select -add CAM ;')
 		mel.eval('AbcExport -j "-frameRange ' + str(FRAME_START) + ' ' + str(FRAME_END) + ' -attr name -dataFormat hdf -root |ASSETS -root |CAM -file ' + SAVE_DIR + '";')
-		print("** DONE: bpEXPORT IS READY: " + SAVE_DIR.replace("/","\\") + " **")  
-	except:
-		print("** FAIL: No ASSETS & CAM group in the scene **")
+		msgText = "** DONE | ALEMBIC EXPORT: " + SAVE_DIR.replace("/","\\") + " **"
+		print(msgText)  
 
+	except:
+		msgText = "** FAIL | ALEMBIC EXPORT: No ASSETS & CAM group in the scene **"
+		print(msgText)  
+
+	return msgText
 	
 def start():
 
 	setAttributeToMesh()
-	exportAlembic()
+	return exportAlembic()

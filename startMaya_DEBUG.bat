@@ -14,17 +14,12 @@ set "ARNOLD_SHADER_PATH=%ARNOLD_PATH%/alShader"
 set "MAYA_VERSION=2015"
 
 
- rem --- Plugins ---
+ rem --- Python ---
 set "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
+set "PYTHONPATH=%PIPELINE_PATH%;%PYTHONPATH%"
 
 
- rem ---arUtils ---
- rem set "MAYA_MODULE_PATH=%PLUGINS_PATH%/arUtils;%MAYA_MODULE_PATH%"
- rem set "PYTHONPATH=%PLUGINS_PATH%/arUtils;%PYTHONPATH%"
-
-
-set "PYTHONPATH=%SCRIPT_PATH%/ArnoldDNA_03;%PYTHONPATH%"
-set "XBMLANGPATH=%SCRIPT_PATH%/ArnoldDNA_03/icons;XBMLANGPATH"
+ rem --- Shelf ---
 set "MAYA_SHELF_PATH=%SOFTWARE_PATH%/maya/shelf;%MAYA_SHELF_PATH%"
 
 

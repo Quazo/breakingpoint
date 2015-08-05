@@ -9,6 +9,9 @@
     <file>../../../../../img/btn/inboxBtn24.png</file>
     <file>../../../../../img/btn/mailBtn24.png</file>
   </qresource>
+  <qresource prefix="shelf">
+    <file>../../../../../img/shelf/shelf_save35.png</file>
+  </qresource>
   <qresource prefix="icon">
     <file>../../../../../img/icons/bpM.png</file>
   </qresource>

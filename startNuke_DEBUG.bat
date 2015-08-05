@@ -5,19 +5,20 @@
 set "PROJECT_ROOT=//bigfoot/breakingpoint"
 set "PROJECT_ROOT=P:"
 set "PIPELINE_PATH=%PROJECT_ROOT%/_pipeline"
-set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox"
-set "PLUGINS_PATH=%SOFTWARE_PATH%/nuke"
+set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox/nuke"
+set "PLUGINS_PATH=%SOFTWARE_PATH%/plugins"
 
 set "NUKE_VERSION=Nuke9.0v6"
 
 
+ rem --- INIT & MENU ---
+set "NUKE_PATH=%SOFTWARE_PATH%;%NUKE_PATH%"
+set "NUKE_INIT_PATH=%SOFTWARE_PATH%;%NUKE_INIT_PATH%"
+set "NUKE_MENU_PATH=%SOFTWARE_PATH%;%NUKE_MENU_PATH%"
+
+
  rem --- Plugins ---
-set "NUKE_PATH=%PLUGINS_PATH%;%NUKE_PATH%"
 set "NUKE_PATH=%PLUGINS_PATH%/plugins;%NUKE_PATH%"
-
-
-set "NUKE_INIT_PATH=%PLUGINS_PATH%;%NUKE_PATH%"
-set "NUKE_MENU_PATH=%PLUGINS_PATH%;%NUKE_PATH%"
 
 
  rem --- Call Nuke ---

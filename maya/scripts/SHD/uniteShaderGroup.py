@@ -1,9 +1,9 @@
 #*************************************************************
 # title:        uniteShaderGroup
 #
-# content:      automaticly saves work and publish files
+# content:      sets the name of all shader groups as the shader (+SG)
 #
-# dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
+# dependencies: 
 #
 # author:       Alexander Richter 
 # email:        alexander.richter@filmakademie.de
@@ -28,10 +28,10 @@ def start():
 
 	    shaderGroup = getSGFromMaterial(shader)
 	    
-	    if (shaderGroup != shader + "SG"):
-	        print shaderGroup
-	        print shader
-	        print ""
-	        mel.eval('rename ' + shaderGroup[0] +  ' ' + shader + 'SG;') ;
+	    if (shaderGroup != shader + "SG"):       
+	        try:
+	        	mel.eval('rename ' + shaderGroup[0] +  ' ' + shader + 'SG;')
+	        except:
+	        	print ("FAIL: Shader has no shading group: " + shader)
 
-	print ("** DONE: Unite Shader and Group **")
+	print ("** DONE: Unite names of shader and shader group **")
