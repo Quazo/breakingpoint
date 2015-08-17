@@ -5,7 +5,7 @@
 #
 # content:		start point for MAYA
 #
-# dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
+# dependencies: "PYTHONPATH=%SOFTWARE_PATH%;%PYTHONPATH%"
 #
 # author: 		Alexander Richter 
 # email:		alexander.richter@filmakademie.de
@@ -22,4 +22,4 @@ print ("\nWelcome " + os.getenv('username'))
 print ("\nBREAKINGPOINT: System is setting ...\n")
 
 cmds.evalDeferred("from scripts import maya_settings")
-cmds.evalDeferred("from scripts import bpMenu")
+cmds.evalDeferred("from scripts import menu")

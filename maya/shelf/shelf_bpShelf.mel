@@ -25,7 +25,7 @@ global proc shelf_bpShelf () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "from scripts import bpSave\nbpSave.main()" 
+        -command "from scripts import save\nsave.start()" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
@@ -38,14 +38,14 @@ global proc shelf_bpShelf () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Separator" 
+        -annotation "-------------------" 
         -enableBackground 0
         -align "center" 
         -label "-------------------" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -style "iconOnly" 
@@ -142,14 +142,14 @@ global proc shelf_bpShelf () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Separator" 
+        -annotation "-------------------" 
         -enableBackground 0
         -align "center" 
         -label "-------------------" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -style "iconOnly" 
@@ -176,8 +176,8 @@ global proc shelf_bpShelf () {
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.2 
-        -image "P:/_pipeline/img/shelf/shelf_sceneShd35.png" 
-        -image1 "P:/_pipeline/img/shelf/shelf_sceneShd35.png" 
+        -image "P:/_pipeline/img/shelf/shelf_referenceSHD_SCENE35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_referenceSHD_SCENE35.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
@@ -246,14 +246,14 @@ global proc shelf_bpShelf () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Separator" 
+        -annotation "-------------------" 
         -enableBackground 0
         -align "center" 
         -label "-------------------" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -image1 "P:/_pipeline/img/shelf/separatoricons/concrete.png" 
         -style "iconOnly" 
@@ -261,6 +261,32 @@ global proc shelf_bpShelf () {
         -marginHeight 1
         -command "// Dont touch me" 
         -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 38
+        -height 38
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Report Error" 
+        -enableBackground 0
+        -align "center" 
+        -label "from scripts import report\nreport.start()" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "P:/_pipeline/img/shelf/shelf_report35.png" 
+        -image1 "P:/_pipeline/img/shelf/shelf_report35.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from scripts import report\nreport.start()" 
+        -sourceType "python" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -285,7 +311,7 @@ global proc shelf_bpShelf () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import webbrowser\nwebbrowser.open(\"https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline\")" 
+        -command "import webbrowser\nwebbrowser.open(\"https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Software\")" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1

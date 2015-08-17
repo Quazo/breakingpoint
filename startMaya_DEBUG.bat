@@ -4,10 +4,10 @@
  rem --- Path ---
 set "PROJECT_ROOT=//bigfoot/breakingpoint"
 set "PIPELINE_PATH=%PROJECT_ROOT%/_pipeline"
-set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox"
+set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox/maya"
 
-set "SCRIPT_PATH=%SOFTWARE_PATH%/maya/scripts"
-set "PLUGINS_PATH=%SOFTWARE_PATH%/maya/plugins"
+set "SCRIPT_PATH=%SOFTWARE_PATH%/scripts"
+set "PLUGINS_PATH=%SOFTWARE_PATH%/plugins"
 set "ARNOLD_PATH=%PLUGINS_PATH%/arnold"
 set "ARNOLD_SHADER_PATH=%ARNOLD_PATH%/alShader"
 
@@ -15,12 +15,12 @@ set "MAYA_VERSION=2015"
 
 
  rem --- Python ---
-set "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
+set "PYTHONPATH=%SOFTWARE_PATH%;%PYTHONPATH%"
 set "PYTHONPATH=%PIPELINE_PATH%;%PYTHONPATH%"
 
 
  rem --- Shelf ---
-set "MAYA_SHELF_PATH=%SOFTWARE_PATH%/maya/shelf;%MAYA_SHELF_PATH%"
+set "MAYA_SHELF_PATH=%SOFTWARE_PATH%/shelf;%MAYA_SHELF_PATH%"
 
 
  rem --- Arnold ---

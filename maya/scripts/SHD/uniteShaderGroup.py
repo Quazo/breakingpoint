@@ -9,6 +9,7 @@
 # email:        alexander.richter@filmakademie.de
 #*************************************************************
 
+
 from pymel.core import *
 
 import maya.cmds as cmds
@@ -20,9 +21,9 @@ def getSGFromMaterial(mat):
     return mat.shadingGroups()
 
 
-def start(): 
+def start(shaderType = "alSurface"): 
 
-	shaderList = cmds.ls(type = 'alSurface')
+	shaderList = cmds.ls(type = shaderType)
 
 	for shader in shaderList:
 
@@ -32,6 +33,6 @@ def start():
 	        try:
 	        	mel.eval('rename ' + shaderGroup[0] +  ' ' + shader + 'SG;')
 	        except:
-	        	print ("FAIL: Shader has no shading group: " + shader)
+	        	print ("** FAIL | Unite Shader and Shader Group: Shader has no shading group or is a reference - " + shader + " **")
 
-	print ("** DONE: Unite names of shader and shader group **")
+	print ("** DONE | Unite Shader and Shader Group **")

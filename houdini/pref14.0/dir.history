@@ -1,9 +1,10 @@
 HIP
 {
-C:/Users/jfranz/Desktop/
 //bigfoot/breakingpoint/0_rnd/jfranz/fx_principal/car_destruction/
 p:/2_production/1_assets/fx/genericSplashGround/10_MODEL/WORK/
 //bigfoot/breakingpoint/2_production/2_shots/140_magneto/30_FX/WORK/
+C:/Users/jfranz/Desktop/
+p:/2_production/2_shots/090_mayhem/30_FX/WORK/
 }
 OTL
 {
@@ -12,4 +13,9 @@ OTL
 //bigfoot/breakingpoint/_pipeline/software/houdini/plugins/qLib-dev/otls/experimental/
 //bigfoot/breakingpoint/_pipeline/software/houdini/plugins/qLib-dev/otls/base/
 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.361/houdini/otls/
+//bigfoot/breakingpoint/_pipeline/software/houdini/plugins/qLib-dev/otls/future/
+}
+MISC
+{
+//bigfoot/breakingpoint/2_production/2_shots/090_mayhem/20_ANIM/PUBLISH/FX_GEO/
 }

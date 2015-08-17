@@ -24,9 +24,9 @@ def start():
 		    mel.eval('lookThroughModelPanel SCENE_SHD_cam_SHD_sceneShape modelPanel4;')
 		
 		except:
-		    print ("** FAIL | Reference SCENE_SHD: Scene or Camera is already used! **")
+		    print ("** FAIL | Reference SCENE_SHD: Scene or Camera is already used **")
 		
-		print("** DONE | Reference SCENE_SHD: Reference SCENE_SHD! **")
+		print("** DONE | Reference SCENE_SHD: Reference SCENE_SHD **")
 	
 	else:
-		print("** FAIL | Reference SCENE_SHD: SCENE_SHD already exist! **")
+		print("** FAIL | Reference SCENE_SHD: SCENE_SHD already exist **")

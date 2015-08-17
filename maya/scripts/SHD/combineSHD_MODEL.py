@@ -1,17 +1,17 @@
 #*************************************************************
 # title:        combine SHD & MODEL
 #
-# content:      automaticly saves work and publish files
+# content:      set all shader on every object which has the shader name in its name
 #
-# dependencies: "PYTHONPATH=%SOFTWARE_PATH%/maya;%PYTHONPATH%"
+# dependencies: "PYTHONPATH=%SOFTWARE_PATH%;%PYTHONPATH%"
+#
+#               shader name must be unique not part of another shader
+#               object must have the shader name inside (-1 character)
+#               shading group must have the save name as shader (+SG)
 #
 # author:       Alexander Richter 
 # email:        alexander.richter@filmakademie.de
 #*************************************************************
-
-# shader name must be unique not part of another
-# object must have the shader name inside (-1 character)
-# shading group must have the save name as shader (+SG)
 
 
 import maya.cmds as cmds
@@ -19,22 +19,21 @@ import maya.mel as mel
 
 import uniteShaderGroup
 
-def start():
+def start(meshType = "mesh", shaderType = "alSurface"):
 
-    uniteShaderGroup.start()
+    try:
+        uniteShaderGroup.start()
+    except:
+        print ("** FAIL | Unite Shader and Shader Group : Failed to load **")
 
-    shaderList = cmds.ls(type = 'alSurface')
-    #print shaderList
-
-    objList = cmds.ls( type="mesh")
-    #print objList
+    shaderList = cmds.ls(type = shaderType)
+    objList = cmds.ls( type= meshType)
 
     for shader in shaderList:
     	
         tmpShader = shader
         
         if (tmpShader.find("SHD")):
-            #print "SHD" + tmpShader
             tmpShader = tmpShader.replace("SHD", "MODEL") 
           
         for obj in objList:
@@ -46,13 +45,9 @@ def start():
                 
             if (tmpObj.find(tmpShader[:-1]) != -1):   
 
-                #print "Set SHD"
-                #print obj
-                #print shader
-                #print ""
                 mel.eval('select -r ' + obj + ';')
                 mel.eval('sets -e -forceElement ' + shader + 'SG;')
                 
                 objList[objList.index(obj)] = ""
 
-    print ("** DONE: Combine SHD & MODEL **")
+    print ("** DONE | Combine SHD & MODEL **")

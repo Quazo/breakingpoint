@@ -11,7 +11,7 @@ import platform
 # BP Scene Defaults
 FPS = 25
 
-FSTART = 950
+FSTART = 1001
 FEND = 1100
 RFSTART = 1021
 RFEND = 1100

@@ -23,7 +23,6 @@ cmds.optionVar(sv = ("workingUnitTimeDefault", "pal"))
 cmds.optionVar(sv = ("preferredRenderer", "arnold"))
 cmds.optionVar(sv = ("preferredRendererHold", "arnold"))
 
-
 # cmds.setAttr ("defaultArnoldRenderOptions.textureMaxMemoryMB", 10024)
 # cmds.setAttr ("defaultArnoldRenderOptions.display_gamma", 1)
 # cmds.setAttr ("defaultArnoldRenderOptions.light_gamma", 1)
