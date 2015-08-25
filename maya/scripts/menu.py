@@ -11,13 +11,21 @@
 # email:		alexander.richter@filmakademie.de
 #*************************************************************
 
-import os, sys
+import os
+import sys
 
 import maya.cmds as cmds
 
+import settings as s
+sys.path.append(s.PATH['lib'])
+import libFunction
 
-print ("\nWelcome " + os.getenv('username'))
-print("setup bpMenu")
+
+#************************
+# START MAYA
+#************************
+print ("\nWelcome " + libFunction.getCurrentUser())
+print("\nsetup bpMenu\n")
 
 
 #*************************
@@ -36,7 +44,7 @@ cmds.menuItem(d = True)
 #*************************
 # SHD
 #*************************
-toolMenu = cmds.menuItem(p = menu, l = 'SHD', sm = True)#, en = 0)
+toolMenu = cmds.menuItem(p = menu, l = 'SHD', sm = True)
 
 cmds.menuItem(p = toolMenu,
             l = 'Reference SHD_SCENE',
@@ -54,7 +62,7 @@ cmds.menuItem(p = toolMenu,
 #*************************
 # ANIM
 #*************************
-toolMenu = cmds.menuItem(p = menu, l = 'ANIM', sm = True)#, en = 0)
+toolMenu = cmds.menuItem(p = menu, l = 'ANIM', sm = True)
 
 cmds.menuItem(p = toolMenu,
             l = 'ALEMBIC EXPORT',
@@ -89,7 +97,7 @@ cmds.menuItem(p = menu,
 #*************************
 cmds.menuItem(p = menu,
             l = 'Report',
-            c = 'from scripts import report\nreport.start()')
+            c = 'from lib import libReport\nlibReport.start()')
 
 cmds.menuItem(p = menu,
             l = 'Help',

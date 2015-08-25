@@ -4,6 +4,7 @@
  rem --- Path ---
 set "PROJECT_ROOT=//bigfoot/breakingpoint"
 set "PIPELINE_PATH=%PROJECT_ROOT%/_pipeline"
+set "LIBRARY_PATH=%PIPELINE_PATH%/lib"
 set "SOFTWARE_PATH=%PIPELINE_PATH%/_sandbox/maya"
 
 set "SCRIPT_PATH=%SOFTWARE_PATH%/scripts"
@@ -17,6 +18,7 @@ set "MAYA_VERSION=2015"
  rem --- Python ---
 set "PYTHONPATH=%SOFTWARE_PATH%;%PYTHONPATH%"
 set "PYTHONPATH=%PIPELINE_PATH%;%PYTHONPATH%"
+set "PYTHONPATH=%LIBRARY_PATH%;%PYTHONPATH%"
 
 
  rem --- Shelf ---
@@ -35,6 +37,7 @@ set "MTOA_TEMPLATES_PATH=%ARNOLD_SHADER_PATH%/ae;%MTOA_TEMPLATES_PATH%"
 set "ARNOLD_LICENSE_HOST=blue"
 
 
+ rem --- Disable Report ---
 set "MAYA_DISABLE_CIP=1"
 set "MAYA_DISABLE_CER=1"
 

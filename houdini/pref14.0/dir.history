@@ -5,6 +5,8 @@ p:/2_production/1_assets/fx/genericSplashGround/10_MODEL/WORK/
 //bigfoot/breakingpoint/2_production/2_shots/140_magneto/30_FX/WORK/
 C:/Users/jfranz/Desktop/
 p:/2_production/2_shots/090_mayhem/30_FX/WORK/
+p:/2_production/2_shots/140_magneto/30_FX/WORK/
+//bigfoot/breakingpoint/2_production/2_shots/090_mayhem/30_FX/WORK/
 }
 OTL
 {
@@ -17,5 +19,16 @@ C:/PROGRA~1/SIDEEF~1/HOUDIN~1.361/houdini/otls/
 }
 MISC
 {
-//bigfoot/breakingpoint/2_production/2_shots/090_mayhem/20_ANIM/PUBLISH/FX_GEO/
+p:/2_production/2_shots/089_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/088_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/086_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/084_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/085_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/087_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/087_mayhem/01_PLATE/jpg/
+p:/2_production/2_shots/087_mayhem/02_PLATE/jpg/
+p:/2_production/2_shots/090_mayhem/00_PLATE/
+p:/2_production/2_shots/090_mayhem/00_PLATE/jpg/
+p:/2_production/2_shots/090_mayhem/00_PLATE/jpg_undistorted/
+P:/2_production/3_render/090_mayhem/090_FX_v001_jf/shadow/
 }

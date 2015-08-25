@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../_sandbox/maya/scripts/ui/qt/save.ui'
 #
-# Created: Tue Aug 25 13:35:49 2015
+# Created: Thu Aug 20 17:16:48 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -89,11 +89,11 @@ class Ui_save(object):
         font.setWeight(75)
         font.setBold(True)
         self.edtComment.setFont(font)
-        self.edtComment.setStyleSheet("color: rgb(168, 168, 168);")
         self.edtComment.setFrameShape(QtGui.QFrame.Box)
         self.edtComment.setFrameShadow(QtGui.QFrame.Plain)
         self.edtComment.setLineWidth(1)
         self.edtComment.setMidLineWidth(0)
+        self.edtComment.setPlainText("")
         self.edtComment.setBackgroundVisible(False)
         self.edtComment.setCenterOnScroll(False)
         self.edtComment.setObjectName("edtComment")
@@ -250,7 +250,6 @@ class Ui_save(object):
         self.edtSavePath.setText(QtGui.QApplication.translate("save", "140_LIGHT_v003_ar.ma", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSave.setShortcut(QtGui.QApplication.translate("save", "Return", None, QtGui.QApplication.UnicodeUTF8))
         self.btnCancel.setShortcut(QtGui.QApplication.translate("save", "Esc", None, QtGui.QApplication.UnicodeUTF8))
-        self.edtComment.setPlainText(QtGui.QApplication.translate("save", "Comment", None, QtGui.QApplication.UnicodeUTF8))
         self.edtMetaData.setPlainText(QtGui.QApplication.translate("save", "Resolution:    2048 x 1152\n"
 "\n"
 "FPS:    25 FPS\n"

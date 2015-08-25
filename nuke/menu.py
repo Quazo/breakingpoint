@@ -12,26 +12,29 @@ import sys
 import nuke
 import webbrowser
 
-sys.path.append(os.path.abspath(".."))
-
+# sys.path.append(os.path.abspath(".."))
 import settings as s
+sys.path.append(s.PATH['lib'])
+from lib import *
 
-print ("\nWelcome " + os.getenv('username'))
+
+print ("\nWelcome " + libFunction.getCurrentUser())
 print ("\nBreaking Point: MENU")
 
 
-PATH_ICON 		= os.path.join(s.PATH["img"], 'icons').replace('\\', '/')
-PATH_MAIN_ICON	= os.path.join(PATH_ICON , 'bpN.png').replace('\\', '/')
+PATH_ICON 			= os.path.join(s.PATH["img"], 'icons').replace('\\', '/')
+PATH_MAIN_ICON		= os.path.join(PATH_ICON , 'bpN.png').replace('\\', '/')
 
-PATH_WRITE_ICON	= os.path.join(PATH_ICON , 'menu', 'changeBtn24.ico').replace('\\', '/')
-PATH_HELP_ICON	= os.path.join(PATH_ICON , 'menu', 'helpBtn24.ico').replace('\\', '/')
+PATH_WRITE_ICON		= os.path.join(PATH_ICON , 'menu', 'changeBtn24.ico').replace('\\', '/')
+PATH_REPORT_ICON	= os.path.join(PATH_ICON , 'menu', 'reportBtn24.ico').replace('\\', '/')
+PATH_HELP_ICON		= os.path.join(PATH_ICON , 'menu', 'helpBtn24.ico').replace('\\', '/')
 
-PATH_RT_ICON	= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
-PATH_RT2_ICON	= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
+PATH_RT_ICON		= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
+PATH_RT2_ICON		= os.path.join(PATH_ICON , 'menu', 'rt_timm.ico').replace('\\', '/')
 
-PATH_GIZMO		= os.path.join(s.PATH["nuke"], 'gizmos').replace('\\', '/')  #JUST FOR SOFTWARE NOT _SANDBOX
+PATH_GIZMO			= os.path.join(s.PATH["nuke"], 'gizmos').replace('\\', '/')  #JUST FOR SOFTWARE NOT _SANDBOX
 
-PATH_BPWRITE	= os.path.join(PATH_GIZMO, 'bpWrite').replace('\\', '/')
+PATH_BPWRITE		= os.path.join(PATH_GIZMO, 'bpWrite').replace('\\', '/')
 
 
 menuNode = nuke.menu('Nodes').addMenu("BREAKINGPOINT", icon = PATH_MAIN_ICON)
@@ -49,10 +52,11 @@ menuNode.addCommand('RenderThreads by Vincent', lambda: run_renderthreadsV(), 'a
 
 menuNode.addSeparator()
 
-menuNode.addCommand('Help', lambda: webbrowser.open("https://www.filmakademie.de/wiki/display/AISPD/BREAKINGPOINT+-+Pipeline"), 'alt+h', PATH_HELP_ICON)
+menuNode.addCommand('Report', "from lib import libReport\nlibReport.start(currentScript = 'other', software = 'nuke')", 'alt+r', PATH_REPORT_ICON)
+menuNode.addCommand('Help', lambda: webbrowser.open(s.LINK["pipeline"]), 'alt+h', PATH_HELP_ICON)
 
-m = menuNode.findItem('bpWrite')
-m.setEnabled( False )
+# m = menuNode.findItem('bpWrite')
+# m.setEnabled( False )
 # m = menuNode.findItem('RenderThreads by Vincent')
 # m.setEnabled( False )
 

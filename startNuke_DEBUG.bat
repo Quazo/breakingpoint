@@ -1,5 +1,5 @@
 @echo off
- rem Nuke
+ rem NUKE
 
  rem --- Path ---
 set "PROJECT_ROOT=//bigfoot/breakingpoint"
@@ -11,8 +11,12 @@ set "PLUGINS_PATH=%SOFTWARE_PATH%/plugins"
 set "NUKE_VERSION=Nuke9.0v6"
 
 
- rem --- INIT & MENU ---
+ rem --- Settings & Lib ---
 set "NUKE_PATH=%SOFTWARE_PATH%;%NUKE_PATH%"
+set "NUKE_PATH=%PIPELINE_PATH%;%NUKE_PATH%"
+ 
+
+ rem --- Init & Menu ---
 set "NUKE_INIT_PATH=%SOFTWARE_PATH%;%NUKE_INIT_PATH%"
 set "NUKE_MENU_PATH=%SOFTWARE_PATH%;%NUKE_MENU_PATH%"
 

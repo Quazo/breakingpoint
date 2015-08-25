@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Roots
+BP_PROJECT_ROOT=/bigfoot/breakingpoint
+BP_PIPELINE_PATH=$BP_PROJECT_ROOT/_pipeline
+BP_HOUDINI_PIPELINE_PATH=$BP_PIPELINE_PATH/software/houdini
+BP_HOUDINI_PLUGINS_PATH=$BP_HOUDINI_PIPELINE_PATH/plugins
+# HOUDINI_SETUP_PATH=$HOUDIN_SOFTWARE_PATH/setup
+BP_HOUDINI_VERSION=14.0.361
+HOUDINI_DIRECTORY=$HOME/hfs$BP_HOUDINI_VERSION
+
+
+# Royal Render
+export RR_ROOT="/medianet/renderfarm/_RR6/"
+
+
+# Default Houdini Environment
+CURRENT_PWD=$PWD
+cd $HOUDINI_DIRECTORY
+source houdini_setup
+cd $CURRENT_PWD
+
+
+# Houdini Variables
+export HOUDINI_PATH=$BP_HOUDINI_PIPELINE_PATH/setup:/home/MEDIANET/$USER/htoa/htoa-1.5.3_r1364_houdini-14.0.361/htoa-1.5.3_r1364_houdini-14.0.361:$HFS/houdini
+
+export HOUDINI_OTLSCAN_PATH=$BP_HOUDINI_PLUGINS_PATH/htoa-1.5.3_r1364_houdini-14.0.361/htoa-1.5.3_r1364_houdini-14.0.361/otls:$BP_HOUDINI_PLUGINS_PATH/qLib-dev/otls/future:$BP_HOUDINI_PLUGINS_PATH/qLib-dev/otls/experimental:$BP_HOUDINI_PIPELINE_PATH/plugins/qLib-dev/otls/base:$BP_HOUDINI_PIPELINE_PATH/otl/publish:$HFS/houdini/otls
+export HOUDINI_BUFFERED_SAVE=1
+export HOUDINI_USER_PREF_DIR=$BP_HOUDINI_PIPELINE_PATH/pref__HVER__
+
+export BP_MENU_SCRIPTS_PATH=%BP_HOUDINI_PIPELINE_PATH/setup/scripts/menu_scripts
+
+
+# Arnold Variables
+export HOUDINI_DSO_ERROR=2
+export HTOA_STARTUP_LOG=0
+
+
+# Splashscreen
+export HOUDINI_SPLASH_FILE=$BP_PIPELINE_PATH/img/logo/houdinisplash.png
+export HOUDINI_SPLASH_MESSAGE="Breaking Point - Houdini "$BP_HOUDINI_VERSION" Linux Version"
+
+
+# Show Environment Variables
+#hconfig
+
+
+# Start Houdini
+$HFS/bin/houdinifx

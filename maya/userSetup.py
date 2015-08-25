@@ -11,14 +11,22 @@
 # email:		alexander.richter@filmakademie.de
 #*************************************************************
 
-
-import sys
 import os
+import sys 
 
 import maya.cmds as cmds
 
 
-print ("\nWelcome " + os.getenv('username'))
+import settings as s
+
+sys.path.append(s.PATH['lib'])
+from lib import *
+
+
+#************************
+# START MAYA
+#************************
+print ("\nWelcome " + libFunction.getCurrentUser())
 print ("\nBREAKINGPOINT: System is setting ...\n")
 
 cmds.evalDeferred("from scripts import maya_settings")

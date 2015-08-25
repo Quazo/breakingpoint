@@ -7,10 +7,15 @@
 # email:		alexander.richter@filmakademie.de
 #*************************************************************
 
-
 import nuke
 
-print ("\nWelcome " + os.getenv('username'))
+
+import settings as s
+sys.path.append(s.PATH["lib"])
+from lib import *
+
+
+print ("\nWelcome " + libFunction.getCurrentUser())
 print ("\nBREAKINGPOINT: System is setting ...\n")
 
 

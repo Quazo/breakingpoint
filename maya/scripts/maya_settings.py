@@ -9,7 +9,6 @@
 # email:        alexander.richter@filmakademie.de
 #*************************************************************
 
-
 import maya.cmds as cmds
 
 print("BREAKINGPOINT: settings")

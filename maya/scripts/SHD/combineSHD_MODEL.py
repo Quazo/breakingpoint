@@ -19,24 +19,31 @@ import maya.mel as mel
 
 import uniteShaderGroup
 
-def start(meshType = "mesh", shaderType = "alSurface"):
-
+def start(meshTypes = ["mesh"], shaderTypes = ["alSurface", "alLayer"]):
+    shaderList = []
+    objList = []
+    
     try:
         uniteShaderGroup.start()
     except:
         print ("** FAIL | Unite Shader and Shader Group : Failed to load **")
 
-    shaderList = cmds.ls(type = shaderType)
-    objList = cmds.ls( type= meshType)
+    for shaderType in shaderTypes:
+        shaderList += cmds.ls(type = shaderType)
+   
+    for meshType in meshTypes:
+        objList += cmds.ls( type= meshType)
 
     for shader in shaderList:
-    	
         tmpShader = shader
         
-        if (tmpShader.find("SHD")):
+        if(tmpShader.find("SHD")):
             tmpShader = tmpShader.replace("SHD", "MODEL") 
           
         for obj in objList:
+
+            if(obj.find("RIG")):
+                tmpShader = tmpShader.replace("SHD", "RIG")
 
             tmpObj = obj
 

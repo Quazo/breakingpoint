@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="btn">
+    <file>../../../../../img/btn/btnCamera48.png</file>
+    <file>../../../../../img/btn/btnArrowLeft48.png</file>
+    <file>../../../../../img/btn/btnArrowRight48.png</file>
     <file>../../../../../img/btn/acceptBtn24.png</file>
     <file>../../../../../img/btn/btnSave.png</file>
     <file>../../../../../img/btn/changeBtn24.png</file>
@@ -10,9 +13,14 @@
     <file>../../../../../img/btn/mailBtn24.png</file>
   </qresource>
   <qresource prefix="shelf">
+    <file>../../../../../img/shelf/shelf_alembicExport35.png</file>
+    <file>../../../../../img/shelf/shelf_outliner35.png</file>
     <file>../../../../../img/shelf/shelf_bug35.png</file>
     <file>../../../../../img/shelf/shelf_default35.png</file>
     <file>../../../../../img/shelf/shelf_save35.png</file>
+  </qresource>
+  <qresource prefix="placeholder">
+    <file>../../../../../img/placeholder/000.png</file>
   </qresource>
   <qresource prefix="icon">
     <file>../../../../../img/icons/report/reportBug35.png</file>

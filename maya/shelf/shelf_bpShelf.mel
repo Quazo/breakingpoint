@@ -285,7 +285,7 @@ global proc shelf_bpShelf () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "from scripts import report\nreport.start()" 
+        -command "from lib import libReport\nlibReport.start()" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
