@@ -1,8 +1,0 @@
-<map id="src/shop/utils.h" name="src/shop/utils.h">
-<area shape="rect" id="node2" href="$shader__desc_8cpp.html" title="src/shop/shader_desc.cpp" alt="" coords="5,80,179,107"/>
-<area shape="rect" id="node3" href="$utils_8cpp.html" title="src/shop/utils.cpp" alt="" coords="204,80,329,107"/>
-<area shape="rect" id="node4" href="$vop__fetch_8cpp.html" title="src/shop/vop_fetch.cpp" alt="" coords="353,80,508,107"/>
-<area shape="rect" id="node5" href="$vop__ramp__float_8cpp.html" title="src/shop/vop_ramp_float.cpp" alt="" coords="532,80,719,107"/>
-<area shape="rect" id="node6" href="$vop__ramp__rgb_8cpp.html" title="src/shop/vop_ramp_rgb.cpp" alt="" coords="743,80,924,107"/>
-<area shape="rect" id="node7" href="$vop__shaders_8cpp.html" title="src/shop/vop_shaders.cpp" alt="" coords="948,80,1121,107"/>
-</map>

@@ -1,6 +1,0 @@
-// $Id: SOHOparameters 150 2012-12-10 11:33:35Z kik $
-
-#include "arnold-4.0.ds"
-
-#define _SOHO_USER_IPR_MODE
-#include "$HFS/houdini/soho/parameters/SOHOparameters"

@@ -46,8 +46,6 @@ VERSION         = "v0.50"
 FILE_NAME       = ['140', s.TASK["shading"], 'v001', 'ar']
 SAVE_DIR        = ''
 
-SHOT_DEFAULT    = '000'
-
 SCENE_SHD_PATH  = s.PATH_EXTRA["scene_shd"]
 META_DATA       = "Resolution:  2048 x 1152\n\nFPS:           25\n\nFrames:       1001 - "
 
