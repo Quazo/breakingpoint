@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../_sandbox/maya/scripts/ui/qt/warehouse.ui'
 #
-# Created: Tue Aug 25 13:35:49 2015
+# Created: Fri Aug 28 18:18:38 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!

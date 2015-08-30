@@ -26,39 +26,37 @@
 					<scriptArgs>crash_recovery</scriptArgs>
 				</scriptItem>
 
+				<scriptItem id="h.bp_report">
+					<label>BP Report Error</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_misc.py</scriptPath>
+					<scriptArgs>report</scriptArgs>
+				</scriptItem>
+
 				<separatorItem />
 
-				<!--<scriptItem id="h.bp_menu_submit">
-					<label>BP Submit to Royal Render</label>
-					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_submit.py</scriptPath>
-					<scriptArgs>arnold</scriptArgs>
+				<scriptItem id="h.bp_menu_doc_wiki">
+					<label>BP Wiki</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
+					<scriptArgs>wiki</scriptArgs>
 				</scriptItem>
-			
 
-				<separatorItem /> -->
+				<scriptItem id="h.bp_menu_doc_asset_list">
+					<label>BP Asset List</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
+					<scriptArgs>assetlist</scriptArgs>
+				</scriptItem>
 
-				<subMenu id="bp_menu_doc">
-					<label>BP Documentation</label>
-						<scriptItem id="h.bp_menu_doc_wiki">
-							<label>BP Wiki</label>
-							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
-							<scriptArgs>wiki</scriptArgs>
-						</scriptItem>
+				<scriptItem  id="h.bp_menu_doc_shot_list">
+					<label>BP Shot List</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
+					<scriptArgs>shotlist</scriptArgs>
+				</scriptItem>
 
-						<separatorItem />
-
-						<scriptItem id="h.bp_menu_doc_asset_list">
-							<label>BP Asset List</label>
-							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
-							<scriptArgs>assetlist</scriptArgs>
-						</scriptItem>
-
-						<scriptItem  id="h.bp_menu_doc_shot_list">
-							<label>BP Shot List</label>
-							<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
-							<scriptArgs>shotlist</scriptArgs>
-						</scriptItem>
-				</subMenu>
+				<scriptItem id="h.bp_menu_fx_list">
+					<label>BP FX List</label>
+					<scriptPath>$BP_MENU_SCRIPTS_PATH/bp_doc.py</scriptPath>
+					<scriptArgs>fxlist</scriptArgs>
+				</scriptItem>
 
 				
 

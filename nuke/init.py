@@ -9,12 +9,14 @@
 
 import nuke
 
-
 import settings as s
 sys.path.append(s.PATH["lib"])
-from lib import *
+from lib import libFunction
 
 
+#************************
+# INIT
+#************************
 print ("\nWelcome " + libFunction.getCurrentUser())
 print ("\nBREAKINGPOINT: System is setting ...\n")
 

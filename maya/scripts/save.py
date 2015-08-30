@@ -23,7 +23,6 @@ from PySide.QtCore import *
 import maya.mel as mel
 import maya.cmds as cmds
 
-
 from scripts.ui import save
 import settings as s
 
@@ -41,7 +40,7 @@ ui      = save.Ui_save()
 #**********************
 # VARIABLE
 #**********************
-VERSION         = "v0.50"
+VERSION         = "v0.55"
 
 FILE_NAME       = ['140', s.TASK["shading"], 'v001', 'ar']
 SAVE_DIR        = ''
@@ -65,13 +64,13 @@ def clicked_btnHelp():
     webbrowser.open(s.LINK["software"])
 
 
+def clicked_btnReport():
+    libReport.start("Save")
+
+
 def clicked_btnOpenFolder():
     global SAVE_DIR
     webbrowser.open(SAVE_DIR)
-
-
-def clicked_btnReport():
-    libReport.start("Save")
 
 
 def clicked_btnMsgFolder():
@@ -111,7 +110,7 @@ def changed_user():
     global FILE_NAME, SAVE_DIR  
 
     # CHANGE USER IMG
-    libFunction.changeUserImg(ui.cbxUser.currentText(), ui.lblUser)
+    libFunction.setUserImg(ui.cbxUser.currentText(), ui.lblUser)
 
     # CHANGE USER TOKEN
     FILE_NAME[3] = ui.cbxUser.currentText()[:2]
@@ -170,15 +169,22 @@ def changed_edtSavePath():
 def initPath(filePath = ''):
     global FILE_NAME, SAVE_DIR
 
+    msg = ""
+
     if(filePath == ''):
         filePath = cmds.file(q=True,sn=True)
 
     SAVE_DIR        = os.path.dirname(filePath).replace('/','\\')
     currentFile     = os.path.basename(filePath)
 
-    if not (SAVE_DIR):
+
+    if (SAVE_DIR == ""):
         SAVE_DIR =  os.path.join(s.PATH['shots'], '000_TEMPLATE\\40_' + s.TASK["lighting"] + '\\WORK')
+        msg = "Fail: No right path existing!"
+        
+    if (currentFile == "" or len(currentFile .split('_')) < 2):
         currentFile = '000_' + s.TASK["lighting"] + '_v000_ar.' + s.SOFTWARE_FORMAT["maya"]
+        msg = "Fail: File is not pipeline conform!"
 
     if(SAVE_DIR.startswith(s.PATH_PROJECT)): # "\\\\bigfoot\\breakingpoint")):
         SAVE_DIR = SAVE_DIR.replace(s.PATH_PROJECT, s.PATH_SHORT)
@@ -189,7 +195,7 @@ def initPath(filePath = ''):
         (shot, task, version, user, comment) = FILE_NAME.split('_') 
     elif(len(FILE_NAME.split('_')) == 4):
         (shot, task, version, user) = FILE_NAME.split('_')
-    else:
+    else:    
         (shot, task) = FILE_NAME.split('_')
         version = "v000"
 
@@ -201,8 +207,8 @@ def initPath(filePath = ''):
 
     FILE_NAME = [shot, task, version, user]
 
-    ui.lblBanner.setPixmap(QPixmap(QImage(libFunction.setBannerImg(task))))
-    ui.lblImage.setPixmap(QPixmap(QImage(libFunction.setShotImage(shot))))
+    ui.lblBanner.setPixmap(QPixmap(QImage(libFunction.getBannerImg(task))))
+    ui.lblImage.setPixmap(QPixmap(QImage(libFunction.getShotImg(shot))))
 
     ui.edtSavePath.setText(('_').join(FILE_NAME) + '.' + s.SOFTWARE_FORMAT["maya"])
     ui.lblShotNr.setText(shot)
@@ -210,8 +216,11 @@ def initPath(filePath = ''):
     if(s.STATUS["publish"] in SAVE_DIR):
         SAVE_DIR = SAVE_DIR.replace(s.STATUS["publish"], s.STATUS["work"])
 
-    ui.edtPath.setText(os.path.join(SAVE_DIR, ui.edtSavePath.text()))
-    libFunction.changeMetaData(FILE_NAME[0], ui.edtMetaData)
+    if(msg == ""):
+        msg = os.path.join(SAVE_DIR, ui.edtSavePath.text())
+
+    ui.edtPath.setText(msg)
+    libFunction.setMetaData(FILE_NAME[0], ui.edtMetaData)
 
 
 def saveFile():
@@ -232,7 +241,6 @@ def saveFile():
             # CUSTOM TASK SCRIPTS
             if(s.TASK["modeling"] == FILE_NAME[1]):
                 print ("PUBLISH: " + s.TASK["modeling"])
-
 
             if(s.TASK["shading"] == FILE_NAME[1]):
                 print ("PUBLISH: " + s.TASK["shading"])
@@ -272,7 +280,8 @@ def saveFile():
             msgText = msgText + msgFailed
 
     # MsgBox: File exists
-    if (os.path.isfile(tmpSavePath)):
+    if (os.path.exists(tmpSavePath)):
+        print "WORKS"
         if (QMessageBox.Cancel == libMessageBox.questionMsgBox("Overwrite", "File exists", "Overwrite the file?", QMessageBox.Warning)):
             print ("** FAIL | SAVE: Overwrite canceled **")
             return
@@ -300,7 +309,7 @@ def saveFile():
         if(s.TASK["animation"] == FILE_NAME[1]):
             print ("ANIM PUBLISH")
             from scripts.ANIM import alembicExport
-            msgText = "File was saved!\n\n" + alembicExport.start()
+            msgText = "File was saved!\n\n" + alembicExport.exportAlembic()
             print ("PUBLISH: ALEMBIC") 
 
         else:

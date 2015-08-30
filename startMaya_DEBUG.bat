@@ -21,8 +21,17 @@ set "PYTHONPATH=%PIPELINE_PATH%;%PYTHONPATH%"
 set "PYTHONPATH=%LIBRARY_PATH%;%PYTHONPATH%"
 
 
+ rem --- Plugin ---
+set "MAYA_PLUG_IN_PATH=%PLUGINS_PATH%/SOuP/plug-ins/win_maya2015;%MAYA_PLUG_IN_PATH%"
+
+
  rem --- Shelf ---
+set "MAYA_SHELF_PATH=%PLUGINS_PATH%/SOuP/shelves;%MAYA_SHELF_PATH%"
 set "MAYA_SHELF_PATH=%SOFTWARE_PATH%/shelf;%MAYA_SHELF_PATH%"
+
+
+ rem --- Icon ---
+set "XBMLANGPATH=%PLUGINS_PATH%/SOuP/icons;%B%XBMLANGPATH%"
 
 
  rem --- Arnold ---

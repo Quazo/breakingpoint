@@ -68,7 +68,7 @@ background-color: rgb(31, 31, 31);</string>
     <string>Script or Title</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnReport">
+  <widget class="QPushButton" name="btnSendReport">
    <property name="geometry">
     <rect>
      <x>405</x>
@@ -404,7 +404,7 @@ background-color: rgb(31, 31, 31);</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnShowReport">
+  <widget class="QPushButton" name="btnReport">
    <property name="geometry">
     <rect>
      <x>455</x>
@@ -562,7 +562,7 @@ background-color: rgb(31, 31, 31);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(161, 161, 161);</string>
+    <string notr="true">color: rgb(175, 175, 175);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -577,7 +577,7 @@ background-color: rgb(31, 31, 31);</string>
     <enum>Qt::AutoText</enum>
    </property>
    <property name="pixmap">
-    <pixmap resource="maya.qrc">:/placeholder/img/placeholder/000.png</pixmap>
+    <pixmap>:/placeholder/img/placeholder/000.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -632,10 +632,32 @@ color: rgb(0, 255, 0);</string>
     </size>
    </property>
   </widget>
+  <widget class="QLabel" name="lblSoftware">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>225</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: 'transparent';</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="maya.qrc">:/user/img/user/_default.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>lblErrorImg</zorder>
   <zorder>edtComment</zorder>
   <zorder>edtScript</zorder>
-  <zorder>btnReport</zorder>
+  <zorder>btnSendReport</zorder>
   <zorder>btnCancel</zorder>
   <zorder>edtErrorMsg</zorder>
   <zorder>btnHelp</zorder>
@@ -645,13 +667,14 @@ color: rgb(0, 255, 0);</string>
   <zorder>cbxReport</zorder>
   <zorder>cbxScript</zorder>
   <zorder>lblScript</zorder>
-  <zorder>btnShowReport</zorder>
+  <zorder>btnReport</zorder>
   <zorder>btnBefore</zorder>
   <zorder>btnNext</zorder>
   <zorder>btnSaveToHistory</zorder>
   <zorder>btnFolder</zorder>
   <zorder>lblErrorCount</zorder>
   <zorder>btnErrorImg</zorder>
+  <zorder>lblSoftware</zorder>
  </widget>
  <resources>
   <include location="maya.qrc"/>

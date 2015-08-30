@@ -13,14 +13,14 @@
     <file>../../../../../img/btn/mailBtn24.png</file>
   </qresource>
   <qresource prefix="shelf">
+    <file>../../../../../img/shelf/shelf_char35.png</file>
+    <file>../../../../../img/shelf/shelf_alembicExportFx35.png</file>
+    <file>../../../../../img/shelf/shelf_suggestion35.png</file>
     <file>../../../../../img/shelf/shelf_alembicExport35.png</file>
     <file>../../../../../img/shelf/shelf_outliner35.png</file>
     <file>../../../../../img/shelf/shelf_bug35.png</file>
     <file>../../../../../img/shelf/shelf_default35.png</file>
     <file>../../../../../img/shelf/shelf_save35.png</file>
-  </qresource>
-  <qresource prefix="placeholder">
-    <file>../../../../../img/placeholder/000.png</file>
   </qresource>
   <qresource prefix="icon">
     <file>../../../../../img/icons/report/reportBug35.png</file>
